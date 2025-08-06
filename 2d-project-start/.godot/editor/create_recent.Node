@@ -1,3 +1,7 @@
+CollisionPolygon2D
+CollisionShape2D
+Area2D
+Sprite2D
 Button
 Label
 MarginContainer
@@ -8,8 +12,3 @@ CanvasLayer
 Timer
 PathFollow2D
 Path2D
-ProgressBar
-CollisionShape2D
-Area2D
-Marker2D
-Camera2D

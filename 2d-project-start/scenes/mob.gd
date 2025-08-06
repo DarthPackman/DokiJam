@@ -12,8 +12,8 @@ func _physics_process(delta: float) -> void:
 	velocity = direction * mob_speed
 	move_and_slide()
 
-func take_damage():
-	health -= 1
+func take_damage(damage: float):
+	health -= damage
 	%Slime.play_hurt()
 	if health == 0:
 		queue_free()
