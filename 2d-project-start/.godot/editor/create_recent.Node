@@ -1,4 +1,8 @@
+Button
 Label
+MarginContainer
+VBoxContainer
+HBoxContainer
 ColorRect
 CanvasLayer
 Timer
@@ -9,5 +13,3 @@ CollisionShape2D
 Area2D
 Marker2D
 Camera2D
-CharacterBody2D
-StaticBody2D

@@ -1,1 +1,4 @@
-res://survivor_game.tscn
+res://scenes/gun.tscn
+res://scenes/survivor_game.tscn
+res://scenes/main_menu.tscn
+res://scenes/player.tscn
