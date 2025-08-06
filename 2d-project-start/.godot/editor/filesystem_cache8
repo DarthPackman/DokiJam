@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1754375790
+::res://::1754439238
 bullet.gd::GDScript::-1::1754369109::0::1::::<>Area2D<>::
 bullet.tscn::PackedScene::3767626037524611134::1754369757::0::1::::<><>::uid://dftkbqwsfd68r::::res://pistol/projectile.png<>res://bullet.gd
 default_bus_layout.tres::AudioBusLayout::6564268947468103023::1754361602::0::1::::<><>::
@@ -11,7 +11,7 @@ mob.tscn::PackedScene::9088212189429487174::1754369757::0::1::::<><>::uid://ogik
 player.gd::GDScript::-1::1754371405::0::1::::<>CharacterBody2D<>::
 player.tscn::PackedScene::3963613419255942370::1754370295::0::1::::<><>::uid://pbmyh1qru7p::::res://characters/happy_boo/happy_boo.tscn<>res://player.gd<>uid://bpgihce445846::::res://gun.tscn
 survivor_game.gd::GDScript::-1::1754371398::0::1::::<>Node2D<>::
-survivor_game.tscn::PackedScene::3632094005030894618::1754371895::0::1::::<><>::uid://bwqaes20ox3le::::res://player.tscn<>res://survivor_game.gd<>uid://y3r78k7kk78i::::res://tree.tscn
+survivor_game.tscn::PackedScene::3632094005030894618::1754375793::0::1::::<><>::uid://bwqaes20ox3le::::res://player.tscn<>res://survivor_game.gd<>uid://y3r78k7kk78i::::res://tree.tscn
 tree.tscn::PackedScene::1743425908894764506::1754369757::0::1::::<><>::uid://b7rhtttevhxtj::::res://characters/ground_shadow.png<>uid://caqfk2xng5v5u::::res://trees/pine_tree.png
 ::res://addons/::1754361602
 ::res://addons/colorpicker_presets/::1754361602
