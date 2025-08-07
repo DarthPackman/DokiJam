@@ -1,5 +1,10 @@
-res://scenes/gun.tscn
+res://scenes/mob.tscn
 res://scenes/survivor_game.tscn
-res://scenes/pause.tscn
-res://scenes/pause.gd
-res://scenes/main_menu.tscn
+res://scenes/gun.tscn
+res://scenes/daze.tscn
+res://scenes/slow.tscn
+res://characters/slime/slime.tscn
+res://scenes/vulnerable.tscn
+res://scenes/weaken.tscn
+res://scenes/mob.gd
+res://scenes/player.gd

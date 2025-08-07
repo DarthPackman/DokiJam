@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://mm6pcv0u32b4"]
+
+[ext_resource type="Script" path="res://scenes/poison.gd" id="1_tfg63"]
+
+[node name="Poison" type="Node2D" groups=["Poison"]]
+script = ExtResource("1_tfg63")
+interval = 0.5

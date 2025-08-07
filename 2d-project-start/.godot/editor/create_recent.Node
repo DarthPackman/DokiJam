@@ -1,6 +1,8 @@
+Timer
+Button
+Node2D
 ColorRect
 CanvasLayer
-Button
 Label
 VBoxContainer
 CollisionPolygon2D
@@ -9,6 +11,4 @@ Area2D
 Sprite2D
 MarginContainer
 HBoxContainer
-Timer
 PathFollow2D
-Path2D

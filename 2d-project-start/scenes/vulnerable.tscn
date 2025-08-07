@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0cp6emci3lkg"]
+
+[ext_resource type="Script" path="res://scenes/vulnerable.gd" id="1_iptoy"]
+
+[node name="Vulnerable" type="Node2D"]
+script = ExtResource("1_iptoy")

@@ -1,0 +1,24 @@
+extends Node2D
+
+@export var damage = 1.0
+@export var interval = 1.0
+@export var duration = 5.0
+var time_elapsed = 0.0
+var duration_time_elapsed = 0.0
+var shadow
+
+func _ready() -> void:
+	shadow = get_parent().get_node("Slime/GroundShadow")
+	shadow.modulate = Color("ff000096")
+
+func _process(delta: float) -> void:
+	time_elapsed += delta
+	duration_time_elapsed += delta
+	if time_elapsed >= interval:
+		time_elapsed -= interval
+		if get_parent().has_method("take_damage"):
+			var damageType = DamageNumbers.DamageTypes.BURN
+			get_parent().take_damage(damage, damageType)
+		if duration_time_elapsed > duration:
+			shadow.modulate = Color("00000096")
+			queue_free()

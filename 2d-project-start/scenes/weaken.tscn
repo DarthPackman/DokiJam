@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dsym4do4f2vnu"]
+
+[ext_resource type="Script" path="res://scenes/weaken.gd" id="1_2dtkl"]
+
+[node name="Weaken" type="Node2D"]
+script = ExtResource("1_2dtkl")

@@ -1,5 +1,11 @@
 extends Area2D
 
+@onready var attackSpeedTimer = $Timer
+@export var attackSpeed = 0.5
+
+func _ready() -> void:
+	attackSpeedTimer.wait_time = attackSpeed
+
 func _physics_process(delta: float) -> void:
 	var enemies_in_range = get_overlapping_bodies()
 	if enemies_in_range.size() > 0.0:

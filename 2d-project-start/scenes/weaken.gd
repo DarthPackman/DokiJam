@@ -1,0 +1,22 @@
+extends Node2D
+
+@export var dmgDecrease = 25.0
+@export var duration = 5.0
+var duration_time_elapsed = 0.0
+var shadow
+
+func _ready() -> void:
+	shadow = get_parent().get_node("Slime/GroundShadow")
+	shadow.modulate = Color("ff61ce96")
+	changeDamage(1.0 - (dmgDecrease / 100))
+
+func _process(delta: float) -> void:
+	duration_time_elapsed += delta
+	if get_parent().has_method("take_damage"):
+		if duration_time_elapsed > duration:
+			changeDamage(1.0)
+			shadow.modulate = Color("00000096")
+			queue_free()
+			
+func changeDamage(dmgMult):
+	get_parent().dmgDealtMult = dmgMult
