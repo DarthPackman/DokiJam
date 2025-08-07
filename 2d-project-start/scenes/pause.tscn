@@ -1,0 +1,50 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1877pj0ym0de"]
+
+[ext_resource type="Script" path="res://scenes/pause.gd" id="1_vfqig"]
+
+[node name="Pause" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_vfqig")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.392157)
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -64.0
+offset_right = 35.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="PauseLabel" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+text = "PAUSE"
+horizontal_alignment = 1
+
+[node name="ResumeButton" type="Button" parent="VBoxContainer2"]
+layout_mode = 2
+text = "Resume"
+
+[node name="MainMenuButton" type="Button" parent="VBoxContainer2"]
+layout_mode = 2
+text = "Main"
+
+[node name="ExitButton" type="Button" parent="VBoxContainer2"]
+layout_mode = 2
+text = "Exit"
+
+[connection signal="pressed" from="VBoxContainer2/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="VBoxContainer2/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="VBoxContainer2/ExitButton" to="." method="_on_exit_button_pressed"]

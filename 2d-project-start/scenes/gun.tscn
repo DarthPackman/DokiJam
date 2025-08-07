@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bpgihce445846"]
+[gd_scene load_steps=3 format=3 uid="uid://bpgihce445846"]
 
 [ext_resource type="Script" path="res://scenes/gun.gd" id="1_1mfvt"]
-[ext_resource type="Texture2D" uid="uid://cswb5do8rrj7q" path="res://pistol/pistol.png" id="1_xscw4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x3feo"]
 radius = 737.024
@@ -16,13 +15,9 @@ shape = SubResource("CircleShape2D_x3feo")
 
 [node name="WeaponPivot" type="Marker2D" parent="."]
 
-[node name="Pistol" type="Sprite2D" parent="WeaponPivot"]
-position = Vector2(102, 6)
-texture = ExtResource("1_xscw4")
-
-[node name="ShootingPoint" type="Marker2D" parent="WeaponPivot/Pistol"]
+[node name="ShootingPoint" type="Marker2D" parent="WeaponPivot"]
 unique_name_in_owner = true
-position = Vector2(25, -12)
+position = Vector2(103, -1)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1
