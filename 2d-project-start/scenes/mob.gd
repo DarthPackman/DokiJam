@@ -3,7 +3,7 @@ extends CharacterBody2D
 @onready var player = get_node("/root/Game/Player")
 @onready var damage_numbers_origin = $DamageNumberOrigins
 @export var health = 50.0
-@export var speed = 300.0
+@export var speed = 150.0
 @export var dmgTakenMult = 1.0
 @export var damageDealt = 1.0
 @export var dmgDealtMult = 1.0
