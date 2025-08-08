@@ -1,3 +1,6 @@
+Area2D
+StaticBody2D
+CollisionShape2D
 Timer
 Button
 Node2D
@@ -6,9 +9,6 @@ CanvasLayer
 Label
 VBoxContainer
 CollisionPolygon2D
-CollisionShape2D
-Area2D
 Sprite2D
 MarginContainer
 HBoxContainer
-PathFollow2D

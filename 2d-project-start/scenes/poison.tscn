@@ -1,7 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://mm6pcv0u32b4"]
+[gd_scene load_steps=3 format=3 uid="uid://mm6pcv0u32b4"]
 
 [ext_resource type="Script" path="res://scenes/poison.gd" id="1_tfg63"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vybl0"]
+radius = 225.0
 
 [node name="Poison" type="Node2D" groups=["Poison"]]
 script = ExtResource("1_tfg63")
 interval = 0.5
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_vybl0")

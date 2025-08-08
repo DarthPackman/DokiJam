@@ -4,9 +4,10 @@ extends Node2D
 @export var duration = 5.0
 var duration_time_elapsed = 0.0
 var shadow
+@onready var aoeCollider = $StaticBody2D/CollisionShape2D
 
 func _ready() -> void:
-	changeSpeed(get_parent().speed* (speedReduction/100))
+	changeSpeed(get_parent().speed * (speedReduction/100))
 	shadow = get_parent().get_node("Slime/GroundShadow")
 	shadow.modulate = Color("ab790396")
 
@@ -20,3 +21,10 @@ func _process(delta: float) -> void:
 
 func changeSpeed(speed: float):
 	get_parent().speed = speed
+	
+func detonate_effect():
+	var stunLength = duration * (speedReduction/100)
+	StatusEffects.applyStun(get_parent(), stunLength)
+
+func enhance_effect():
+	changeSpeed(get_parent().speed * (speedReduction/100))

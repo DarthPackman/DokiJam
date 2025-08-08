@@ -6,6 +6,7 @@ extends Node2D
 var time_elapsed = 0.0
 var duration_time_elapsed = 0.0
 var shadow
+@onready var spreadAoe = $Area2D
 
 func _ready() -> void:
 	shadow = get_parent().get_node("Slime/GroundShadow")
@@ -22,3 +23,13 @@ func _process(delta: float) -> void:
 		if duration_time_elapsed > duration:
 			shadow.modulate = Color("00000096")
 			queue_free()
+
+func spread_effect():
+	var overlapping_mobs = spreadAoe.get_overlapping_bodies()
+	for mob in overlapping_mobs:
+		if mob.has_method("take_damage"):
+			var poisonDOT = self.duplicate()
+			mob.add_child(poisonDOT)
+
+func detonate_effect():
+	get_parent().takeDamage(damage * duration/interval)

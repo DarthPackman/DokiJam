@@ -4,6 +4,7 @@ extends Node2D
 @export var duration = 5.0
 var duration_time_elapsed = 0.0
 var shadow
+@onready var spreadAoe = $Area2D
 
 func _ready() -> void:
 	shadow = get_parent().get_node("Slime/GroundShadow")
@@ -20,3 +21,13 @@ func _process(delta: float) -> void:
 			
 func changeDamage(dmgMult):
 	get_parent().dmgDealtMult = dmgMult
+	
+func spread_effect():
+	var overlapping_mobs = spreadAoe.get_overlapping_bodies()
+	for mob in overlapping_mobs:
+		if mob.has_method("take_damage"):
+			var weakDebuff = self.duplicate()
+			mob.add_child(weakDebuff)
+
+func enhance_effect():
+	changeDamage(1.0 + (dmgDecrease / 100))
