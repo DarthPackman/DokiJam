@@ -22,3 +22,9 @@ res://scenes/tree.tscn
 res://scenes/vulnerable.tscn
 res://scenes/weaken.tscn
 res://smoke_explosion/smoke_explosion.tscn
+res://scenes/gun.gd
+res://weapons/aura.tscn
+res://weapons/aura.gd
+res://weapons/gun.gd
+res://weapons/gun.tscn
+res://weapons/bullet.tscn

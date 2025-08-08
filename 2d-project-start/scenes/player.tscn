@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://pbmyh1qru7p" path="res://characters/happy_boo/happy_boo.tscn" id="1_6qt4s"]
 [ext_resource type="Script" uid="uid://he8l1uiks5uo" path="res://scenes/player.gd" id="1_xn4rl"]
-[ext_resource type="PackedScene" uid="uid://bpgihce445846" path="res://scenes/gun.tscn" id="3_dda0g"]
+[ext_resource type="PackedScene" uid="uid://c75lvu1b71tom" path="res://weapons/aura.tscn" id="4_dqkch"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y8ava"]
 radius = 33.0151
@@ -36,9 +36,8 @@ unique_name_in_owner = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="Gun" parent="." instance=ExtResource("3_dda0g")]
-position = Vector2(0, -54)
-rotation = 0.00263169
+[node name="Aura" parent="." instance=ExtResource("4_dqkch")]
+scale = Vector2(35.5001, 35.5001)
 
 [node name="HurtBox" type="Area2D" parent="."]
 unique_name_in_owner = true

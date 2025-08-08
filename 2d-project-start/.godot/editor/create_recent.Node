@@ -1,3 +1,4 @@
+ColorRect
 Label
 CanvasLayer
 CharacterBody2D
@@ -7,7 +8,6 @@ StaticBody2D
 Timer
 Button
 Node2D
-ColorRect
 VBoxContainer
 CollisionPolygon2D
 Sprite2D
