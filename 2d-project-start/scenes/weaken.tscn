@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dsym4do4f2vnu"]
 
-[ext_resource type="Script" path="res://scenes/weaken.gd" id="1_2dtkl"]
+[ext_resource type="Script" uid="uid://dvf6e0eyuq2u1" path="res://scenes/weaken.gd" id="1_2dtkl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kw2nj"]
 radius = 225.0
