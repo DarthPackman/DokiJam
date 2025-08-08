@@ -1,3 +1,4 @@
+AnimatedSprite2D
 Label
 CanvasLayer
 CharacterBody2D
@@ -11,4 +12,3 @@ ColorRect
 VBoxContainer
 CollisionPolygon2D
 Sprite2D
-MarginContainer

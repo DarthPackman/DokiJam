@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://lcejsdjwswpf"]
+
+[ext_resource type="Texture2D" uid="uid://c72qaapcg00h4" path="res://art/RegRobotShadow.png" id="1_1fk7e"]
+[ext_resource type="Script" path="res://scenes/reg_robot.gd" id="1_uxgtj"]
+[ext_resource type="Texture2D" uid="uid://bq3822mpbj5n1" path="res://art/Robots.png" id="1_wxkb0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vef7m"]
+atlas = ExtResource("1_wxkb0")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qfcxx"]
+atlas = ExtResource("1_wxkb0")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p6t1m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vef7m")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qfcxx")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="RegRobot" type="Node2D"]
+scale = Vector2(4, 4)
+script = ExtResource("1_uxgtj")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 0.588235)
+texture_filter = 1
+position = Vector2(0, -1)
+texture = ExtResource("1_1fk7e")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+modulate = Color(0.592424, 0.57182, 1, 1)
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_p6t1m")
+animation = &"walk"
+autoplay = "walk"

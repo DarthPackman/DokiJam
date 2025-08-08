@@ -3,6 +3,10 @@ extends CharacterBody2D
 signal health_depleted
 var health = 100.0
 var player_speed = 600
+var character
+
+func _ready() -> void:
+	character = get_child(0)
 
 func _physics_process(delta: float) -> void:
 	var direction = Input.get_vector("move_left","move_right", "move_up", "move_down")
@@ -10,9 +14,13 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 	if velocity.length() > 0.0:
-		%HappyBoo.play_walk_animation()
+		if direction.x == 1:
+			character.get_node("AnimatedSprite2D").set_flip_h(true)
+		elif direction.x == -1:
+			character.get_node("AnimatedSprite2D").set_flip_h(false)
+		character.play_walk_animation()
 	else:
-		%HappyBoo.play_idle_animation()
+		character.play_idle_animation()
 	
 	var overlapping_mobs = %HurtBox.get_overlapping_bodies()
 	if overlapping_mobs.size() > 0:
