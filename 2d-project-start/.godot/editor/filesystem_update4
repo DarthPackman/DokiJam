@@ -4,3 +4,8 @@ res://scenes/player.tscn
 res://scenes/gun.tscn
 res://scenes/survivor_game.tscn
 res://scenes/tree.tscn
+res://scenes/FastMob.tscn
+res://scenes/SlowMob.tscn
+res://scenes/survivor_game.gd
+res://scenes/RegMob.tscn
+res://characters/slime/slime.tscn

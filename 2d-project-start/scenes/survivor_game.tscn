@@ -63,6 +63,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0.119282, 0.465978, 0.259602, 1)
 
 [node name="Player" parent="." instance=ExtResource("1_51qua")]
 position = Vector2(956, 542)
@@ -94,6 +95,17 @@ position = Vector2(1163, 382)
 [node name="MobSpawnTimer" type="Timer" parent="."]
 wait_time = 0.3
 autostart = true
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Timer" type="Label" parent="CanvasLayer2"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
 
 [connection signal="pressed" from="GameOver/Button" to="." method="_on_button_pressed"]
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]

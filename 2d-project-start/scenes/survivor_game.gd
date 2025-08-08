@@ -1,7 +1,38 @@
 extends Node2D
 
+@onready var spawnTimer = $MobSpawnTimer
+@onready var timerLabel = $CanvasLayer2/Timer
+var difficulty = 0
+var activeTime = 0
+
+func _process(delta: float) -> void:
+	activeTime += delta
+	var minutes = floor(activeTime/60)
+	var seconds = fmod(activeTime, 60)
+	timerLabel.text = "%02d:%02d" % [minutes, seconds]
+	if minutes == 10:
+		difficulty = 1
+	elif minutes == 20:
+		difficulty = 2
+	if difficulty == 1: 
+		spawnTimer.wait_time = 0.2
+	elif difficulty == 2:
+		spawnTimer.wait_time = 0.1
+
 func spawn_mob():
-	var new_mob = preload("res://scenes/mob.tscn").instantiate()
+	var reg_mob = preload("res://scenes/RegMob.tscn")
+	var slow_mob = preload("res://scenes/SlowMob.tscn")
+	var fast_mob = preload("res://scenes/FastMob.tscn")
+	var currentSpawn = randi() % 3
+	var new_mob
+	
+	if currentSpawn == 0:
+		new_mob = reg_mob.instantiate()
+	elif currentSpawn == 1:
+		new_mob = slow_mob.instantiate()
+	elif currentSpawn == 2:
+		new_mob = fast_mob.instantiate()
+	
 	%PathFollow2D.progress_ratio = randf()
 	new_mob.global_position = %PathFollow2D.global_position
 	add_child(new_mob)
