@@ -18,6 +18,8 @@ func _physics_process(delta: float) -> void:
 	velocity = direction * speed
 	
 	if character.has_node("AnimatedSprite2D"):
+		if not character.get_node("AnimatedSprite2D").is_playing():
+			character.play_walk()
 		if direction.x >= 0:
 			character.get_node("AnimatedSprite2D").set_flip_h(true)
 		elif direction.x <= 0:

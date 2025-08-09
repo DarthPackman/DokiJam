@@ -1,6 +1,6 @@
 extends Node
 
-func applyPoison(body, damage = 2, interval = 2, duration = 10):
+func applyPoison(body, damage = 2, interval = 2, duration_time_elapse = 0.0, duration = 10):
 	print("Apply Poision")
 	const POISON = preload("res://scenes/poison.tscn")
 	if not body.has_node("Poison"):
