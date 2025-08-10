@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cbcpmhuc0r3uh"]
+[gd_scene load_steps=16 format=3 uid="uid://cbcpmhuc0r3uh"]
 
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_ky7y5"]
 [ext_resource type="PackedScene" uid="uid://bnfbtrlt13uif" path="res://scenes/regular_dragoon.tscn" id="2_hqvs3"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://w4a8mr0bw34i" path="res://scenes/Shotgun.tscn" id="3_3jl3r"]
 [ext_resource type="PackedScene" uid="uid://oagfu4u7fonq" path="res://scenes/Bow.tscn" id="3_664et"]
 [ext_resource type="PackedScene" uid="uid://cj83crweoun23" path="res://scenes/Rifle.tscn" id="3_ahgig"]
+[ext_resource type="AudioStream" uid="uid://dfkpobr43rhwn" path="res://sound/bgm_gameplay_fd1.ogg" id="3_mvxva"]
 [ext_resource type="PackedScene" uid="uid://w30vum0s5f0g" path="res://scenes/OverhardEgg.tscn" id="5_0307s"]
 [ext_resource type="PackedScene" uid="uid://b1bunl8yrhgul" path="res://scenes/PicoPicoHammer.tscn" id="6_ctlpa"]
 [ext_resource type="PackedScene" uid="uid://d11s0633u7mtu" path="res://scenes/WingSlap.tscn" id="7_6wj3r"]
@@ -43,6 +44,11 @@ position = Vector2(0, -15)
 shape = SubResource("CircleShape2D_y8ava")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Camera2D"]
+stream = ExtResource("3_mvxva")
+autoplay = true
+parameters/looping = true
 
 [node name="HurtBox" type="Area2D" parent="."]
 unique_name_in_owner = true
