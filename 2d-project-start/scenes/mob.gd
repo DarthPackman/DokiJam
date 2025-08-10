@@ -4,12 +4,14 @@ extends CharacterBody2D
 @onready var damage_numbers_origin = $DamageNumberOrigins
 @export var health = 50.0
 @export var speed = 150.0
+var defaultSpeed
 @export var dmgTakenMult = 1.0
 @export var damageDealt = 1.0
 @export var dmgDealtMult = 1.0
 var character
 
 func _ready() -> void:
+	defaultSpeed = speed
 	character = get_child(0)
 	character.play_walk()
 

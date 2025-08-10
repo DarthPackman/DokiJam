@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvfvrbhf4pvo2"]
+
+[ext_resource type="Script" path="res://scenes/arrow.gd" id="1_cdowu"]
+[ext_resource type="Texture2D" uid="uid://cyfuwwr0a8m4h" path="res://art/Arrow.png" id="2_57eay"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6jbd6"]
+radius = 7.0
+
+[node name="Arrow" type="Area2D"]
+top_level = true
+rotation = 0.000888212
+scale = Vector2(1.5, 1.5)
+collision_layer = 0
+collision_mask = 6
+script = ExtResource("1_cdowu")
+
+[node name="Projectile" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0.000888212, 1)
+scale = Vector2(3, 3)
+texture = ExtResource("2_57eay")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(17, -0.0150996)
+shape = SubResource("CircleShape2D_6jbd6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

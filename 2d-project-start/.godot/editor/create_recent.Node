@@ -1,8 +1,10 @@
+Marker2D
+RigidBody2D
+CollisionShape2D
 AnimatedSprite2D
 Label
 CanvasLayer
 CharacterBody2D
-CollisionShape2D
 Area2D
 StaticBody2D
 Timer
@@ -11,4 +13,3 @@ Node2D
 ColorRect
 VBoxContainer
 CollisionPolygon2D
-Sprite2D

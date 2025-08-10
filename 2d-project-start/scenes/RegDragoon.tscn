@@ -1,8 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://cbcpmhuc0r3uh"]
+[gd_scene load_steps=15 format=3 uid="uid://cbcpmhuc0r3uh"]
 
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_ky7y5"]
 [ext_resource type="PackedScene" uid="uid://bnfbtrlt13uif" path="res://scenes/regular_dragoon.tscn" id="2_hqvs3"]
-[ext_resource type="PackedScene" uid="uid://bpgihce445846" path="res://scenes/gun.tscn" id="3_x85fo"]
+[ext_resource type="PackedScene" uid="uid://dgtxwbels7nep" path="res://scenes/HardBoiledEgg.tscn" id="3_2f8g3"]
+[ext_resource type="PackedScene" uid="uid://w4a8mr0bw34i" path="res://scenes/Shotgun.tscn" id="3_3jl3r"]
+[ext_resource type="PackedScene" uid="uid://oagfu4u7fonq" path="res://scenes/Bow.tscn" id="3_664et"]
+[ext_resource type="PackedScene" uid="uid://cj83crweoun23" path="res://scenes/Rifle.tscn" id="3_ahgig"]
+[ext_resource type="PackedScene" uid="uid://w30vum0s5f0g" path="res://scenes/OverhardEgg.tscn" id="5_0307s"]
+[ext_resource type="PackedScene" uid="uid://b1bunl8yrhgul" path="res://scenes/PicoPicoHammer.tscn" id="6_ctlpa"]
+[ext_resource type="PackedScene" uid="uid://d11s0633u7mtu" path="res://scenes/WingSlap.tscn" id="7_6wj3r"]
+[ext_resource type="PackedScene" uid="uid://33tqhb5p6ylb" path="res://scenes/SpearJab.tscn" id="8_1ikqv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y8ava"]
 radius = 34.0147
@@ -37,10 +44,6 @@ shape = SubResource("CircleShape2D_y8ava")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="Gun" parent="." instance=ExtResource("3_x85fo")]
-position = Vector2(0, -54)
-rotation = 0.00263169
-
 [node name="HurtBox" type="Area2D" parent="."]
 unique_name_in_owner = true
 collision_layer = 0
@@ -60,3 +63,19 @@ theme_override_styles/background = SubResource("StyleBoxFlat_gfie6")
 theme_override_styles/fill = SubResource("StyleBoxFlat_qfw5d")
 value = 100.0
 show_percentage = false
+
+[node name="Bow" parent="." instance=ExtResource("3_664et")]
+
+[node name="Rifle" parent="." instance=ExtResource("3_ahgig")]
+
+[node name="ShotGun" parent="." instance=ExtResource("3_3jl3r")]
+
+[node name="HardBoiledEgg" parent="." instance=ExtResource("3_2f8g3")]
+
+[node name="PicoPicoHammer" parent="." instance=ExtResource("6_ctlpa")]
+
+[node name="OverhardEgg" parent="." instance=ExtResource("5_0307s")]
+
+[node name="WingSlap" parent="." instance=ExtResource("7_6wj3r")]
+
+[node name="SpearJab" parent="." instance=ExtResource("8_1ikqv")]

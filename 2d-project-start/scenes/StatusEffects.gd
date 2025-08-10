@@ -147,6 +147,7 @@ func applyStun(body, duration = 1):
 		stunCC.duration = duration
 
 func resetDuration(body):
+	print("Reset Duration")
 	if body.has_node("Daze"):
 		body.get_node("Daze").duration_time_elapsed = 0.0
 	if body.has_node("Slow"):
@@ -170,4 +171,4 @@ func enhanceEffect(enhance):
 
 func detonateEffect(detonate):
 	print("Detonate Effect")
-	detonate.denotate_effect()
+	detonate.detonate_effect()

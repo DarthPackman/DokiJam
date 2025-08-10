@@ -34,4 +34,4 @@ func spread_effect():
 			mob.add_child(burnDOT)
 			
 func detonate_effect():
-	get_parent().takeDamage(damage * duration/interval)
+	get_parent().take_damage(damage * duration/interval, DamageNumbers.DamageTypes.BURN)

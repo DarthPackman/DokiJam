@@ -8,7 +8,7 @@ var character
 var previousDamage = 0
 
 func _ready() -> void:
-	changeSpeed(get_parent().speed * (speedReduction/100))
+	changeSpeed(0)
 	previousDamage = get_parent().damageDealt
 	get_parent().damageDealt = 0
 	if get_parent().get_child(0).has_node("AnimatedSprite2D"):
@@ -19,7 +19,7 @@ func _process(delta: float) -> void:
 	duration_time_elapsed += delta
 	if get_parent().has_method("take_damage"):
 		if duration_time_elapsed > duration:
-			changeSpeed(get_parent().speed * (100/speedReduction))
+			changeSpeed(get_parent().defaultSpeed)
 			get_parent().damageDealt = previousDamage
 			if character:
 				character.modulate = Color("9792ff")

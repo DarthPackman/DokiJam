@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://33tqhb5p6ylb"]
+
+[ext_resource type="Script" path="res://scenes/spear_jab.gd" id="1_wa0lo"]
+[ext_resource type="PackedScene" uid="uid://s1juok152iqw" path="res://scenes/Spear.tscn" id="2_sxkrg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x3feo"]
+radius = 232.009
+
+[node name="SpearJab" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_wa0lo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_x3feo")
+
+[node name="WeaponPivot" type="Marker2D" parent="."]
+
+[node name="MeleePoint" type="Marker2D" parent="WeaponPivot"]
+unique_name_in_owner = true
+position = Vector2(104, 0)
+
+[node name="Spear" parent="WeaponPivot/MeleePoint" instance=ExtResource("2_sxkrg")]
+unique_name_in_owner = true
+position = Vector2(106, 0)
+rotation = 0.0006212
+
+[node name="MeleePoint2" type="Marker2D" parent="WeaponPivot"]
+unique_name_in_owner = true
+position = Vector2(-100, 0)
+rotation = 3.14159
+
+[node name="Spear2" parent="WeaponPivot/MeleePoint2" instance=ExtResource("2_sxkrg")]
+unique_name_in_owner = true
+position = Vector2(-107, 1)
+rotation = -3.14159
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

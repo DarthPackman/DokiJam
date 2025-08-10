@@ -9,7 +9,7 @@ size = Vector2(56, 96)
 [node name="Mob" type="CharacterBody2D"]
 position = Vector2(0, 1)
 collision_layer = 2
-collision_mask = 6
+collision_mask = 4
 script = ExtResource("1_nf082")
 
 [node name="RegRobot" parent="." instance=ExtResource("2_8qrps")]

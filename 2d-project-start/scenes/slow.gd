@@ -16,7 +16,7 @@ func _process(delta: float) -> void:
 	duration_time_elapsed += delta
 	if get_parent().has_method("take_damage"):
 		if duration_time_elapsed > duration:
-			changeSpeed(get_parent().speed * (1 + (speedReduction/75)))
+			changeSpeed(get_parent().defaultSpeed)
 			if character:
 				character.modulate = Color("9792ff")
 			queue_free()
