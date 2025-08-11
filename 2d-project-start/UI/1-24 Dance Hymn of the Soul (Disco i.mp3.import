@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cnap8bqop5noc"
+path="res://.godot/imported/1-24 Dance Hymn of the Soul (Disco i.mp3-41d8cefa8246c7864a304cb7b8aaa1f7.mp3str"
+
+[deps]
+
+source_file="res://UI/1-24 Dance Hymn of the Soul (Disco i.mp3"
+dest_files=["res://.godot/imported/1-24 Dance Hymn of the Soul (Disco i.mp3-41d8cefa8246c7864a304cb7b8aaa1f7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
