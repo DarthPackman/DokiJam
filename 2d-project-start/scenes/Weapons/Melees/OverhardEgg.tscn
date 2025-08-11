@@ -3,7 +3,6 @@
 [ext_resource type="Script" path="res://scenes/Weapons/Melees/overhard_egg.gd" id="1_iflvl"]
 [ext_resource type="PackedScene" uid="uid://br2s6r534yv13" path="res://scenes/Weapons/Melees/EggSlap.tscn" id="2_fyhn0"]
 
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_x3feo"]
 radius = 232.009
 
@@ -23,6 +22,7 @@ position = Vector2(1, -135)
 
 [node name="EggSlap" parent="WeaponPivot/MeleePoint" instance=ExtResource("2_fyhn0")]
 unique_name_in_owner = true
+visible = false
 position = Vector2(-7.45058e-09, -135)
 
 [node name="MeleePoint2" type="Marker2D" parent="WeaponPivot"]
@@ -32,6 +32,7 @@ rotation = 3.14159
 
 [node name="EggSlap2" parent="WeaponPivot/MeleePoint2" instance=ExtResource("2_fyhn0")]
 unique_name_in_owner = true
+visible = false
 position = Vector2(9.09495e-13, 134)
 rotation = 3.14159
 

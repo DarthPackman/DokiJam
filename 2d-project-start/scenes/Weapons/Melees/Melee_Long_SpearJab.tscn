@@ -3,7 +3,6 @@
 [ext_resource type="Script" path="res://scenes/Weapons/Melees/melee_long_spearjab.gd" id="1_wa0lo"]
 [ext_resource type="PackedScene" uid="uid://s1juok152iqw" path="res://scenes/Weapons/Melees/Melee_Long_Spear.tscn" id="2_sxkrg"]
 
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_x3feo"]
 radius = 232.009
 

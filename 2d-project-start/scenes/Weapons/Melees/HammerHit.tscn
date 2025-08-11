@@ -1,10 +1,67 @@
-[gd_scene load_steps=4 format=3 uid="uid://bmsut1h1tr6pb"]
+[gd_scene load_steps=12 format=3 uid="uid://bmsut1h1tr6pb"]
 
-[ext_resource type="Script" uid="uid://b5o45sxgb8805" path="res://weapons/hammer_hit.gd" id="1_5liwc"]
-[ext_resource type="Texture2D" uid="uid://c2gshjr1aoh7b" path="res://art/Pico.png" id="2_57dl5"]
+[ext_resource type="Script" path="res://scenes/Weapons/Melees/hammer_hit.gd" id="1_5liwc"]
+[ext_resource type="Texture2D" uid="uid://djvyaber24s5g" path="res://art/Hammer.png" id="2_fmqjq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6jbd6"]
 radius = 73.3349
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rqyhr"]
+atlas = ExtResource("2_fmqjq")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cmkmc"]
+atlas = ExtResource("2_fmqjq")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vrcg8"]
+atlas = ExtResource("2_fmqjq")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4mrea"]
+atlas = ExtResource("2_fmqjq")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8hvme"]
+atlas = ExtResource("2_fmqjq")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0r3op"]
+atlas = ExtResource("2_fmqjq")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jtbca"]
+atlas = ExtResource("2_fmqjq")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ik5ve"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rqyhr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cmkmc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vrcg8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4mrea")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8hvme")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0r3op")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jtbca")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [node name="Hit" type="Area2D"]
 top_level = true
@@ -14,11 +71,11 @@ collision_layer = 0
 collision_mask = 6
 script = ExtResource("1_5liwc")
 
-[node name="Melee" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(-0.800711, -0.799289)
-scale = Vector2(10, 10)
-texture = ExtResource("2_57dl5")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_6jbd6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_ik5ve")
+frame_progress = 0.514149

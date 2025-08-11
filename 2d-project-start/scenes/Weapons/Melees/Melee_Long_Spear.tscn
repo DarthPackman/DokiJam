@@ -1,10 +1,67 @@
-[gd_scene load_steps=4 format=3 uid="uid://s1juok152iqw"]
+[gd_scene load_steps=12 format=3 uid="uid://s1juok152iqw"]
 
-[ext_resource type="Script" uid="uid://doev5cmolg1gs" path="res://scenes_weapons/melee_long_spear.gd" id="1_gigig"]
-[ext_resource type="Texture2D" uid="uid://3sbisfx4t8pj" path="res://art/Spear.png" id="2_mhr3g"]
+[ext_resource type="Script" path="res://scenes/Weapons/Melees/melee_long_spear.gd" id="1_gigig"]
+[ext_resource type="Texture2D" uid="uid://dpftri535hlu6" path="res://art/SpearJab.png" id="2_gs5hu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e35h1"]
 size = Vector2(159.194, 68.805)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l884l"]
+atlas = ExtResource("2_gs5hu")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mnla1"]
+atlas = ExtResource("2_gs5hu")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ctjqw"]
+atlas = ExtResource("2_gs5hu")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lw0lf"]
+atlas = ExtResource("2_gs5hu")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fxnue"]
+atlas = ExtResource("2_gs5hu")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x88b4"]
+atlas = ExtResource("2_gs5hu")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l4ty0"]
+atlas = ExtResource("2_gs5hu")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3ik6m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l884l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mnla1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ctjqw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lw0lf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fxnue")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x88b4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l4ty0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [node name="Spear" type="Area2D"]
 top_level = true
@@ -13,12 +70,13 @@ collision_layer = 0
 collision_mask = 6
 script = ExtResource("1_gigig")
 
-[node name="Melee" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(56.0042, 4.75026)
-scale = Vector2(10, 10)
-texture = ExtResource("2_mhr3g")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(54.7968, -0.0515192)
 shape = SubResource("RectangleShape2D_e35h1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(55.9982, -2.04974)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_3ik6m")
+frame_progress = 0.934004

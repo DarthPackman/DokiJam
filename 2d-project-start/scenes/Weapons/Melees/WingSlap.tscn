@@ -3,7 +3,6 @@
 [ext_resource type="Script" path="res://scenes/Weapons/Melees/wing_slap.gd" id="1_hbfq1"]
 [ext_resource type="PackedScene" uid="uid://bd82ta27leyu0" path="res://scenes/Weapons/Melees/Slap.tscn" id="2_vy0ba"]
 
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_x3feo"]
 radius = 232.009
 
