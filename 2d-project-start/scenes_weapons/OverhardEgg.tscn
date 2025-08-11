@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://w30vum0s5f0g"]
 
-[ext_resource type="Script" uid="uid://nqapn7k8ngmc" path="res://scenes/overhard_egg.gd" id="1_iflvl"]
-[ext_resource type="PackedScene" uid="uid://br2s6r534yv13" path="res://weapons/EggSlap.tscn" id="2_fyhn0"]
+[ext_resource type="Script" uid="uid://nqapn7k8ngmc" path="res://scenes_weapons/overhard_egg.gd" id="1_iflvl"]
+[ext_resource type="PackedScene" uid="uid://br2s6r534yv13" path="res://scenes_weapons/EggSlap.tscn" id="2_fyhn0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x3feo"]
 radius = 232.009
