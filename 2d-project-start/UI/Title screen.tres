@@ -1,0 +1,39 @@
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://cgah1efpjglvn"]
+
+[ext_resource type="FontFile" uid="uid://bd5fdvq76vys" path="res://UI/GrapeSoda.ttf" id="1_ctske"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w6mg8"]
+bg_color = Color(0.576471, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ipogy"]
+bg_color = Color(0.431373, 0.501961, 0.784314, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btyon"]
+bg_color = Color(0.192157, 0.207843, 0.427451, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xngkt"]
+bg_color = Color(0.258824, 0.364706, 0.760784, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mjo6e"]
+bg_color = Color(0.258824, 0.364706, 0.760784, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iwcq4"]
+bg_color = Color(1, 0.894118, 0.678431, 1)
+
+[resource]
+default_font = ExtResource("1_ctske")
+default_font_size = 24
+Button/colors/font_color = Color(0.976471, 0.662745, 0.439216, 1)
+Button/colors/font_disabled_color = Color(0.976471, 0.662745, 0.439216, 1)
+Button/colors/font_focus_color = Color(0.976471, 0.662745, 0.439216, 1)
+Button/colors/font_hover_color = Color(0.976471, 0.662745, 0.439216, 1)
+Button/colors/font_hover_pressed_color = Color(0.976471, 0.662745, 0.439216, 1)
+Button/colors/font_pressed_color = Color(0.976471, 0.662745, 0.439216, 1)
+Button/styles/disabled = SubResource("StyleBoxFlat_w6mg8")
+Button/styles/focus = SubResource("StyleBoxFlat_ipogy")
+Button/styles/hover = SubResource("StyleBoxFlat_btyon")
+Button/styles/normal = SubResource("StyleBoxFlat_xngkt")
+Button/styles/pressed = SubResource("StyleBoxFlat_mjo6e")
+Label/colors/font_color = Color(0.976471, 0.662745, 0.439216, 1)
+Panel/styles/panel = SubResource("StyleBoxFlat_iwcq4")
+TextEdit/colors/font_color = Color(0.976471, 0.662745, 0.439216, 1)

@@ -1,0 +1,70 @@
+[gd_scene load_steps=3 format=3 uid="uid://c07r7accdfvtd"]
+
+[ext_resource type="Script" path="res://scenes/options.gd" id="1_kq0wc"]
+[ext_resource type="Theme" uid="uid://cgah1efpjglvn" path="res://UI/Title screen.tres" id="2_v265i"]
+
+[node name="options" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kq0wc")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1921.0
+offset_bottom = 1077.0
+theme = ExtResource("2_v265i")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -483.5
+offset_top = 128.0
+offset_right = 484.5
+offset_bottom = 319.0
+grow_horizontal = 2
+theme = ExtResource("2_v265i")
+theme_override_font_sizes/font_size = 128
+text = "Options"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -308.0
+offset_right = 100.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_v265i")
+theme_override_constants/separation = 20
+
+[node name="volumeslider" type="HSlider" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="Backbutton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_v265i")
+theme_override_font_sizes/font_size = 64
+text = "Back"
+
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/volumeslider" to="." method="_on_h_slider_value_changed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Backbutton" to="." method="_on_backbutton_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Backbutton" to="." method="_on_quitbutton_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Backbutton" to="MarginContainer/VBoxContainer/Backbutton" method="_on_pressed"]
