@@ -58,9 +58,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8ulxm")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
-"speed": 10.0
+"speed": 12.5
 }]
 
 [node name="EggSlap" type="Area2D"]
@@ -74,7 +74,9 @@ script = ExtResource("1_eudir")
 shape = SubResource("CircleShape2D_6jbd6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
 texture_filter = 1
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_mt6eq")
+autoplay = "default"
 frame_progress = 0.174959

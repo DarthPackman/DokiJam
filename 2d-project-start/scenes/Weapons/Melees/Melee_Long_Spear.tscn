@@ -58,9 +58,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_l4ty0")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
-"speed": 10.0
+"speed": 12.5
 }]
 
 [node name="Spear" type="Area2D"]
@@ -75,8 +75,10 @@ position = Vector2(54.7968, -0.0515192)
 shape = SubResource("RectangleShape2D_e35h1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
 texture_filter = 1
 position = Vector2(55.9982, -2.04974)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_3ik6m")
+autoplay = "default"
 frame_progress = 0.934004

@@ -9,3 +9,6 @@ func hit():
 			var damageType = DamageNumbers.DamageTypes.NORMAL
 			enemy.take_damage(damage, damageType)
 			StatusEffects.applyBurn(enemy)
+
+func play_animation():
+	%AnimatedSprite2D.play("default")

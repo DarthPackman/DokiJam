@@ -1,8 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://cbcpmhuc0r3uh"]
+[gd_scene load_steps=12 format=3 uid="uid://cbcpmhuc0r3uh"]
 
 [ext_resource type="Script" path="res://scenes/PlayableCharacters/player.gd" id="1_ky7y5"]
 [ext_resource type="PackedScene" uid="uid://bnfbtrlt13uif" path="res://scenes/PlayableCharacters/regular_dragoon.tscn" id="2_hqvs3"]
 [ext_resource type="AudioStream" uid="uid://dfkpobr43rhwn" path="res://sound/bgm_gameplay_fd1.ogg" id="3_mvxva"]
+[ext_resource type="PackedScene" uid="uid://b1bunl8yrhgul" path="res://scenes/Weapons/Melees/PicoPicoHammer.tscn" id="4_ig4v8"]
+[ext_resource type="PackedScene" uid="uid://d11s0633u7mtu" path="res://scenes/Weapons/Melees/WingSlap.tscn" id="5_52p72"]
+[ext_resource type="PackedScene" uid="uid://w30vum0s5f0g" path="res://scenes/Weapons/Melees/OverhardEgg.tscn" id="6_vninn"]
+[ext_resource type="PackedScene" uid="uid://33tqhb5p6ylb" path="res://scenes/Weapons/Melees/Melee_Long_SpearJab.tscn" id="7_452o1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y8ava"]
 radius = 34.0147
@@ -68,3 +72,11 @@ theme_override_styles/background = SubResource("StyleBoxFlat_gfie6")
 theme_override_styles/fill = SubResource("StyleBoxFlat_qfw5d")
 value = 100.0
 show_percentage = false
+
+[node name="OverhardEgg" parent="." instance=ExtResource("6_vninn")]
+
+[node name="SpearJab" parent="." instance=ExtResource("7_452o1")]
+
+[node name="WingSlap" parent="." instance=ExtResource("5_52p72")]
+
+[node name="PicoPicoHammer" parent="." instance=ExtResource("4_ig4v8")]

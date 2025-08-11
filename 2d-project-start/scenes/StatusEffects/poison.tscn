@@ -1,6 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://mm6pcv0u32b4"]
 
-[ext_resource type="Script" uid="uid://d4e2ukg6ys2gj" path="res://scenes/poison.gd" id="1_tfg63"]
+[ext_resource type="Script" path="res://scenes/StatusEffects/poison.gd" id="1_tfg63"]
+
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vybl0"]
 radius = 225.0

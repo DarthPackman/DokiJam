@@ -1,10 +1,10 @@
 extends Area2D
 
 @onready var attackSpeedTimer = $Timer
-@export var attackSpeed = 0.5
-var duration = 0.1
+@export var attackSpeed = 1.5
+var duration = 0.6
 var duration_time_elapsed = 0.0
-@onready var slap_visuals = %Slap
+@onready var hit_visuals = %Slap
 @onready var meleePoint = %MeleePoint
 
 func _ready() -> void:
@@ -17,15 +17,15 @@ func _physics_process(delta: float) -> void:
 		var target_enemy = enemies_in_range.front()
 		look_at(target_enemy.global_position)
 	if duration_time_elapsed >= duration:
-		slap_visuals.hide()
+		hit_visuals.hide()
+	hit_visuals.global_position = meleePoint.global_position
+	hit_visuals.global_rotation = meleePoint.global_rotation
 		
 func attack():
-	slap_visuals.global_position = meleePoint.global_position
-	slap_visuals.global_rotation = meleePoint.global_rotation
-	slap_visuals.show()
-	slap_visuals.hit()
+	hit_visuals.show()
+	hit_visuals.hit()
+	hit_visuals.play_animation()
 	duration_time_elapsed = 0.0
-	
 
 func _on_timer_timeout() -> void:
 	attack()

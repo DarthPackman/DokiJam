@@ -20,10 +20,10 @@ unique_name_in_owner = true
 [node name="MeleePoint" type="Marker2D" parent="WeaponPivot"]
 unique_name_in_owner = true
 position = Vector2(134, -1)
+rotation = 1.5708
 
 [node name="Hit" parent="WeaponPivot/MeleePoint" instance=ExtResource("2_7lh4i")]
 unique_name_in_owner = true
-visible = false
 position = Vector2(132, 0)
 rotation = 1.5708
 

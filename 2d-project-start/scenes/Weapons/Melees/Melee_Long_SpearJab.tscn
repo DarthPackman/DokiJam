@@ -22,6 +22,7 @@ position = Vector2(104, 0)
 
 [node name="Spear" parent="WeaponPivot/MeleePoint" instance=ExtResource("2_sxkrg")]
 unique_name_in_owner = true
+visible = false
 position = Vector2(106, 0)
 rotation = 0.0006212
 
@@ -32,6 +33,7 @@ rotation = 3.14159
 
 [node name="Spear2" parent="WeaponPivot/MeleePoint2" instance=ExtResource("2_sxkrg")]
 unique_name_in_owner = true
+visible = false
 position = Vector2(-107, 1)
 rotation = -3.14159
 

@@ -1,6 +1,30 @@
-[gd_scene load_steps=3 format=3 uid="uid://co753tibkdyqp"]
+[gd_scene load_steps=3 format=3 uid="uid://bjb0wg0r1dmwp"]
 
-[ext_resource type="Script" path="res://scenes/Weapons/Melees/melee.gd" id="1_gj2p4"]
+[sub_resource type="GDScript" id="GDScript_aam1n"]
+script/source = "extends Area2D
+
+@onready var attackSpeedTimer = $Timer
+@export var attackSpeed = 0.25
+
+func _ready() -> void:
+	attackSpeedTimer.wait_time = attackSpeed
+
+func _physics_process(delta: float) -> void:
+	var enemies_in_range = get_overlapping_bodies()
+	if enemies_in_range.size() > 0.0:
+		var target_enemy = enemies_in_range.front()
+		look_at(target_enemy.global_position)
+
+func shoot():
+	const BULLET = preload(\"res://scenes/bullet.tscn\")
+	var new_bullet = BULLET.instantiate()
+	new_bullet.global_position = %ShootingPoint.global_position
+	new_bullet.global_rotation = %ShootingPoint.global_rotation
+	%ShootingPoint.add_child(new_bullet)
+
+func _on_timer_timeout() -> void:
+	shoot()
+"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x3feo"]
 radius = 737.024
@@ -8,7 +32,7 @@ radius = 737.024
 [node name="Gun" type="Area2D"]
 collision_layer = 0
 collision_mask = 2
-script = ExtResource("1_gj2p4")
+script = SubResource("GDScript_aam1n")
 attackSpeed = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
