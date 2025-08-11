@@ -28,10 +28,13 @@ func spawn_mob():
 	
 	if currentSpawn == 0:
 		new_mob = reg_mob.instantiate()
+		new_mob.exp_amt = 10
 	elif currentSpawn == 1:
 		new_mob = slow_mob.instantiate()
+		new_mob.exp_amt = 15
 	elif currentSpawn == 2:
 		new_mob = fast_mob.instantiate()
+		new_mob.exp_amt = 2
 	
 	%PathFollow2D.progress_ratio = randf()
 	new_mob.global_position = %PathFollow2D.global_position

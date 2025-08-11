@@ -1,6 +1,11 @@
+CollisionShape2D
+TextureRect
+ColorRect
+Sprite2D
+Area2D
+ProgressBar
 AnimatedSprite2D
 Timer
-TextureRect
 PanelContainer
 HBoxContainer
 CanvasLayer
@@ -8,7 +13,3 @@ AudioStreamPlayer2D
 AudioListener2D
 Marker2D
 RigidBody2D
-CollisionShape2D
-Label
-CharacterBody2D
-Area2D

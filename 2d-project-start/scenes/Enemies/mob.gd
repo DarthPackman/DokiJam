@@ -8,7 +8,11 @@ var defaultSpeed
 @export var dmgTakenMult = 1.0
 @export var damageDealt = 1.0
 @export var dmgDealtMult = 1.0
+@export var exp_amt: int = 5
+@export var orb_spawn_radius: float = 2
 var character
+
+const EXP_ORB_SCENE = preload("res://scenes/Systems/Exp_Orb.tscn")
 
 func _ready() -> void:
 	defaultSpeed = speed
@@ -38,7 +42,25 @@ func take_damage(damage: float, damageType: DamageNumbers.DamageTypes):
 		var smoke = SMOKE_SCENE.instantiate()
 		get_parent().add_child(smoke)
 		smoke.global_position = global_position
+		spawn_exp_orb()
 		queue_free()
+
+func spawn_exp_orb() -> void:
+	var orb = EXP_ORB_SCENE.instantiate()  
+	get_parent().add_child(orb)  
+	
+	# makes sure it doesn't stack perfectly and spawn in a circle
+	var offset = random_offset_in_circle(orb_spawn_radius)  
+	orb.global_position = global_position + offset
+
+	orb.exp_value = exp_amt
+
+func random_offset_in_circle(radius: float) -> Vector2:  
+	#  r = R * sqrt(u), theta = 2*pi*v  
+	var angle := randf() * TAU  
+	var r := radius * sqrt(randf())  
+	return Vector2(cos(angle), sin(angle)) * r
+
 
 func deal_damage():
 	damageDealt * dmgDealtMult

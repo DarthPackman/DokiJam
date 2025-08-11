@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://y3r78k7kk78i" path="res://scenes/tree.tscn" id="2_qhwj7"]
 [ext_resource type="PackedScene" uid="uid://cbcpmhuc0r3uh" path="res://scenes/PlayableCharacters/RegDragoon.tscn" id="3_2gh8j"]
 
-
 [sub_resource type="Curve2D" id="Curve2D_gfcyf"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -175, -128, 0, 0, 0, 0, 2056, -122, 0, 0, 0, 0, 2073, 1264, 0, 0, 0, 0, -181, 1273, 0, 0, 0, 0, -175, -122)
