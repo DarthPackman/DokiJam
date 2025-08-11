@@ -1,0 +1,237 @@
+[gd_scene load_steps=16 format=3 uid="uid://cxwau5axekbly"]
+
+[ext_resource type="Script" path="res://scenes/pickbird.gd" id="1_y6hrr"]
+[ext_resource type="Theme" uid="uid://cgah1efpjglvn" path="res://UI/Title screen.tres" id="2_oa5m0"]
+[ext_resource type="Texture2D" uid="uid://1sfvn3p3p5dj" path="res://UI/red_dragoon_with_tomatostill.webp" id="3_albn4"]
+[ext_resource type="AudioStream" uid="uid://cnap8bqop5noc" path="res://UI/1-24 Dance Hymn of the Soul (Disco i.mp3" id="3_oqyll"]
+[ext_resource type="Texture2D" uid="uid://ciyf7a7fshs4x" path="res://UI/RegularDragoonIdle.webp" id="4_dhlu5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wul86"]
+atlas = ExtResource("4_dhlu5")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nr67g"]
+atlas = ExtResource("4_dhlu5")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mto3k"]
+atlas = ExtResource("4_dhlu5")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_003m1"]
+atlas = ExtResource("4_dhlu5")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l83ay"]
+atlas = ExtResource("4_dhlu5")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dmjmp"]
+atlas = ExtResource("4_dhlu5")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ohmwb"]
+atlas = ExtResource("4_dhlu5")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ky87e"]
+atlas = ExtResource("4_dhlu5")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wl3xg"]
+atlas = ExtResource("4_dhlu5")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p6m7q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wul86")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nr67g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mto3k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_003m1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l83ay")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dmjmp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ohmwb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ky87e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wl3xg")
+}],
+"loop": true,
+"name": &"Regidle",
+"speed": 8.0
+}]
+
+[node name="Pickbird" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y6hrr")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1921.0
+offset_bottom = 1077.0
+theme = ExtResource("2_oa5m0")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -483.5
+offset_top = 128.0
+offset_right = 484.5
+offset_bottom = 319.0
+grow_horizontal = 2
+theme = ExtResource("2_oa5m0")
+theme_override_font_sizes/font_size = 128
+text = "Pick your Dragoon"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -572.0
+offset_top = -177.5
+offset_right = 572.0
+offset_bottom = 177.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 50
+
+[node name="selectreg" type="Button" parent="Panel/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(360, 360)
+layout_mode = 2
+theme = ExtResource("2_oa5m0")
+theme_override_font_sizes/font_size = 72
+text = "Reg"
+
+[node name="selectchonk" type="Button" parent="Panel/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(360, 360)
+layout_mode = 2
+theme = ExtResource("2_oa5m0")
+theme_override_font_sizes/font_size = 72
+disabled = true
+text = "Chonk"
+
+[node name="selecttall" type="Button" parent="Panel/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(360, 360)
+layout_mode = 2
+theme = ExtResource("2_oa5m0")
+theme_override_font_sizes/font_size = 72
+disabled = true
+text = "Tall"
+
+[node name="selectegg" type="Button" parent="Panel/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(360, 360)
+layout_mode = 2
+theme = ExtResource("2_oa5m0")
+theme_override_font_sizes/font_size = 72
+disabled = true
+text = "Egg"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/MarginContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 50
+
+[node name="TextureRect" type="TextureRect" parent="Panel/MarginContainer/HBoxContainer2"]
+visible = false
+layout_mode = 2
+texture = ExtResource("3_albn4")
+stretch_mode = 3
+
+[node name="TextureButton" type="TextureButton" parent="Panel/MarginContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(360, 360)
+layout_mode = 2
+theme = ExtResource("2_oa5m0")
+texture_normal = ExtResource("3_albn4")
+stretch_mode = 3
+
+[node name="regidle" type="AnimatedSprite2D" parent="Panel/MarginContainer/HBoxContainer2/TextureButton"]
+position = Vector2(180.5, 180.5)
+scale = Vector2(4.11914, 3.9043)
+sprite_frames = SubResource("SpriteFrames_p6m7q")
+animation = &"Regidle"
+frame_progress = 0.0738786
+
+[node name="TextureButton2" type="TextureButton" parent="Panel/MarginContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(360, 360)
+layout_mode = 2
+theme = ExtResource("2_oa5m0")
+texture_normal = ExtResource("3_albn4")
+stretch_mode = 3
+
+[node name="TextureButton3" type="TextureButton" parent="Panel/MarginContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(360, 360)
+layout_mode = 2
+theme = ExtResource("2_oa5m0")
+texture_normal = ExtResource("3_albn4")
+stretch_mode = 3
+
+[node name="TextureButton4" type="TextureButton" parent="Panel/MarginContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(360, 360)
+layout_mode = 2
+theme = ExtResource("2_oa5m0")
+texture_normal = ExtResource("3_albn4")
+stretch_mode = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -106.5
+offset_top = -132.0
+offset_right = 107.5
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer2"]
+layout_mode = 2
+
+[node name="back" type="Button" parent="Panel/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Back"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_oqyll")
+volume_db = -33.425
+autoplay = true
+
+[connection signal="pressed" from="Panel/MarginContainer/HBoxContainer/selectreg" to="." method="_on_selectreg_pressed"]
+[connection signal="mouse_entered" from="Panel/MarginContainer/HBoxContainer2/TextureButton" to="." method="_on_texture_button_mouse_entered"]
+[connection signal="mouse_exited" from="Panel/MarginContainer/HBoxContainer2/TextureButton" to="." method="_on_texture_button_mouse_exited"]
+[connection signal="pressed" from="Panel/MarginContainer/HBoxContainer2/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer2/VBoxContainer/back" to="." method="_on_back_pressed"]

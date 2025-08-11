@@ -1,4 +1,9 @@
-res://scenes/gun.tscn
+res://scenes/pickbird.gd
+res://scenes/pickbird.tscn
+res://UI/Title screen.tres
 res://scenes/survivor_game.tscn
 res://scenes/main_menu.tscn
 res://scenes/player.tscn
+res://scenes/gun.tscn
+res://scenes/titlescreen.tscn
+res://scenes/options.tscn
