@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://cpehgfaeyco4r" path="res://art/RegRobotHurt.png" id="3_2m27x"]
 [ext_resource type="Texture2D" uid="uid://tjg18ecgma6s" path="res://art/RegRobotWalkCycle.png" id="3_mhaya"]
 
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_bqqo3"]
 atlas = ExtResource("3_2m27x")
 region = Rect2(32, 0, 32, 32)

@@ -26,4 +26,7 @@ func _process(delta: float) -> void:
 			queue_free()
 
 func changeSpeed(speed: float):
-	get_parent().speed = speed
+	if get_parent().canBeStunned:
+		get_parent().canBeStunned = false
+		get_parent().stunCD_elapsed = 0.0
+		get_parent().speed = speed

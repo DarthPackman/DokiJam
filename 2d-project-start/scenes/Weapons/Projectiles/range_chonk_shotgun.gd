@@ -3,6 +3,7 @@ extends Area2D
 @onready var attackSpeedTimer = $Timer
 @export var attackSpeed = 0.5
 @export var shotCount = 3
+@export var statusEffectDisabled = false
 
 @onready var shooting_points = [
 	%ShootingPoint, 
@@ -25,7 +26,7 @@ func _physics_process(delta: float) -> void:
 		look_at(target_enemy.global_position)
 
 func shoot():
-	const BUCKSHOT = preload("res://scenes_weapons/Range_Chonk_Shotgun.tscn")
+	const BUCKSHOT = preload("res://scenes/Weapons/Projectiles/Range_Chonk_Shotgun.tscn")
 	for i in shotCount:
 		var shooting_point = shooting_points[i]
 		var rotation_offset = rotation_offsets[i]
@@ -33,6 +34,7 @@ func shoot():
 		var new_shot = BUCKSHOT.instantiate()
 		new_shot.global_position = shooting_point.global_position
 		new_shot.global_rotation = shooting_point.global_rotation + rotation_offset
+		new_shot.disabled = statusEffectDisabled
 		shooting_point.add_child(new_shot)
 
 

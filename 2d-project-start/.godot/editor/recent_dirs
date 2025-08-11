@@ -1,6 +1,8 @@
+res://art
+res://scenes/Weapons/Auras
+res://scenes/Weapons/Projectiles
 res://scenes/Systems
 res://scenes/StatusEffects
-res://art
 res://scenes/Weapons/Melees
 res://scenes/Enemies
 res://scenes/PlayableCharacters

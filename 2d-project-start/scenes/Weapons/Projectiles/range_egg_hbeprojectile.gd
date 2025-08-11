@@ -6,6 +6,7 @@ const RANGE = 2000
 var damage = 5.0
 var bounceCount = 3
 var currentBounce = 0
+var disabled = false
 
 func _physics_process(delta: float) -> void:
 	var direction = Vector2.RIGHT.rotated(rotation)
@@ -20,7 +21,8 @@ func _on_body_entered(body: Node2D) -> void:
 		currentBounce += 1
 		var damageType = DamageNumbers.DamageTypes.NORMAL
 		body.take_damage(damage, damageType)
-		StatusEffects.applyBurn(body)
+		if not disabled:
+			StatusEffects.applyBurn(body)
 		rotation = rotation * 90
 	if currentBounce > bounceCount:
 		queue_free()

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://oagfu4u7fonq"]
 
-[ext_resource type="Script" uid="uid://cbwv7kksnqidw" path="res://scenes_weapons/range_long_bow.gd" id="1_mfpuh"]
+[ext_resource type="Script" path="res://scenes/Weapons/Projectiles/range_long_bow.gd" id="1_mfpuh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x3feo"]
 radius = 737.024

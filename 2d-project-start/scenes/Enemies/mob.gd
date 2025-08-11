@@ -11,6 +11,9 @@ var defaultSpeed
 @export var exp_amt: int = 5
 @export var orb_spawn_radius: float = 2
 var character
+var canBeStunned = true
+var stunCD = 5.0
+var stunCD_elapsed = 0.0
 
 const EXP_ORB_SCENE = preload("res://scenes/Systems/Exp_Orb.tscn")
 
@@ -22,6 +25,10 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	var direction = global_position.direction_to(player.global_position)
 	velocity = direction * speed
+	
+	stunCD_elapsed += delta
+	if stunCD_elapsed >= stunCD:
+		canBeStunned = true
 	
 	if character.has_node("AnimatedSprite2D"):
 		if not character.get_node("AnimatedSprite2D").is_playing():
