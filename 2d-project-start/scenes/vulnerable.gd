@@ -3,12 +3,13 @@ extends Node2D
 @export var dmgIncrease = 25.0
 @export var duration = 5.0
 var duration_time_elapsed = 0.0
-var shadow
+var character
 @onready var spreadAoe = $Area2D
 
 func _ready() -> void:
-	shadow = get_parent().get_node("Slime/GroundShadow")
-	shadow.modulate = Color("00ca3196")
+	if get_parent().get_child(0).has_node("AnimatedSprite2D"):
+		character = get_parent().get_child(0).get_node("AnimatedSprite2D")
+		character.modulate = Color("52b16a")
 	changeDamage(1.0 + (dmgIncrease / 100))
 
 func _process(delta: float) -> void:
@@ -16,7 +17,8 @@ func _process(delta: float) -> void:
 	if get_parent().has_method("take_damage"):
 		if duration_time_elapsed > duration:
 			changeDamage(1.0)
-			shadow.modulate = Color("00000096")
+			if character:
+				character.modulate = Color("9792ff")
 			queue_free()
 			
 func changeDamage(dmgMult):

@@ -5,12 +5,13 @@ extends Node2D
 @export var duration = 5.0
 var time_elapsed = 0.0
 var duration_time_elapsed = 0.0
-var shadow
+var character
 @onready var spreadAoe = $Area2D
 
 func _ready() -> void:
-	shadow = get_parent().get_node("Slime/GroundShadow")
-	shadow.modulate = Color("ff000096")
+	if get_parent().get_child(0).has_node("AnimatedSprite2D"):
+		character = get_parent().get_child(0).get_node("AnimatedSprite2D")
+		character.modulate = Color("ff0000")
 
 func _process(delta: float) -> void:
 	time_elapsed += delta
@@ -21,7 +22,8 @@ func _process(delta: float) -> void:
 			var damageType = DamageNumbers.DamageTypes.BURN
 			get_parent().take_damage(damage, damageType)
 		if duration_time_elapsed > duration:
-			shadow.modulate = Color("00000096")
+			if character:
+				character.modulate = Color("9792ff")
 			queue_free()
 
 func spread_effect():
@@ -32,4 +34,4 @@ func spread_effect():
 			mob.add_child(burnDOT)
 			
 func detonate_effect():
-	get_parent().takeDamage(damage * duration/interval)
+	get_parent().take_damage(damage * duration/interval, DamageNumbers.DamageTypes.BURN)

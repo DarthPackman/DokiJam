@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://br0ob7ugxmalu"]
 
-[ext_resource type="PackedScene" uid="uid://bwqaes20ox3le" path="res://scenes/player.tscn" id="1_51qua"]
-[ext_resource type="Script" uid="uid://jgucsepv76ag" path="res://scenes/survivor_game.gd" id="1_yw7k2"]
+[ext_resource type="Script" path="res://scenes/survivor_game.gd" id="1_yw7k2"]
 [ext_resource type="PackedScene" uid="uid://b1877pj0ym0de" path="res://scenes/pause.tscn" id="2_6wd34"]
 [ext_resource type="PackedScene" uid="uid://y3r78k7kk78i" path="res://scenes/tree.tscn" id="2_qhwj7"]
+[ext_resource type="PackedScene" uid="uid://cbcpmhuc0r3uh" path="res://scenes/RegDragoon.tscn" id="3_2gh8j"]
 
 [sub_resource type="Curve2D" id="Curve2D_gfcyf"]
 _data = {
@@ -65,11 +65,11 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.119282, 0.465978, 0.259602, 1)
 
-[node name="Player" parent="." instance=ExtResource("1_51qua")]
-position = Vector2(956, 542)
+[node name="Player" parent="." instance=ExtResource("3_2gh8j")]
+position = Vector2(960, 540)
 
 [node name="Path2D" type="Path2D" parent="Player"]
-position = Vector2(-956, -570)
+position = Vector2(-974, -557)
 curve = SubResource("Curve2D_gfcyf")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Player/Path2D"]

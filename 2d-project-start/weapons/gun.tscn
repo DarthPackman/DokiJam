@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bpgihce445846"]
 
-[ext_resource type="Script" uid="uid://b2xgwnv43ai1i" path="res://weapons/gun.gd" id="1_1mfvt"]
+[ext_resource type="Script" path="res://scenes/gun.gd" id="1_1mfvt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x3feo"]
 radius = 737.024

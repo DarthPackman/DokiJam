@@ -1,26 +1,27 @@
 [gd_scene load_steps=4 format=3 uid="uid://b4snipejh67dp"]
 
-[ext_resource type="Script" uid="uid://imsicll48iek" path="res://scenes/mob.gd" id="1_uuxwc"]
-[ext_resource type="PackedScene" uid="uid://ogik4s70pgwl" path="res://characters/slime/slime.tscn" id="2_k2ef8"]
+[ext_resource type="Script" path="res://scenes/mob.gd" id="1_uuxwc"]
+[ext_resource type="PackedScene" uid="uid://lcejsdjwswpf" path="res://scenes/reg_robot.tscn" id="2_lmcst"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ygswy"]
-radius = 50.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f1box"]
+size = Vector2(42.6667, 72)
 
 [node name="Mob" type="CharacterBody2D"]
 position = Vector2(0, 1)
 scale = Vector2(0.75, 0.75)
 collision_layer = 2
-collision_mask = 7
+collision_mask = 4
 script = ExtResource("1_uuxwc")
 health = 25.0
 speed = 200.0
 
-[node name="Slime" parent="." instance=ExtResource("2_k2ef8")]
+[node name="RegRobot" parent="." instance=ExtResource("2_lmcst")]
 unique_name_in_owner = true
+scale = Vector2(3, 3)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -27)
-shape = SubResource("CircleShape2D_ygswy")
+position = Vector2(0, 2.66667)
+shape = SubResource("RectangleShape2D_f1box")
 
 [node name="DamageNumberOrigins" type="Node2D" parent="."]
-position = Vector2(0, -95)
+position = Vector2(0, -45)

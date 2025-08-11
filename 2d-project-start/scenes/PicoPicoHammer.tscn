@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1bunl8yrhgul"]
+
+[ext_resource type="Script" path="res://scenes/pico_pico_hammer.gd" id="1_occ0e"]
+[ext_resource type="PackedScene" uid="uid://bmsut1h1tr6pb" path="res://scenes/HammerHit.tscn" id="2_7lh4i"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x3feo"]
+radius = 232.009
+
+[node name="PicoPicoHammer" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_occ0e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_x3feo")
+
+[node name="WeaponPivot" type="Marker2D" parent="."]
+unique_name_in_owner = true
+
+[node name="MeleePoint" type="Marker2D" parent="WeaponPivot"]
+unique_name_in_owner = true
+position = Vector2(134, -1)
+
+[node name="Hit" parent="WeaponPivot/MeleePoint" instance=ExtResource("2_7lh4i")]
+unique_name_in_owner = true
+position = Vector2(132, 0)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,6 +1,6 @@
 extends Node
 
-func applyPoison(body, damage = 2, interval = 2, duration = 10):
+func applyPoison(body, damage = 2, interval = 2, duration_time_elapse = 0.0, duration = 10):
 	print("Apply Poision")
 	const POISON = preload("res://scenes/poison.tscn")
 	if not body.has_node("Poison"):
@@ -147,6 +147,7 @@ func applyStun(body, duration = 1):
 		stunCC.duration = duration
 
 func resetDuration(body):
+	print("Reset Duration")
 	if body.has_node("Daze"):
 		body.get_node("Daze").duration_time_elapsed = 0.0
 	if body.has_node("Slow"):
@@ -170,4 +171,4 @@ func enhanceEffect(enhance):
 
 func detonateEffect(detonate):
 	print("Detonate Effect")
-	detonate.denotate_effect()
+	detonate.detonate_effect()
