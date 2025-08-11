@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://ccienqmxc8n7t"]
+
+[ext_resource type="Script" uid="uid://b6vtftt17dd5d" path="res://weapons/buckshot.gd" id="1_if1rh"]
+[ext_resource type="Texture2D" uid="uid://bsj51l81bd0ib" path="res://art/Shot.png" id="2_73d6m"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6jbd6"]
+radius = 8.0
+
+[node name="BuckShot" type="Area2D"]
+top_level = true
+rotation = 0.000888212
+collision_layer = 0
+collision_mask = 6
+script = ExtResource("1_if1rh")
+
+[node name="Projectile" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(9.53674e-07, 0)
+scale = Vector2(3, 3)
+texture = ExtResource("2_73d6m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_6jbd6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://b4snipejh67dp"]
 
-[ext_resource type="Script" path="res://scenes/mob.gd" id="1_uuxwc"]
+[ext_resource type="Script" uid="uid://imsicll48iek" path="res://scenes/mob.gd" id="1_uuxwc"]
 [ext_resource type="PackedScene" uid="uid://lcejsdjwswpf" path="res://scenes/reg_robot.tscn" id="2_lmcst"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f1box"]

@@ -1,4 +1,7 @@
-res://scenes/Bow.tscn
-res://scenes/regular_dragoon.tscn
 res://scenes/RegDragoon.tscn
+res://scenes/regular_dragoon.tscn
+res://scenes_weapons/range_long_bow.gd
 res://scenes/survivor_game.tscn
+res://scenes_weapons/melee.tscn
+res://scenes_weapons/range_reg_rifle.gd
+res://scenes_weapons/Melee_Long_SpearJab.tscn

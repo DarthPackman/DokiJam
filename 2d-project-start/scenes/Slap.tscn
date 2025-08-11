@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bd82ta27leyu0"]
 
-[ext_resource type="Script" path="res://scenes/slap.gd" id="1_6b8f7"]
+[ext_resource type="Script" uid="uid://kimveqwbp7mb" path="res://scenes/slap.gd" id="1_6b8f7"]
 [ext_resource type="Texture2D" uid="uid://cfohjyp07yv8k" path="res://art/WingSlap.png" id="2_2ylkh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6jbd6"]
