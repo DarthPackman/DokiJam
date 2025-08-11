@@ -20,9 +20,9 @@ func _process(delta: float) -> void:
 		spawnTimer.wait_time = 0.1
 
 func spawn_mob():
-	var reg_mob = preload("res://scenes/RegMob.tscn")
-	var slow_mob = preload("res://scenes/SlowMob.tscn")
-	var fast_mob = preload("res://scenes/FastMob.tscn")
+	var reg_mob = preload("res://scenes/Enemies/RegMob.tscn")
+	var slow_mob = preload("res://scenes/Enemies/SlowMob.tscn")
+	var fast_mob = preload("res://scenes/Enemies/FastMob.tscn")
 	var currentSpawn = randi() % 3
 	var new_mob
 	

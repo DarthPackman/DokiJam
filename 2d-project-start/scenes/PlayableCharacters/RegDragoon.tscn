@@ -1,0 +1,70 @@
+[gd_scene load_steps=8 format=3 uid="uid://cbcpmhuc0r3uh"]
+
+[ext_resource type="Script" path="res://scenes/PlayableCharacters/player.gd" id="1_ky7y5"]
+[ext_resource type="PackedScene" uid="uid://bnfbtrlt13uif" path="res://scenes/PlayableCharacters/regular_dragoon.tscn" id="2_hqvs3"]
+[ext_resource type="AudioStream" uid="uid://dfkpobr43rhwn" path="res://sound/bgm_gameplay_fd1.ogg" id="3_mvxva"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y8ava"]
+radius = 34.0147
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_er830"]
+radius = 71.0282
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gfie6"]
+bg_color = Color(0.152941, 0.168627, 0.188235, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qfw5d"]
+bg_color = Color(0.388235, 0.8, 0.372549, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="Player" type="CharacterBody2D"]
+z_index = 1
+collision_mask = 4
+script = ExtResource("1_ky7y5")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Weapons" type="HBoxContainer" parent="UI"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RegularDragoon" parent="." instance=ExtResource("2_hqvs3")]
+unique_name_in_owner = true
+position = Vector2(0, -15)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_y8ava")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Camera2D"]
+stream = ExtResource("3_mvxva")
+autoplay = true
+parameters/looping = true
+
+[node name="HurtBox" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+shape = SubResource("CircleShape2D_er830")
+debug_color = Color(0.786142, 0.408967, 0.383428, 0.42)
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+offset_left = -55.0
+offset_top = -80.0
+offset_right = 55.0
+offset_bottom = -66.0
+theme_override_styles/background = SubResource("StyleBoxFlat_gfie6")
+theme_override_styles/fill = SubResource("StyleBoxFlat_qfw5d")
+value = 100.0
+show_percentage = false

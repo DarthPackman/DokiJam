@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvnk5t48r7fy"]
+
+[ext_resource type="Script" path="res://scenes/Enemies/mob.gd" id="1_nf082"]
+[ext_resource type="PackedScene" uid="uid://lcejsdjwswpf" path="res://scenes/Enemies/reg_robot.tscn" id="2_8qrps"]
+
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4gd1i"]
+size = Vector2(56, 96)
+
+[node name="Mob" type="CharacterBody2D"]
+position = Vector2(0, 1)
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("1_nf082")
+
+[node name="RegRobot" parent="." instance=ExtResource("2_8qrps")]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 4)
+shape = SubResource("RectangleShape2D_4gd1i")
+
+[node name="DamageNumberOrigins" type="Node2D" parent="."]
+position = Vector2(0, -60)
