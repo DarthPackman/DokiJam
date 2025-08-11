@@ -25,7 +25,7 @@ func _physics_process(delta: float) -> void:
 		look_at(target_enemy.global_position)
 
 func shoot():
-	const BUCKSHOT = preload("res://scenes_weapons/Buckshot.tscn")
+	const BUCKSHOT = preload("res://scenes_weapons/Range_Chonk_Shotgun.tscn")
 	for i in shotCount:
 		var shooting_point = shooting_points[i]
 		var rotation_offset = rotation_offsets[i]

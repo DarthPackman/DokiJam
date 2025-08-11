@@ -14,7 +14,7 @@ func _physics_process(delta: float) -> void:
 		look_at(target_enemy.global_position)
 
 func shoot():
-	const BOILEDEGG = preload("res://scenes_weapons/BoiledEgg.tscn")
+	const BOILEDEGG = preload("res://scenes_weapons/Range_Egg_HBEProjectile.tscn")
 	var new_egg = BOILEDEGG.instantiate()
 	new_egg.global_position = %ShootingPoint.global_position
 	new_egg.global_rotation = %ShootingPoint.global_rotation

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://htsq6e0y2ulw"]
 
-[ext_resource type="Script" uid="uid://lphb3ffh5mb8" path="res://weapons/boiled_egg.gd" id="1_x2b6d"]
-[ext_resource type="Texture2D" uid="uid://dy37fw7mw3m8r" path="res://art/HardBoiledEgg.png" id="2_ppur8"]
+[ext_resource type="Script" uid="uid://lphb3ffh5mb8" path="res://scenes_weapons/range_egg_hbeprojectile.gd" id="1_g06em"]
+[ext_resource type="Texture2D" uid="uid://dy37fw7mw3m8r" path="res://art/HardBoiledEgg.png" id="2_vqnn4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_64ju2"]
 radius = 15.0
@@ -11,14 +11,14 @@ top_level = true
 rotation = 0.000888212
 collision_layer = 0
 collision_mask = 6
-script = ExtResource("1_x2b6d")
+script = ExtResource("1_g06em")
 
 [node name="Projectile" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(-3, 0.00266464)
 rotation = 1.5708
 scale = Vector2(4, 4)
-texture = ExtResource("2_ppur8")
+texture = ExtResource("2_vqnn4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_64ju2")
