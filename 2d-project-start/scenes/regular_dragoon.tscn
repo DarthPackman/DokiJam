@@ -124,4 +124,3 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_ock1w")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.325306
