@@ -1,3 +1,10 @@
-res://scenes/titlescreen.tscn
+res://scenes/Bow.tscn
 res://UI/Title screen.tres
+res://scenes/regular_dragoon.tscn
+res://scenes/RegDragoon.tscn
+res://scenes/survivor_game.tscn
+res://scenes/titlescreen.tscn
+res://scenes/pickbird.tscn
 res://scenes/options.tscn
+res://scenes/pause.tscn
+res://scenes/pause.gd

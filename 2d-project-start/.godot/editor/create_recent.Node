@@ -1,3 +1,5 @@
+MarginContainer
+Panel
 AudioStreamPlayer2D
 AudioListener2D
 Marker2D
@@ -11,4 +13,3 @@ Area2D
 StaticBody2D
 Timer
 Button
-Node2D

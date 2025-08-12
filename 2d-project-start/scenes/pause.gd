@@ -19,7 +19,7 @@ func _on_resume_button_pressed() -> void:
 
 func _on_main_menu_button_pressed() -> void:
 	_toggle_pause()
-	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+	get_tree().change_scene_to_file("res://scenes/titlescreen.tscn")
 
 func _on_exit_button_pressed() -> void:
 	get_tree().quit()
