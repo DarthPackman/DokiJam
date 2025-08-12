@@ -55,6 +55,7 @@ theme_override_font_sizes/font_size = 64
 text = "Menu"
 
 [node name="ExitButton" type="Button" parent="MarginContainer/VBoxContainer2"]
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 64
 text = "Exit"
