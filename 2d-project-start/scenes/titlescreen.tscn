@@ -87,6 +87,9 @@ stream = ExtResource("4_t7v6v")
 volume_db = -10.0
 autoplay = true
 
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/Playbutton" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Playbutton" to="." method="_on_playbutton_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/Optionsbutton" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Optionsbutton" to="." method="_on_optionsbutton_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/Quitbutton" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Quitbutton" to="." method="_on_quitbutton_pressed"]
