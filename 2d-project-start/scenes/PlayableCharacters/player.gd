@@ -11,7 +11,6 @@ signal level_up(new_level: int)
 var current_exp = 0
 var current_level = 1
 var exp_to_next_level = 20
-
 @onready var exp_bar = %ExpBar
 
 func _ready() -> void:
@@ -34,7 +33,7 @@ func _physics_process(delta: float) -> void:
 		character.play_idle_animation()
 	
 	# Debug EXP gain (toggleable)
-	if Input.is_action_just_pressed("space"):  # Spacebar
+	if Input.is_action_just_pressed("ui_accept"):
 		debug_add_exp()
 		
 	var overlapping_mobs = %HurtBox.get_overlapping_bodies()

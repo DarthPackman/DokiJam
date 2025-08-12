@@ -1,6 +1,6 @@
 extends Area2D
 
-@export duration = 2.5
+@export var duration = 2.5
 var attackDuration = 0.6
 @export var statusEffectDisabled = false
 var attackDuration_time_elapsed = 0.0

@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+AudioStreamPlayer2D
 CanvasLayer
 CollisionShape2D
 Area2D
@@ -11,20 +11,4 @@ ProgressBar
 Timer
 PanelContainer
 HBoxContainer
-=======
 MarginContainer
-Panel
->>>>>>> 3b82b2343f6f9bc24f5a964a0bd97d967704c0d5
-AudioStreamPlayer2D
-AudioListener2D
-Marker2D
-RigidBody2D
-CollisionShape2D
-AnimatedSprite2D
-Label
-CanvasLayer
-CharacterBody2D
-Area2D
-StaticBody2D
-Timer
-Button

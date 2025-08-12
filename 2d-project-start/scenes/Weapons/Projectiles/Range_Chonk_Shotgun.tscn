@@ -3,12 +3,13 @@
 [ext_resource type="Script" path="res://scenes/Weapons/Projectiles/range_chonk_shotgun.gd" id="1_43b16"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x3feo"]
-radius = 737.024
+radius = 256.195
 
 [node name="ShotGun" type="Area2D"]
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_43b16")
+attackSpeed = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_x3feo")
@@ -44,6 +45,7 @@ unique_name_in_owner = true
 position = Vector2(45, -85)
 
 [node name="Timer" type="Timer" parent="."]
+unique_name_in_owner = true
 wait_time = 0.1
 autostart = true
 

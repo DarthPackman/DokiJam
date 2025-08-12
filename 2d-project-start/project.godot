@@ -82,7 +82,7 @@ config/icon="res://icon.png"
 [autoload]
 
 DamageNumbers="*res://scenes/DamageNumbers.gd"
-StatusEffects="*res://scenes/StatusEffects.gd"
+StatusEffects="*res://scenes/StatusEffects/StatusEffects.gd"
 
 [display]
 
