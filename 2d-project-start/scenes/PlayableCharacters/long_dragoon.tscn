@@ -1,0 +1,93 @@
+[gd_scene load_steps=14 format=3 uid="uid://clx1hqx4ati2f"]
+
+[ext_resource type="Script" uid="uid://ceijnvhnf64o4" path="res://scenes/PlayableCharacters/dragoon.gd" id="1_4u6ry"]
+[ext_resource type="Texture2D" uid="uid://cv7opp1vfi4tr" path="res://art/RegularDragoonShadow.png" id="2_gj7wl"]
+[ext_resource type="Texture2D" uid="uid://cd6vcgkkt5bvf" path="res://art/LongIdle.png" id="3_4u6ry"]
+[ext_resource type="Texture2D" uid="uid://gu5clv2u6u1n" path="res://art/LongWalk.png" id="4_gj7wl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u4ave"]
+atlas = ExtResource("3_4u6ry")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n2y0i"]
+atlas = ExtResource("3_4u6ry")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eln3l"]
+atlas = ExtResource("3_4u6ry")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ubj6v"]
+atlas = ExtResource("3_4u6ry")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cg3sn"]
+atlas = ExtResource("4_gj7wl")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gkh4k"]
+atlas = ExtResource("4_gj7wl")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qv6jk"]
+atlas = ExtResource("4_gj7wl")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gerjy"]
+atlas = ExtResource("4_gj7wl")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ock1w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u4ave")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n2y0i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eln3l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ubj6v")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 7.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cg3sn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gkh4k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qv6jk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gerjy")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 7.5
+}]
+
+[node name="LongDragoon" type="Node2D"]
+scale = Vector2(4, 4)
+script = ExtResource("1_4u6ry")
+
+[node name="RegularDragoonShadow" type="Sprite2D" parent="."]
+modulate = Color(0.0980392, 0.0980392, 0.0980392, 0.588235)
+texture_filter = 1
+position = Vector2(0, 1)
+texture = ExtResource("2_gj7wl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_ock1w")
+animation = &"walk"
+autoplay = "idle"
+frame_progress = 0.315818

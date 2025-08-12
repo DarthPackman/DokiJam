@@ -1,0 +1,93 @@
+[gd_scene load_steps=14 format=3 uid="uid://smpcif0xi5ny"]
+
+[ext_resource type="Script" uid="uid://ceijnvhnf64o4" path="res://scenes/PlayableCharacters/dragoon.gd" id="1_vensg"]
+[ext_resource type="Texture2D" uid="uid://cv7opp1vfi4tr" path="res://art/RegularDragoonShadow.png" id="2_152lt"]
+[ext_resource type="Texture2D" uid="uid://bp42kl61thf8b" path="res://art/ChonkyIdle.png" id="3_vensg"]
+[ext_resource type="Texture2D" uid="uid://bjorot1hpsgxa" path="res://art/ChonkyWalk.png" id="4_152lt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nns5i"]
+atlas = ExtResource("3_vensg")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ec3x6"]
+atlas = ExtResource("3_vensg")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0t4a3"]
+atlas = ExtResource("3_vensg")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mpiym"]
+atlas = ExtResource("3_vensg")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jlwli"]
+atlas = ExtResource("4_152lt")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pgnp0"]
+atlas = ExtResource("4_152lt")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_epr40"]
+atlas = ExtResource("4_152lt")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ki5t2"]
+atlas = ExtResource("4_152lt")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ock1w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nns5i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ec3x6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0t4a3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mpiym")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jlwli")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pgnp0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_epr40")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ki5t2")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="ChonkyDragoon" type="Node2D"]
+scale = Vector2(4, 4)
+script = ExtResource("1_vensg")
+
+[node name="RegularDragoonShadow" type="Sprite2D" parent="."]
+modulate = Color(0.0980392, 0.0980392, 0.0980392, 0.588235)
+texture_filter = 1
+position = Vector2(0, 1)
+texture = ExtResource("2_152lt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_ock1w")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.497923
