@@ -1,64 +1,54 @@
-# Godot 4+ specific files
+# Godot (4.x) editor/import cache and metadata
 .godot/
+
+# Legacy/compat (older projects or assets migrated from 3.x)
 .import/
 
-# Godot 3 specific files (if you ever switch back)
-.import/
-export_presets.cfg
+# Mono/C# artifacts (if not using C#, you can remove these)
+.mono/
+data_*/
+mono_crash.*
 
-# Exported executables
-*.tmp
-*.exe
+# Local overrides (machine-specific)
+override.cfg
+
+# Exported builds and packages
+build/
+builds/
+export/
+exports/
+dist/
 *.pck
 *.zip
+*.apk
+*.aab
+*.ipa
+*.exe
+*.app
 *.dmg
 *.pkg
 *.deb
 *.rpm
-*.app
 
-# Logs and databases
+# Logs and temp files
 *.log
-*.sql
-*.sqlite
+*.tmp
+*.bak
+*.backup
+*.orig
 
-# OS generated files
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-
-# IDE and editor files
+# IDE/editor junk
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
 
-# Temporary files
-*.tmp
-*.bak
-*.backup
-*.orig
-
-# User-specific project settings
-override.cfg
-.mono/
-data_*/
-
-# Build artifacts
-builds/
-exports/
-dist/
-
-# Addons that should be downloaded fresh
-# Uncomment if you want to exclude specific addons
-# addons/some_addon_name/
-
-# Personal notes and documentation
-notes.txt
-TODO.txt
-*.md.backup
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db

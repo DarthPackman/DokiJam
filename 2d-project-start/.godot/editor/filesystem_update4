@@ -1,3 +1,25 @@
+<<<<<<< HEAD
 res://scenes/PlayableCharacters/RegDragoon.tscn
 res://scenes/Systems/level_up/LevelUpScreen.tscn
 res://scenes/Systems/level_up/UpgradeBox.tscn
+=======
+res://scenes/Weapons/Auras/aura.gd
+res://scenes/PlayableCharacters/RegDragoon.tscn
+res://scenes/PlayableCharacters/player.gd
+res://scenes/Weapons/Auras/burp.gd
+res://scenes/Weapons/Auras/hoolahoop.gd
+res://scenes/Weapons/Auras/rottenEgg.tscn
+res://scenes/Weapons/Auras/rotten_egg.gd
+res://scenes/Weapons/Melees/wing_slap.gd
+res://scenes/Weapons/Melees/pico_pico_hammer.gd
+res://scenes/Weapons/Melees/overhard_egg.gd
+res://scenes/Weapons/Melees/Melee_Long_SpearJab.tscn
+res://scenes/Weapons/Melees/melee_long_spearjab.gd
+res://scenes/Weapons/Projectiles/range_chonk_shotgun.gd
+res://scenes/Weapons/Projectiles/range_egg_hardboiledegg.gd
+res://scenes/Weapons/Projectiles/range_long_bow.gd
+res://scenes/Weapons/Projectiles/range_reg_rifle.gd
+res://scenes/survivor_game.tscn
+res://scenes/survivor_game.gd
+res://scenes/Enemies/RegMob.tscn
+>>>>>>> 3b82b2343f6f9bc24f5a964a0bd97d967704c0d5

@@ -2,8 +2,7 @@ extends Area2D
 
 @export var triggerTime = 0.5
 var trigger_time_elapsed = 0.0
-var duration = 1.0
-var duration_time_elapsed = 0.0
+@export var duration = 5.0
 var damage = 2.5
 @export var statusEffectDisabled = false
 @onready var areaOfEffect = %AOE
@@ -13,7 +12,6 @@ func _ready() -> void:
 	areaOfEffect.play("trigger")
 	
 func _physics_process(delta: float) -> void:
-	duration_time_elapsed += delta
 	trigger_time_elapsed += delta
 	if not fx.is_playing():
 		fx.play("duration")
@@ -28,3 +26,6 @@ func _physics_process(delta: float) -> void:
 				if not statusEffectDisabled:
 					StatusEffects.resetDuration(enemy)
 		trigger_time_elapsed = 0.0
+
+func level_up():
+	pass

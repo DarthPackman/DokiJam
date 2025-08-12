@@ -4,6 +4,7 @@ extends Area2D
 @export var attackSpeed = 0.5
 @export var shotCount = 3
 @export var statusEffectDisabled = false
+@export var duration = 1.0
 
 @onready var shooting_points = [
 	%ShootingPoint, 
@@ -37,6 +38,8 @@ func shoot():
 		new_shot.disabled = statusEffectDisabled
 		shooting_point.add_child(new_shot)
 
-
 func _on_timer_timeout() -> void:
 	shoot()
+
+func level_up():
+	pass

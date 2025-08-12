@@ -19,6 +19,15 @@ func _process(delta: float) -> void:
 	elif difficulty == 2:
 		spawnTimer.wait_time = 0.1
 
+	if minutes == 7:
+		triggerEvent()
+	elif minutes == 14:
+		triggerEvent()
+	elif minutes == 21:
+		triggerEvent()
+	elif minutes == 28:
+		triggerEvent()
+
 func spawn_mob():
 	var reg_mob = preload("res://scenes/Enemies/RegMob.tscn")
 	var slow_mob = preload("res://scenes/Enemies/SlowMob.tscn")
@@ -49,3 +58,6 @@ func _on_player_health_depleted() -> void:
 
 func _on_button_pressed() -> void:
 	get_tree().quit()
+
+func triggerEvent():
+	pass

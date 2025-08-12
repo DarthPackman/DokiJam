@@ -2,7 +2,7 @@ extends Area2D
 
 @export var triggerTime = 0.5
 var trigger_time_elapsed = 0.0
-var duration = 1.0
+@export var duration = 5.0
 var duration_time_elapsed = 0.0
 var damage = 2.5
 @export var statusEffectDisabled = false
@@ -29,3 +29,6 @@ func _physics_process(delta: float) -> void:
 				if not statusEffectDisabled:
 					StatusEffects.applyPoison(enemy)
 		trigger_time_elapsed = 0.0
+
+func level_up():
+	pass
