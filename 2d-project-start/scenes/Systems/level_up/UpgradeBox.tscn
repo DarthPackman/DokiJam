@@ -1,0 +1,44 @@
+[gd_scene load_steps=2 format=3 uid="uid://ya3tbx4ypprr"]
+
+[ext_resource type="Script" path="res://scenes/Systems/level_up/upgradebox.gd" id="1_wavww"]
+
+[node name="UpgradeBox" type="Control"]
+custom_minimum_size = Vector2(240, 260)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_wavww")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = -12.0
+offset_bottom = -12.0
+mouse_filter = 2
+
+[node name="IconContainer" type="CenterContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Icon" type="ColorRect" parent="VBoxContainer/IconContainer"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+color = Color(0.8, 0.8, 0.8, 1)
+
+[node name="NameLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Upgrade Name"
+horizontal_alignment = 1
+
+[node name="DescriptionLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Short description here."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0

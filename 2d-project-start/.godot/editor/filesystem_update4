@@ -1,8 +1,10 @@
-res://scenes/PlayableCharacters/player.gd
-res://scenes/PlayableCharacters/RegDragoon.tscn
 res://scenes/Enemies/mob.gd
-res://scenes/Systems/exp_orb.tscn
-res://scenes/Systems/exp_orb.gd
-res://scenes/Systems/Exp_Orb.tscn
-res://scenes/survivor_game.tscn
+res://scenes/PlayableCharacters/player.gd
 res://scenes/survivor_game.gd
+res://scenes/survivor_game.tscn
+res://scenes/PlayableCharacters/RegDragoon.tscn
+res://scenes/Systems/level_up/LevelUpScreen.tscn
+res://scenes/Systems/level_up/levelupscreen.gd
+res://scenes/Systems/level_up/upgradebox.gd
+res://scenes/Systems/Exp_Orb.tscn
+res://scenes/Systems/level_up/UpgradeBox.tscn
