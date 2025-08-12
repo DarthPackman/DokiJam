@@ -1,0 +1,65 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmye256cob83t"]
+
+[ext_resource type="Script" uid="uid://bs2f1ike2rety" path="res://scenes/gameover.gd" id="1_unfcc"]
+[ext_resource type="Theme" uid="uid://cgah1efpjglvn" path="res://UI/Title screen.tres" id="2_l4jp6"]
+[ext_resource type="AudioStream" uid="uid://cnap8bqop5noc" path="res://UI/1-24 Dance Hymn of the Soul (Disco i.mp3" id="3_rel3a"]
+
+[node name="winscreen" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_unfcc")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1921.0
+offset_bottom = 1077.0
+theme = ExtResource("2_l4jp6")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+offset_right = 568.0
+offset_bottom = 259.0
+theme = ExtResource("2_l4jp6")
+theme_override_font_sizes/font_size = 128
+text = "Mission
+Complete!"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+offset_left = 102.0
+offset_top = 299.0
+offset_right = 397.0
+offset_bottom = 497.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme = ExtResource("2_l4jp6")
+theme_override_constants/separation = 20
+
+[node name="againbutton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_l4jp6")
+theme_override_font_sizes/font_size = 64
+text = "Again?"
+
+[node name="Menubutton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_l4jp6")
+theme_override_font_sizes/font_size = 64
+text = "Menu"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_rel3a")
+volume_db = -33.425
+autoplay = true
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/againbutton" to="." method="_on_retrybutton_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/againbutton" to="." method="_on_playbutton_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Menubutton" to="." method="_on_menubutton_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Menubutton" to="." method="_on_quitbutton_pressed"]
