@@ -147,7 +147,6 @@ unique_name_in_owner = true
 
 [node name="m_lo_spear" parent="." instance=ExtResource("15_suj3s")]
 unique_name_in_owner = true
-scale = Vector2(1, 1)
 
 [node name="m_egg_OverhardEgg" parent="." instance=ExtResource("16_422pe")]
 unique_name_in_owner = true
