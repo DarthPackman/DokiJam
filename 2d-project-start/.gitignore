@@ -1,0 +1,64 @@
+# Godot 4+ specific files
+.godot/
+.import/
+
+# Godot 3 specific files (if you ever switch back)
+.import/
+export_presets.cfg
+
+# Exported executables
+*.tmp
+*.exe
+*.pck
+*.zip
+*.dmg
+*.pkg
+*.deb
+*.rpm
+*.app
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.bak
+*.backup
+*.orig
+
+# User-specific project settings
+override.cfg
+.mono/
+data_*/
+
+# Build artifacts
+builds/
+exports/
+dist/
+
+# Addons that should be downloaded fresh
+# Uncomment if you want to exclude specific addons
+# addons/some_addon_name/
+
+# Personal notes and documentation
+notes.txt
+TODO.txt
+*.md.backup

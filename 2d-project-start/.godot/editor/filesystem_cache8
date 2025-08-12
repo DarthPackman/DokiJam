@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1754960371
+::res://::1754962696
 default_bus_layout.tres::AudioBusLayout::6564268947468103023::1754886698::0::1::::<><>::
 icon.png::CompressedTexture2D::621515402784007901::1754377454::1754960299::1::::<><>::
 ::res://addons/::1754377454
@@ -100,20 +100,20 @@ texture_button.gd::GDScript::-1::1754886698::0::1::::<>TextureButton<>::
 titlescreen.gd::GDScript::-1::1754886698::0::1::::<>Control<>::
 titlescreen.tscn::PackedScene::1604123443590068974::1754901108::0::1::::<><>::res://scenes/titlescreen.gd<>uid://cgah1efpjglvn::::res://UI/Title screen.tres<>uid://cnap8bqop5noc::::res://UI/1-24 Dance Hymn of the Soul (Disco i.mp3
 tree.tscn::PackedScene::1743425908894764506::1754900268::0::1::::<><>::uid://b7rhtttevhxtj::::res://characters/ground_shadow.png<>uid://caqfk2xng5v5u::::res://trees/pine_tree.png
-::res://scenes/Enemies/::1754960095
-FastMob.tscn::PackedScene::4459860350475317885::1754960095::0::1::::<><>::res://scenes/Enemies/mob.gd<>uid://lcejsdjwswpf::::res://scenes/Enemies/reg_robot.tscn
+::res://scenes/Enemies/::1754960466
+FastMob.tscn::PackedScene::4459860350475317885::1754960466::0::1::::<><>::res://scenes/Enemies/mob.gd<>uid://lcejsdjwswpf::::res://scenes/Enemies/reg_robot.tscn
 mob.gd::GDScript::-1::1754960095::0::1::::<>CharacterBody2D<>::
 mob.tscn::PackedScene::9088212189429487174::1754901108::0::1::::<><>::uid://ogik4s70pgwl::::res://characters/slime/slime.tscn<>res://scenes/Enemies/mob.gd
-RegMob.tscn::PackedScene::254727249008585402::1754960095::0::1::::<><>::res://scenes/Enemies/mob.gd<>uid://lcejsdjwswpf::::res://scenes/Enemies/reg_robot.tscn
+RegMob.tscn::PackedScene::254727249008585402::1754960466::0::1::::<><>::res://scenes/Enemies/mob.gd<>uid://lcejsdjwswpf::::res://scenes/Enemies/reg_robot.tscn
 reg_robot.gd::GDScript::-1::1754900117::0::1::::<>Node2D<>::
-reg_robot.tscn::PackedScene::776465926136453163::1754960095::0::1::::<><>::uid://c72qaapcg00h4::::res://art/RegRobotShadow.png<>res://scenes/Enemies/reg_robot.gd<>uid://cpehgfaeyco4r::::res://art/RegRobotHurt.png<>uid://tjg18ecgma6s::::res://art/RegRobotWalkCycle.png
-SlowMob.tscn::PackedScene::1638669032515179839::1754960095::0::1::::<><>::res://scenes/Enemies/mob.gd<>uid://lcejsdjwswpf::::res://scenes/Enemies/reg_robot.tscn
-::res://scenes/PlayableCharacters/::1754960266
-player.gd::GDScript::-1::1754958701::0::1::::<>CharacterBody2D<>::
-RegDragoon.tscn::PackedScene::4848091549635229559::1754960266::0::1::::<><>::res://scenes/PlayableCharacters/player.gd<>uid://bnfbtrlt13uif::::res://scenes/PlayableCharacters/regular_dragoon.tscn<>uid://dfkpobr43rhwn::::res://sound/bgm_gameplay_fd1.ogg<>uid://c75lvu1b71tom::::res://scenes/Weapons/Auras/aura.tscn<>uid://d0k2jxoacl7c4::::res://scenes/Weapons/Auras/hoolahoop.tscn<>uid://bqr368synoprc::::res://scenes/Weapons/Auras/burp.tscn<>uid://becjgrhp41w6q::::res://scenes/Weapons/Auras/rottenEgg.tscn
+reg_robot.tscn::PackedScene::776465926136453163::1754960466::0::1::::<><>::uid://c72qaapcg00h4::::res://art/RegRobotShadow.png<>res://scenes/Enemies/reg_robot.gd<>uid://cpehgfaeyco4r::::res://art/RegRobotHurt.png<>uid://tjg18ecgma6s::::res://art/RegRobotWalkCycle.png
+SlowMob.tscn::PackedScene::1638669032515179839::1754960466::0::1::::<><>::res://scenes/Enemies/mob.gd<>uid://lcejsdjwswpf::::res://scenes/Enemies/reg_robot.tscn
+::res://scenes/PlayableCharacters/::1754962724
+player.gd::GDScript::-1::1754961438::0::1::::<>CharacterBody2D<>::
+RegDragoon.tscn::PackedScene::4848091549635229559::1754962724::0::1::::<><>::res://scenes/PlayableCharacters/player.gd<>uid://c5lnuyav6ht8l::::res://scenes/Systems/level_up/LevelUpScreen.tscn<>uid://bnfbtrlt13uif::::res://scenes/PlayableCharacters/regular_dragoon.tscn<>uid://dfkpobr43rhwn::::res://sound/bgm_gameplay_fd1.ogg
 regular_dragoon.gd::GDScript::-1::1754900117::0::1::::<>Node2D<>::
-regular_dragoon.tscn::PackedScene::3309293097623723141::1754901108::0::1::::<><>::uid://cv7opp1vfi4tr::::res://art/RegularDragoonShadow.png<>uid://16wtdrenqy8n::::res://art/RegularDragoonIdle.png<>res://scenes/PlayableCharacters/regular_dragoon.gd<>uid://cqq65u03ctmrm::::res://art/RegularDragoonWalk.png
-::res://scenes/StatusEffects/::1754960095
+regular_dragoon.tscn::PackedScene::3309293097623723141::1754960466::0::1::::<><>::uid://cv7opp1vfi4tr::::res://art/RegularDragoonShadow.png<>uid://16wtdrenqy8n::::res://art/RegularDragoonIdle.png<>res://scenes/PlayableCharacters/regular_dragoon.gd<>uid://cqq65u03ctmrm::::res://art/RegularDragoonWalk.png
+::res://scenes/StatusEffects/::1754960466
 burn.gd::GDScript::-1::1754900117::0::1::::<>Node2D<>::
 burn.tscn::PackedScene::1642156587551603653::1754912843::0::1::::<><>::res://scenes/StatusEffects/burn.gd
 daze.gd::GDScript::-1::1754900117::0::1::::<>Node2D<>::
@@ -124,7 +124,7 @@ slow.gd::GDScript::-1::1754900117::0::1::::<>Node2D<>::
 slow.tscn::PackedScene::2989540185803565982::1754912843::0::1::::<><>::res://scenes/StatusEffects/slow.gd
 StatusEffects.gd::GDScript::-1::1754900117::0::1::::<>Node<>::
 stun.gd::GDScript::-1::1754960095::0::1::::<>Node2D<>::
-stun.tscn::PackedScene::4581697345669059609::1754960095::0::1::::<><>::res://scenes/StatusEffects/stun.gd
+stun.tscn::PackedScene::4581697345669059609::1754960466::0::1::::<><>::res://scenes/StatusEffects/stun.gd
 vulnerable.gd::GDScript::-1::1754900117::0::1::::<>Node2D<>::
 vulnerable.tscn::PackedScene::6532657557081408678::1754912843::0::1::::<><>::res://scenes/StatusEffects/vulnerable.gd
 weaken.gd::GDScript::-1::1754900117::0::1::::<>Node2D<>::
@@ -132,13 +132,13 @@ weaken.tscn::PackedScene::8472986875120467434::1754912843::0::1::::<><>::res://s
 ::res://scenes/Systems/::1754959400
 exp_orb.gd::GDScript::-1::1754955883::0::1::::<>Area2D<>::
 Exp_Orb.tscn::PackedScene::8217019233462211228::1754959400::0::1::::<><>::res://scenes/Systems/exp_orb.gd
-::res://scenes/Systems/level_up/::1754959783
+::res://scenes/Systems/level_up/::1754962724
 exp_orb.gd::GDScript::-1::1754922941::0::1::::<>Area2D<>::
 Exp_Orb.tscn::PackedScene::5405495846118946656::1754923787::0::1::::<><>::res://scenes/Systems/exp_orb.gd
 levelupscreen.gd::GDScript::-1::1754959125::0::1::::<>Control<>::
-LevelUpScreen.tscn::PackedScene::6902041130162165121::1754959400::0::1::::<><>::res://scenes/Systems/level_up/LevelUpScreen.gd
+LevelUpScreen.tscn::PackedScene::6902041130162165121::1754962724::0::1::::<><>::res://scenes/Systems/level_up/LevelUpScreen.gd
 upgradebox.gd::GDScript::-1::1754957758::0::1::::<>Control<>::
-UpgradeBox.tscn::PackedScene::1686266342598589799::1754959783::0::1::::<><>::res://scenes/Systems/level_up/upgradebox.gd
+UpgradeBox.tscn::PackedScene::1686266342598589799::1754962724::0::1::::<><>::res://scenes/Systems/level_up/upgradebox.gd
 ::res://scenes/Systems/weapon_slots/::1754955812
 slot.gd::GDScript::-1::1754904264::0::1::::<>PanelContainer<>::
 slot.tscn::PackedScene::6229891084693846546::1754920215::0::1::::<><>::res://dev_test (contains alternate files for the system)/upgrade/slot.gd
