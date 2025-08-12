@@ -90,13 +90,17 @@ shape = SubResource("CircleShape2D_er830")
 debug_color = Color(0.786142, 0.408967, 0.383428, 0.42)
 
 [node name="Burp" parent="." instance=ExtResource("4_jkyiq")]
+visible = false
 triggerTime = 1.0
 
 [node name="AuraFarm" parent="." instance=ExtResource("4_abwr3")]
+visible = false
 triggerTime = 1.0
 
 [node name="Hoola" parent="." instance=ExtResource("4_hh2qb")]
+visible = false
 triggerTime = 1.0
 
 [node name="RottenEgg" parent="." instance=ExtResource("4_qr2no")]
+visible = false
 triggerTime = 1.0

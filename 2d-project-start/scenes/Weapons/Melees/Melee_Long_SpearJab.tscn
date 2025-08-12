@@ -10,6 +10,8 @@ radius = 232.009
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_wa0lo")
+statusEffectDisabled = null
+attackSpeed = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_x3feo")

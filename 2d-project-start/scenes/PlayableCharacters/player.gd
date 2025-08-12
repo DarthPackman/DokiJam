@@ -12,8 +12,6 @@ var current_exp = 0
 var current_level = 1
 var exp_to_next_level = 20
 
-
-
 @onready var exp_bar = %ExpBar
 
 func _ready() -> void:
@@ -25,7 +23,7 @@ func _physics_process(delta: float) -> void:
 	var direction = Input.get_vector("move_left","move_right", "move_up", "move_down")
 	velocity = direction * player_speed
 	move_and_slide()
-	
+		
 	if velocity.length() > 0.0:
 		if direction.x == 1:
 			character.get_node("AnimatedSprite2D").set_flip_h(true)
