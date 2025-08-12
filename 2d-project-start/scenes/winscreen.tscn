@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bs2f1ike2rety" path="res://scenes/gameover.gd" id="1_unfcc"]
 [ext_resource type="Theme" uid="uid://cgah1efpjglvn" path="res://UI/Title screen.tres" id="2_l4jp6"]
-[ext_resource type="AudioStream" uid="uid://cnap8bqop5noc" path="res://UI/1-24 Dance Hymn of the Soul (Disco i.mp3" id="3_rel3a"]
+[ext_resource type="AudioStream" uid="uid://dc0w7bh6lr8eh" path="res://sound/bgm_gamewin_fd1.ogg" id="3_unfcc"]
 
 [node name="winscreen" type="Control"]
 texture_filter = 1
@@ -55,8 +55,8 @@ theme_override_font_sizes/font_size = 64
 text = "Menu"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_rel3a")
-volume_db = -33.425
+stream = ExtResource("3_unfcc")
+volume_db = -10.0
 autoplay = true
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/againbutton" to="." method="_on_retrybutton_pressed"]

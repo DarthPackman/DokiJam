@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://br0ob7ugxmalu"]
+[gd_scene load_steps=7 format=3 uid="uid://br0ob7ugxmalu"]
 
 [ext_resource type="Script" uid="uid://jgucsepv76ag" path="res://scenes/survivor_game.gd" id="1_yw7k2"]
 [ext_resource type="PackedScene" uid="uid://b1877pj0ym0de" path="res://scenes/pause.tscn" id="2_6wd34"]
 [ext_resource type="PackedScene" uid="uid://y3r78k7kk78i" path="res://scenes/tree.tscn" id="2_qhwj7"]
 [ext_resource type="PackedScene" uid="uid://cbcpmhuc0r3uh" path="res://scenes/PlayableCharacters/player.tscn" id="3_2gh8j"]
+[ext_resource type="AudioStream" uid="uid://dfkpobr43rhwn" path="res://sound/bgm_gameplay_fd1.ogg" id="5_31xms"]
 
 [sub_resource type="Curve2D" id="Curve2D_gfcyf"]
 _data = {
@@ -17,42 +18,6 @@ script = ExtResource("1_yw7k2")
 
 [node name="Pause" parent="." instance=ExtResource("2_6wd34")]
 visible = false
-
-[node name="GameOver" type="CanvasLayer" parent="."]
-unique_name_in_owner = true
-process_mode = 3
-visible = false
-
-[node name="ColorRect" type="ColorRect" parent="GameOver"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0.392157)
-
-[node name="Label" type="Label" parent="GameOver/ColorRect"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -43.5
-offset_top = -11.5
-offset_right = 43.5
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 242
-text = "Game Over"
-
-[node name="Button" type="Button" parent="GameOver"]
-offset_left = 920.0
-offset_top = 696.0
-offset_right = 970.0
-offset_bottom = 727.0
-text = "Close"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
@@ -107,6 +72,10 @@ offset_right = 20.0
 offset_bottom = 23.0
 grow_horizontal = 2
 
-[connection signal="pressed" from="GameOver/Button" to="." method="_on_button_pressed"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_31xms")
+volume_db = -5.0
+autoplay = true
+
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
 [connection signal="timeout" from="MobSpawnTimer" to="." method="_on_timer_timeout"]
