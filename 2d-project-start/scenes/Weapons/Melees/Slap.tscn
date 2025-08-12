@@ -1,0 +1,83 @@
+[gd_scene load_steps=12 format=3 uid="uid://bd82ta27leyu0"]
+
+[ext_resource type="Script" path="res://scenes/Weapons/Melees/slap.gd" id="1_6b8f7"]
+[ext_resource type="Texture2D" uid="uid://cqmkb0q5uhbsw" path="res://art/WingSlap.png" id="2_2ylkh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8msud"]
+atlas = ExtResource("2_2ylkh")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a6gsb"]
+atlas = ExtResource("2_2ylkh")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_840kt"]
+atlas = ExtResource("2_2ylkh")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rtgoe"]
+atlas = ExtResource("2_2ylkh")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_40y7x"]
+atlas = ExtResource("2_2ylkh")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3shum"]
+atlas = ExtResource("2_2ylkh")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ndd3s"]
+atlas = ExtResource("2_2ylkh")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rxeo7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8msud")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a6gsb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_840kt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rtgoe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_40y7x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3shum")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ndd3s")
+}],
+"loop": false,
+"name": &"default",
+"speed": 12.5
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6jbd6"]
+radius = 73.3349
+
+[node name="Slap" type="Area2D"]
+top_level = true
+rotation = 0.000888212
+scale = Vector2(1.25, 1.25)
+collision_layer = 0
+collision_mask = 6
+script = ExtResource("1_6b8f7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+texture_filter = 1
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_rxeo7")
+autoplay = "default"
+frame_progress = 0.774987
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_6jbd6")

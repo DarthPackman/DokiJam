@@ -20,18 +20,21 @@ func _process(delta: float) -> void:
 		spawnTimer.wait_time = 0.1
 
 func spawn_mob():
-	var reg_mob = preload("res://scenes/RegMob.tscn")
-	var slow_mob = preload("res://scenes/SlowMob.tscn")
-	var fast_mob = preload("res://scenes/FastMob.tscn")
+	var reg_mob = preload("res://scenes/Enemies/RegMob.tscn")
+	var slow_mob = preload("res://scenes/Enemies/SlowMob.tscn")
+	var fast_mob = preload("res://scenes/Enemies/FastMob.tscn")
 	var currentSpawn = randi() % 3
 	var new_mob
 	
 	if currentSpawn == 0:
 		new_mob = reg_mob.instantiate()
+		new_mob.exp_amt = 10
 	elif currentSpawn == 1:
 		new_mob = slow_mob.instantiate()
+		new_mob.exp_amt = 15
 	elif currentSpawn == 2:
 		new_mob = fast_mob.instantiate()
+		new_mob.exp_amt = 2
 	
 	%PathFollow2D.progress_ratio = randf()
 	new_mob.global_position = %PathFollow2D.global_position

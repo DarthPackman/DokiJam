@@ -1,0 +1,82 @@
+[gd_scene load_steps=12 format=3 uid="uid://br2s6r534yv13"]
+
+[ext_resource type="Script" path="res://scenes/Weapons/Melees/egg_slap.gd" id="1_eudir"]
+[ext_resource type="Texture2D" uid="uid://dkeggar06tyfc" path="res://art/EggSlap.png" id="2_k6ohm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6jbd6"]
+radius = 73.3349
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tlurx"]
+atlas = ExtResource("2_k6ohm")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hxnt8"]
+atlas = ExtResource("2_k6ohm")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8qjbk"]
+atlas = ExtResource("2_k6ohm")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_blhvf"]
+atlas = ExtResource("2_k6ohm")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lc0e8"]
+atlas = ExtResource("2_k6ohm")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ydily"]
+atlas = ExtResource("2_k6ohm")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ulxm"]
+atlas = ExtResource("2_k6ohm")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mt6eq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tlurx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hxnt8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8qjbk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_blhvf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lc0e8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ydily")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ulxm")
+}],
+"loop": false,
+"name": &"default",
+"speed": 12.5
+}]
+
+[node name="EggSlap" type="Area2D"]
+top_level = true
+rotation = 0.000888212
+collision_layer = 0
+collision_mask = 6
+script = ExtResource("1_eudir")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_6jbd6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+texture_filter = 1
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_mt6eq")
+autoplay = "default"
+frame_progress = 0.174959
