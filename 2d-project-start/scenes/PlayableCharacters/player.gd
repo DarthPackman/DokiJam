@@ -13,7 +13,7 @@ var current_level = 1
 var exp_to_next_level = 20
 
 
-
+@onready var hp_bar = %HPBar
 @onready var exp_bar = %ExpBar
 
 func _ready() -> void:

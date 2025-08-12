@@ -1,3 +1,4 @@
+CanvasLayer
 CollisionShape2D
 Area2D
 AnimatedSprite2D
@@ -9,6 +10,5 @@ ProgressBar
 Timer
 PanelContainer
 HBoxContainer
-CanvasLayer
 AudioStreamPlayer2D
 AudioListener2D
