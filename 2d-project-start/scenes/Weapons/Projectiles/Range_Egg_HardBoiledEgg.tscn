@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dgtxwbels7nep"]
 
-[ext_resource type="Script" uid="uid://cmnhpbyb7rjfb" path="res://scenes_weapons/range_egg_hardboiledegg.gd" id="1_01ltc"]
+[ext_resource type="Script" path="res://scenes/Weapons/Projectiles/range_egg_hardboiledegg.gd" id="1_01ltc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x3feo"]
 radius = 737.024

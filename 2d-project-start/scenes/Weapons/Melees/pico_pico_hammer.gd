@@ -2,6 +2,7 @@ extends Area2D
 
 @onready var attackSpeedTimer = $Timer
 @export var attackSpeed = 1.5
+@export var statusEffectDisabled = false
 var duration = 0.6
 var duration_time_elapsed = 0.0
 @onready var hit_visuals = %Hit
@@ -11,6 +12,7 @@ var enemies_in_range
 var random_enemy
 
 func _ready() -> void:
+	hit_visuals.disabled = statusEffectDisabled
 	attackSpeedTimer.wait_time = attackSpeed
 
 func _physics_process(delta: float) -> void:

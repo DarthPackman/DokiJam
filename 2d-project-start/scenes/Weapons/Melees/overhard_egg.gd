@@ -8,8 +8,10 @@ var duration_time_elapsed = 0.0
 @onready var hit_visuals2 = %EggSlap2
 @onready var meleePoint = %MeleePoint
 @onready var meleePoint2 = %MeleePoint2
+@export var statusEffectDisabled = false
 
 func _ready() -> void:
+	hit_visuals.disabled = statusEffectDisabled
 	attackSpeedTimer.wait_time = attackSpeed
 
 func _physics_process(delta: float) -> void:

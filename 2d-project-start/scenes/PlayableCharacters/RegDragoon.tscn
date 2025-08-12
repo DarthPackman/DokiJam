@@ -1,9 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://cbcpmhuc0r3uh"]
+[gd_scene load_steps=14 format=3 uid="uid://cbcpmhuc0r3uh"]
 
 [ext_resource type="Script" path="res://scenes/PlayableCharacters/player.gd" id="1_ky7y5"]
 [ext_resource type="PackedScene" uid="uid://bnfbtrlt13uif" path="res://scenes/PlayableCharacters/regular_dragoon.tscn" id="2_hqvs3"]
-[ext_resource type="PackedScene" uid="uid://c5lnuyav6ht8l" path="res://scenes/Systems/level_up/LevelUpScreen.tscn" id="2_y3bcd"]
 [ext_resource type="AudioStream" uid="uid://dfkpobr43rhwn" path="res://sound/bgm_gameplay_fd1.ogg" id="3_mvxva"]
+[ext_resource type="PackedScene" uid="uid://c75lvu1b71tom" path="res://scenes/Weapons/Auras/aura.tscn" id="4_abwr3"]
+[ext_resource type="PackedScene" uid="uid://d0k2jxoacl7c4" path="res://scenes/Weapons/Auras/hoolahoop.tscn" id="4_hh2qb"]
+[ext_resource type="PackedScene" uid="uid://bqr368synoprc" path="res://scenes/Weapons/Auras/burp.tscn" id="4_jkyiq"]
+[ext_resource type="PackedScene" uid="uid://becjgrhp41w6q" path="res://scenes/Weapons/Auras/rottenEgg.tscn" id="4_qr2no"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gfie6"]
 bg_color = Color(0.152941, 0.168627, 0.188235, 1)
@@ -37,11 +40,6 @@ collision_mask = 4
 script = ExtResource("1_ky7y5")
 
 [node name="UI" type="CanvasLayer" parent="."]
-
-[node name="LevelUpScreen" parent="UI" instance=ExtResource("2_y3bcd")]
-unique_name_in_owner = true
-grow_horizontal = 2
-grow_vertical = 2
 
 [node name="Weapons" type="HBoxContainer" parent="UI"]
 offset_right = 40.0
@@ -90,3 +88,15 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 shape = SubResource("CircleShape2D_er830")
 debug_color = Color(0.786142, 0.408967, 0.383428, 0.42)
+
+[node name="Burp" parent="." instance=ExtResource("4_jkyiq")]
+triggerTime = 1.0
+
+[node name="AuraFarm" parent="." instance=ExtResource("4_abwr3")]
+triggerTime = 1.0
+
+[node name="Hoola" parent="." instance=ExtResource("4_hh2qb")]
+triggerTime = 1.0
+
+[node name="RottenEgg" parent="." instance=ExtResource("4_qr2no")]
+triggerTime = 1.0
