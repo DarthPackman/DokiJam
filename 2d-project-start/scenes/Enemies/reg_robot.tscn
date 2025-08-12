@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://lcejsdjwswpf"]
 
 [ext_resource type="Texture2D" uid="uid://c72qaapcg00h4" path="res://art/RegRobotShadow.png" id="1_1fk7e"]
-[ext_resource type="Script" path="res://scenes/Enemies/reg_robot.gd" id="1_uxgtj"]
+[ext_resource type="Script" uid="uid://lj5ogvo2i730" path="res://scenes/Enemies/reg_robot.gd" id="1_uxgtj"]
 [ext_resource type="Texture2D" uid="uid://cpehgfaeyco4r" path="res://art/RegRobotHurt.png" id="3_2m27x"]
 [ext_resource type="Texture2D" uid="uid://tjg18ecgma6s" path="res://art/RegRobotWalkCycle.png" id="3_mhaya"]
 [ext_resource type="AudioStream" uid="uid://cwj1d4u0t7l1y" path="res://sound/sfx_npc_robothit_fd1.ogg" id="5_qn0iq"]
@@ -77,4 +77,4 @@ frame_progress = 1.0
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_qn0iq")
-volume_db = -2.5
+volume_db = -10.0

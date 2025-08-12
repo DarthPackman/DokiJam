@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://cxwau5axekbly"]
 
-[ext_resource type="Script" path="res://scenes/pickbird.gd" id="1_y6hrr"]
+[ext_resource type="Script" uid="uid://cfxf7vp2if2lv" path="res://scenes/pickbird.gd" id="1_y6hrr"]
 [ext_resource type="Theme" uid="uid://cgah1efpjglvn" path="res://UI/Title screen.tres" id="2_oa5m0"]
 [ext_resource type="Texture2D" uid="uid://1sfvn3p3p5dj" path="res://UI/red_dragoon_with_tomatostill.webp" id="3_albn4"]
 [ext_resource type="AudioStream" uid="uid://cnap8bqop5noc" path="res://UI/1-24 Dance Hymn of the Soul (Disco i.mp3" id="3_oqyll"]

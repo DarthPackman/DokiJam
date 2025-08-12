@@ -1,6 +1,6 @@
 [gd_scene load_steps=30 format=3 uid="uid://c75lvu1b71tom"]
 
-[ext_resource type="Script" path="res://scenes/Weapons/Auras/aura.gd" id="1_a4qu0"]
+[ext_resource type="Script" uid="uid://cg5fxw0dkwmjs" path="res://scenes/Weapons/Auras/aura.gd" id="1_a4qu0"]
 [ext_resource type="Texture2D" uid="uid://bubwtmtduc3bl" path="res://art/AuraFarmDuration.png" id="2_p5wf1"]
 [ext_resource type="Texture2D" uid="uid://b2eiob3px8hel" path="res://art/AuraFarmActivation.png" id="3_xasnm"]
 [ext_resource type="Texture2D" uid="uid://ckuovx3qcq6xn" path="res://art/SparkleActive.png" id="4_dn2f3"]

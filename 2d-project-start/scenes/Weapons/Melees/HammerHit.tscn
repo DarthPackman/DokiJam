@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://bmsut1h1tr6pb"]
 
-[ext_resource type="Script" path="res://scenes/Weapons/Melees/hammer_hit.gd" id="1_5liwc"]
+[ext_resource type="Script" uid="uid://djlharyxpktq3" path="res://scenes/Weapons/Melees/hammer_hit.gd" id="1_5liwc"]
 [ext_resource type="Texture2D" uid="uid://djvyaber24s5g" path="res://art/Hammer.png" id="2_fmqjq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6jbd6"]

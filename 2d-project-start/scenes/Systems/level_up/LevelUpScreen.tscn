@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c5lnuyav6ht8l"]
 
-[ext_resource type="Script" path="res://scenes/Systems/level_up/LevelUpScreen.gd" id="1"]
+[ext_resource type="Script" uid="uid://dj12t0jm87xmt" path="res://scenes/Systems/level_up/LevelUpScreen.gd" id="1"]
 
 [node name="LevelUpScreen" type="Control"]
 layout_mode = 3

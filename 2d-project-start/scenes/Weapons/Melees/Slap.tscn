@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://bd82ta27leyu0"]
 
-[ext_resource type="Script" path="res://scenes/Weapons/Melees/slap.gd" id="1_6b8f7"]
+[ext_resource type="Script" uid="uid://dyvpboa4lb1s1" path="res://scenes/Weapons/Melees/slap.gd" id="1_6b8f7"]
 [ext_resource type="Texture2D" uid="uid://cqmkb0q5uhbsw" path="res://art/WingSlap.png" id="2_2ylkh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8msud"]

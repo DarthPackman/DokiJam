@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cv7opp1vfi4tr" path="res://art/RegularDragoonShadow.png" id="1_8wmd8"]
 [ext_resource type="Texture2D" uid="uid://16wtdrenqy8n" path="res://art/RegularDragoonIdle.png" id="1_f18em"]
-[ext_resource type="Script" path="res://scenes/PlayableCharacters/regular_dragoon.gd" id="1_s6xkt"]
+[ext_resource type="Script" uid="uid://ceijnvhnf64o4" path="res://scenes/PlayableCharacters/regular_dragoon.gd" id="1_s6xkt"]
 [ext_resource type="Texture2D" uid="uid://cqq65u03ctmrm" path="res://art/RegularDragoonWalk.png" id="2_pntmf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vpmc0"]

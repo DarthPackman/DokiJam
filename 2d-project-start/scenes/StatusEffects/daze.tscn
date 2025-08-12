@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bd1fb2fhfpbos"]
 
-[ext_resource type="Script" path="res://scenes/StatusEffects/daze.gd" id="1_jsrm1"]
+[ext_resource type="Script" uid="uid://dnt7mktlhr50e" path="res://scenes/StatusEffects/daze.gd" id="1_jsrm1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d3g17"]
 radius = 225.0

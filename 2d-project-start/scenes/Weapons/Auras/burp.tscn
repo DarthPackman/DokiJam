@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://bqr368synoprc"]
 
-[ext_resource type="Script" path="res://scenes/Weapons/Auras/burp.gd" id="1_saoub"]
+[ext_resource type="Script" uid="uid://860q8lxrd5y8" path="res://scenes/Weapons/Auras/burp.gd" id="1_saoub"]
 [ext_resource type="Texture2D" uid="uid://b4m247b0cn23y" path="res://art/Burp.png" id="6_exftr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4fhbx"]

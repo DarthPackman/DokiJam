@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://br2s6r534yv13"]
 
-[ext_resource type="Script" path="res://scenes/Weapons/Melees/egg_slap.gd" id="1_eudir"]
+[ext_resource type="Script" uid="uid://dhs3xeqg3pjlu" path="res://scenes/Weapons/Melees/egg_slap.gd" id="1_eudir"]
 [ext_resource type="Texture2D" uid="uid://dkeggar06tyfc" path="res://art/EggSlap.png" id="2_k6ohm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6jbd6"]

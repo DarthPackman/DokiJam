@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://w4a8mr0bw34i"]
 
-[ext_resource type="Script" path="res://scenes/Weapons/Projectiles/range_chonk_shotgun.gd" id="1_43b16"]
+[ext_resource type="Script" uid="uid://bgtd03ovxq05x" path="res://scenes/Weapons/Projectiles/range_chonk_shotgun.gd" id="1_43b16"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x3feo"]
 radius = 256.195

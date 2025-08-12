@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://d0k2jxoacl7c4"]
 
-[ext_resource type="Script" path="res://scenes/Weapons/Auras/hoolahoop.gd" id="1_ryvyh"]
+[ext_resource type="Script" uid="uid://pvh8fg5q0n2l" path="res://scenes/Weapons/Auras/hoolahoop.gd" id="1_ryvyh"]
 [ext_resource type="Texture2D" uid="uid://do6201pso35ub" path="res://art/HoolaHoopActivation.png" id="2_kmgbt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mfwrl"]

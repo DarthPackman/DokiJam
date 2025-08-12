@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://cbcpmhuc0r3uh"]
 
-[ext_resource type="Script" path="res://scenes/PlayableCharacters/player.gd" id="1_ky7y5"]
+[ext_resource type="Script" uid="uid://eiogqwid6kow" path="res://scenes/PlayableCharacters/player.gd" id="1_ky7y5"]
 [ext_resource type="PackedScene" uid="uid://c5lnuyav6ht8l" path="res://scenes/Systems/level_up/LevelUpScreen.tscn" id="2_dk2a1"]
 [ext_resource type="PackedScene" uid="uid://bnfbtrlt13uif" path="res://scenes/PlayableCharacters/regular_dragoon.tscn" id="2_hqvs3"]
 [ext_resource type="AudioStream" uid="uid://dfkpobr43rhwn" path="res://sound/bgm_gameplay_fd1.ogg" id="3_mvxva"]

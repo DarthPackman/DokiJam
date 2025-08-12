@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bvfvrbhf4pvo2"]
 
-[ext_resource type="Script" path="res://scenes/Weapons/Projectiles/range_long_bowarrow.gd" id="1_cdowu"]
+[ext_resource type="Script" uid="uid://28k8kc6gw0bc" path="res://scenes/Weapons/Projectiles/range_long_bowarrow.gd" id="1_cdowu"]
 [ext_resource type="Texture2D" uid="uid://cyfuwwr0a8m4h" path="res://art/Arrow.png" id="2_57eay"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6jbd6"]

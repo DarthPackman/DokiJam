@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://0xckd428gmrd"]
 
-[ext_resource type="Script" path="res://scenes/Weapons/Projectiles/range_reg_riflebullet.gd" id="1_bwfa7"]
+[ext_resource type="Script" uid="uid://sllvf1stcx4j" path="res://scenes/Weapons/Projectiles/range_reg_riflebullet.gd" id="1_bwfa7"]
 [ext_resource type="Texture2D" uid="uid://biccs4c3bh6ts" path="res://art/RifleBullet.png" id="2_d57ch"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hw4el"]

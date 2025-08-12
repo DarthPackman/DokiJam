@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://s1juok152iqw"]
 
-[ext_resource type="Script" path="res://scenes/Weapons/Melees/melee_long_spear.gd" id="1_gigig"]
+[ext_resource type="Script" uid="uid://umnl0efihdgk" path="res://scenes/Weapons/Melees/melee_long_spear.gd" id="1_gigig"]
 [ext_resource type="Texture2D" uid="uid://dpftri535hlu6" path="res://art/SpearJab.png" id="2_gs5hu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e35h1"]
