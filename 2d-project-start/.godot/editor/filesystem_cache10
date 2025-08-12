@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1754966905
+::res://::1754967600
 default_bus_layout.tres::AudioBusLayout/AudioBusLayout::6564268947468103023::1754890768::0::1::::<><><>0<>0<><>::
 icon.png::CompressedTexture2D/CompressedTexture2D::621515402784007901::1754361602::1754946362::1::::<><><>0<>0<>130257868ffab54ab02a8c8a0dce8413<>res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex::
 ::res://addons/::1754361602
@@ -7,7 +7,7 @@ icon.png::CompressedTexture2D/CompressedTexture2D::621515402784007901::175436160
 colorpicker_presets.gd::GDScript/GDScript::5971578166635109814::1754361602::0::1::::<>EditorPlugin<><>0<>1<><>::
 plugin.cfg::TextFile/TextFile::-1::1754361602::0::1::::<><><>0<>0<><>::
 README.md::TextFile/TextFile::-1::1754361602::0::1::::<><><>0<>0<><>::
-::res://art/::1754966007
+::res://art/::1754967334
 Arrow.png::CompressedTexture2D/CompressedTexture2D::6468950313703090937::1754788794::1754946362::1::::<><><>0<>0<>7e03f42a450b70d671460b7165ae22b0<>res://.godot/imported/Arrow.png-e196b12a47dc92763082ea00607d048f.ctex::
 AuraDuration.png::CompressedTexture2D/CompressedTexture2D::5710998675089167226::1754953607::1754966007::1::::<><><>0<>0<>c92d2787d4012270c41b63a4edf1761b<>res://.godot/imported/AuraDuration.png-e05bbc4461a55a768e0532fa684117f7.ctex::
 AuraFarmActivation.png::CompressedTexture2D/CompressedTexture2D::4290287806484460935::1754953655::1754966007::1::::<><><>0<>0<>e868e228870477bcf19874f975e97cb7<>res://.godot/imported/AuraFarmActivation.png-73a16aa056d6c1ac4c1fd93226065057.ctex::
@@ -15,13 +15,13 @@ AuraFarmActive.png::CompressedTexture2D/CompressedTexture2D::2925387644795142664
 AuraFarmDuration.png::CompressedTexture2D/CompressedTexture2D::3793632297927493389::1754953610::1754966007::1::::<><><>0<>0<>2a04ac31c4ed5d4d35e9daa0ccfb4589<>res://.godot/imported/AuraFarmDuration.png-81ccb7704dda19d67f79819d16f2fd79.ctex::
 AuraFarmTrigger.png::CompressedTexture2D/CompressedTexture2D::5859031445112025186::1754949186::1754966007::1::::<><><>0<>0<>821e87702d10481bed781116b63022f1<>res://.godot/imported/AuraFarmTrigger.png-2afe740f86b955250fa086f230852914.ctex::
 Burp.png::CompressedTexture2D/CompressedTexture2D::4448362512503804452::1754954086::1754966007::1::::<><><>0<>0<>9e5803b722e00adae539e8cdcb8385d9<>res://.godot/imported/Burp.png-e659a4200533a85499bb35c1cd6b0313.ctex::
-ChonkyIdle.png::CompressedTexture2D/CompressedTexture2D::3500778136727845727::1754895779::1754966007::1::::<><><>0<>0<>1e2d9d9d51ad98ab1da385d5309e6372<>res://.godot/imported/ChonkyIdle.png-3e5a96c3c2196c01e3557caaba284b66.ctex::
+ChonkyIdle.png::CompressedTexture2D/CompressedTexture2D::3500778136727845727::1754967226::1754967227::1::::<><><>0<>0<>1e2d9d9d51ad98ab1da385d5309e6372<>res://.godot/imported/ChonkyIdle.png-3e5a96c3c2196c01e3557caaba284b66.ctex::
 ChonkyShadow.png::CompressedTexture2D/CompressedTexture2D::7708893526116723780::1754895779::1754966007::1::::<><><>0<>0<>24f419981c9fda4108fc2e75c4ea3cbf<>res://.godot/imported/ChonkyShadow.png-14cb0d72ba2b330aa7b9c2baa481af8f.ctex::
-ChonkyWalk.png::CompressedTexture2D/CompressedTexture2D::3048079793431303558::1754895779::1754966007::1::::<><><>0<>0<>dc9eec929baf2d59847810216e9cbc67<>res://.godot/imported/ChonkyWalk.png-97e69e9f4762382213f91e7d181940fa.ctex::
-EggIdle.png::CompressedTexture2D/CompressedTexture2D::5015495233061174613::1754895787::1754966007::1::::<><><>0<>0<>27673939c49938336023f4867a49a324<>res://.godot/imported/EggIdle.png-042b5e6c7e2cfde1023f4459d839bb19.ctex::
+ChonkyWalk.png::CompressedTexture2D/CompressedTexture2D::3048079793431303558::1754967226::1754967227::1::::<><><>0<>0<>dc9eec929baf2d59847810216e9cbc67<>res://.godot/imported/ChonkyWalk.png-97e69e9f4762382213f91e7d181940fa.ctex::
+EggIdle.png::CompressedTexture2D/CompressedTexture2D::5015495233061174613::1754967333::1754967334::1::::<><><>0<>0<>27673939c49938336023f4867a49a324<>res://.godot/imported/EggIdle.png-042b5e6c7e2cfde1023f4459d839bb19.ctex::
 EggShadow.png::CompressedTexture2D/CompressedTexture2D::883717001410276483::1754895787::1754966007::1::::<><><>0<>0<>485490a0cf24310dae8405ad9574b513<>res://.godot/imported/EggShadow.png-f982843ce87d0dfce2adc90a8c681194.ctex::
 EggSlap.png::CompressedTexture2D/CompressedTexture2D::7869783042635656052::1754899363::1754966007::1::::<><><>0<>0<>ccee56a3432f59d2ff2a968dfd44e82e<>res://.godot/imported/EggSlap.png-d777f9f8f6d0db8db92492104b87a71a.ctex::
-EggWalk.png::CompressedTexture2D/CompressedTexture2D::9195811798310474144::1754895787::1754966007::1::::<><><>0<>0<>0c2164e2f5f812c0d3d76341a5a1fad6<>res://.godot/imported/EggWalk.png-edafdc315ab3cdd092828b413cf6523d.ctex::
+EggWalk.png::CompressedTexture2D/CompressedTexture2D::9195811798310474144::1754967333::1754967334::1::::<><><>0<>0<>0c2164e2f5f812c0d3d76341a5a1fad6<>res://.godot/imported/EggWalk.png-edafdc315ab3cdd092828b413cf6523d.ctex::
 Hammer.png::CompressedTexture2D/CompressedTexture2D::7835770843995457794::1754898181::1754966007::1::::<><><>0<>0<>8460e49a52c5bf1214d28987b8cd9625<>res://.godot/imported/Hammer.png-3c7d37e8545d429812ed947eca43b288.ctex::
 HardBoiledEgg.png::CompressedTexture2D/CompressedTexture2D::8903549953766989923::1754895787::1754946362::1::::<><><>0<>0<>753da7c3fdb97a1cde9ce919032d4820<>res://.godot/imported/HardBoiledEgg.png-ec285ba8d5be2fc28d4c7ca677e541bd.ctex::
 HoolaHoopActivation.png::CompressedTexture2D/CompressedTexture2D::8207586965656778721::1754951280::1754966007::1::::<><><>0<>0<>cb8adf43aa24f4931882d77c85f29eb2<>res://.godot/imported/HoolaHoopActivation.png-55006964364eb3df534cce8f98e44dfb.ctex::
@@ -79,7 +79,7 @@ impact.tscn::PackedScene/PackedScene::706737085132625066::1754966016::0::1::::<>
 muzzle_flash.gd::GDScript/GDScript::3395623022629687801::1754361602::0::1::::<>Node2D<><>0<>0<><>::
 muzzle_flash.png::CompressedTexture2D/CompressedTexture2D::3592944556550980239::1754361602::1754946362::1::::<><><>0<>0<>28453999893b9aac4db20fa2c44b723d<>res://.godot/imported/muzzle_flash.png-752b19c1a1a60c24eac6f205d487f2ea.ctex::
 muzzle_flash.tscn::PackedScene/PackedScene::6601472980654318439::1754966016::0::1::::<><><>0<>0<><>::uid://bom4od3e8cw86::::res://pistol/muzzle_flash/muzzle_flash.gd<>uid://brgpjilf7s2ul::::res://pistol/muzzle_flash/muzzle_flash.png
-::res://scenes/::1754966905
+::res://scenes/::1754967572
 backbutton.gd::GDScript/GDScript::8120549250995552272::1754890768::0::1::::<>Button<><>0<>0<><>::
 DamageNumbers.gd::GDScript/GDScript::3296147191044704336::1754604448::0::1::::<>Node<><>0<>0<><>::
 hit.gd::GDScript/GDScript::3139843100240974268::1754795559::0::1::::<>Area2D<><>0<>0<><>::
@@ -92,10 +92,10 @@ options.gd::GDScript/GDScript::1952917559831921258::1754890768::0::1::::<>Contro
 options.tscn::PackedScene/PackedScene::6594711883933621237::1754966018::0::1::::<><><>0<>0<><>::uid://23ajcrw3v2l7::::res://scenes/options.gd<>uid://cgah1efpjglvn::::res://UI/Title screen.tres
 pause.gd::GDScript/GDScript::5067164264444587687::1754963228::0::1::::<>CanvasLayer<><>0<>0<><>::
 pause.tscn::PackedScene/PackedScene::4281455976261349390::1754966018::0::1::::<><><>0<>0<><>::uid://cegtpqd1qbdl4::::res://scenes/pause.gd<>uid://cgah1efpjglvn::::res://UI/Title screen.tres
-pickbird.gd::GDScript/GDScript::5171628131688622399::1754963661::0::1::::<>Control<><>0<>0<><>::
-pickbird.tscn::PackedScene/PackedScene::6432638374279618946::1754966018::0::1::::<><><>0<>0<><>::uid://cfxf7vp2if2lv::::res://scenes/pickbird.gd<>uid://cgah1efpjglvn::::res://UI/Title screen.tres<>uid://1sfvn3p3p5dj::::res://UI/red_dragoon_with_tomatostill.webp<>uid://cnap8bqop5noc::::res://UI/1-24 Dance Hymn of the Soul (Disco i.mp3<>uid://ciyf7a7fshs4x::::res://UI/RegularDragoonIdle.webp
+pickbird.gd::GDScript::5171628131688622399::1754967572::0::1::::<>Control<><>0<>0<><>::
+pickbird.tscn::PackedScene::6432638374279618946::1754967572::0::1::::<><><>0<>0<><>::uid://cfxf7vp2if2lv::::res://scenes/pickbird.gd<>uid://cgah1efpjglvn::::res://UI/Title screen.tres<>uid://1sfvn3p3p5dj::::res://UI/red_dragoon_with_tomatostill.webp<>uid://cnap8bqop5noc::::res://UI/1-24 Dance Hymn of the Soul (Disco i.mp3<>uid://ciyf7a7fshs4x::::res://UI/RegularDragoonIdle.webp
 survivor_game.gd::GDScript/GDScript::645304723020197426::1754963170::0::1::::<>Node2D<><>0<>0<><>::
-survivor_game.tscn::PackedScene::3632094005030894618::1754966905::0::1::::<><><>0<>0<><>::uid://jgucsepv76ag::::res://scenes/survivor_game.gd<>uid://b1877pj0ym0de::::res://scenes/pause.tscn<>uid://y3r78k7kk78i::::res://scenes/tree.tscn<>uid://cbcpmhuc0r3uh::::res://scenes/PlayableCharacters/player.tscn
+survivor_game.tscn::PackedScene/PackedScene::3632094005030894618::1754966905::0::1::::<><><>0<>0<><>::uid://jgucsepv76ag::::res://scenes/survivor_game.gd<>uid://b1877pj0ym0de::::res://scenes/pause.tscn<>uid://y3r78k7kk78i::::res://scenes/tree.tscn<>uid://cbcpmhuc0r3uh::::res://scenes/PlayableCharacters/player.tscn
 texture_button.gd::GDScript/GDScript::1730536783625980032::1754890768::0::1::::<>TextureButton<><>0<>0<><>::
 titlescreen.gd::GDScript/GDScript::3425726968162732172::1754890768::0::1::::<>Control<><>0<>0<><>::
 titlescreen.tscn::PackedScene::1604123443590068974::1754966852::0::1::::<><><>0<>0<><>::uid://bo2phtnpp1u4c::::res://scenes/titlescreen.gd<>uid://cgah1efpjglvn::::res://UI/Title screen.tres<>uid://0g7lvjca68u0::::res://UI/9gag or whatever.png<>uid://cnap8bqop5noc::::res://UI/1-24 Dance Hymn of the Soul (Disco i.mp3
@@ -108,11 +108,14 @@ RegMob.tscn::PackedScene::254727249008585402::1754966852::0::1::::<><><>0<>0<><>
 reg_robot.gd::GDScript/GDScript::792503538956079681::1754966087::0::1::::<>Node2D<><>0<>0<><>::
 reg_robot.tscn::PackedScene::776465926136453163::1754966852::0::1::::<><><>0<>0<><>::uid://c72qaapcg00h4::::res://art/RegRobotShadow.png<>uid://lj5ogvo2i730::::res://scenes/Enemies/reg_robot.gd<>uid://cpehgfaeyco4r::::res://art/RegRobotHurt.png<>uid://tjg18ecgma6s::::res://art/RegRobotWalkCycle.png<>uid://cwj1d4u0t7l1y::::res://sound/sfx_npc_robothit_fd1.ogg
 SlowMob.tscn::PackedScene/PackedScene::1638669032515179839::1754966017::0::1::::<><><>0<>0<><>::uid://c3qr0tvgrvrja::::res://scenes/Enemies/mob.gd<>uid://lcejsdjwswpf::::res://scenes/Enemies/reg_robot.tscn
-::res://scenes/PlayableCharacters/::1754966920
+::res://scenes/PlayableCharacters/::1754967513
+chonky_dragoon.tscn::PackedScene::1289086474090401114::1754967448::0::1::::<><><>0<>0<><>::uid://ceijnvhnf64o4::::res://scenes/PlayableCharacters/dragoon.gd<>uid://cv7opp1vfi4tr::::res://art/RegularDragoonShadow.png<>uid://bp42kl61thf8b::::res://art/ChonkyIdle.png<>uid://bjorot1hpsgxa::::res://art/ChonkyWalk.png
+dragoon.gd::GDScript/GDScript::5070682546629050261::1754891980::0::1::::<>Node2D<><>0<>0<><>::
+egg_dragoon.tscn::PackedScene::1045165957270352589::1754967434::0::1::::<><><>0<>0<><>::uid://ceijnvhnf64o4::::res://scenes/PlayableCharacters/dragoon.gd<>uid://cv7opp1vfi4tr::::res://art/RegularDragoonShadow.png<>uid://cdpsqdu6ckbht::::res://art/EggIdle.png<>uid://d4arxamxgr5vw::::res://art/EggWalk.png
+long_dragoon.tscn::PackedScene::5593991355339683635::1754967477::0::1::::<><><>0<>0<><>::uid://ceijnvhnf64o4::::res://scenes/PlayableCharacters/dragoon.gd<>uid://cv7opp1vfi4tr::::res://art/RegularDragoonShadow.png<>uid://cd6vcgkkt5bvf::::res://art/LongIdle.png<>uid://gu5clv2u6u1n::::res://art/LongWalk.png
 player.gd::GDScript/GDScript::298132023974789954::1754964120::0::1::::<>CharacterBody2D<><>0<>0<><>::
-player.tscn::PackedScene::4848091549635229559::1754966920::0::1::::<><><>0<>0<><>::uid://eiogqwid6kow::::res://scenes/PlayableCharacters/player.gd<>uid://c5lnuyav6ht8l::::res://scenes/Systems/level_up/LevelUpScreen.tscn<>uid://bnfbtrlt13uif::::res://scenes/PlayableCharacters/regular_dragoon.tscn<>uid://dfkpobr43rhwn::::res://sound/bgm_gameplay_fd1.ogg
-regular_dragoon.gd::GDScript/GDScript::5070682546629050261::1754891980::0::1::::<>Node2D<><>0<>0<><>::
-regular_dragoon.tscn::PackedScene::3309293097623723141::1754966953::0::1::::<><><>0<>0<><>::uid://cv7opp1vfi4tr::::res://art/RegularDragoonShadow.png<>uid://16wtdrenqy8n::::res://art/RegularDragoonIdle.png<>uid://ceijnvhnf64o4::::res://scenes/PlayableCharacters/regular_dragoon.gd<>uid://cqq65u03ctmrm::::res://art/RegularDragoonWalk.png
+player.tscn::PackedScene::4848091549635229559::1754967513::0::1::::<><><>0<>0<><>::uid://eiogqwid6kow::::res://scenes/PlayableCharacters/player.gd<>uid://c5lnuyav6ht8l::::res://scenes/Systems/level_up/LevelUpScreen.tscn<>uid://bnfbtrlt13uif::::res://scenes/PlayableCharacters/regular_dragoon.tscn<>uid://dfkpobr43rhwn::::res://sound/bgm_gameplay_fd1.ogg
+regular_dragoon.tscn::PackedScene::3309293097623723141::1754967465::0::1::::<><><>0<>0<><>::uid://cv7opp1vfi4tr::::res://art/RegularDragoonShadow.png<>uid://16wtdrenqy8n::::res://art/RegularDragoonIdle.png<>uid://ceijnvhnf64o4::::res://scenes/PlayableCharacters/dragoon.gd<>uid://cqq65u03ctmrm::::res://art/RegularDragoonWalk.png
 ::res://scenes/StatusEffects/::1754966017
 burn.gd::GDScript/GDScript::8224012994718188023::1754792312::0::1::::<>Node2D<><>0<>0<><>::
 burn.tscn::PackedScene/PackedScene::1642156587551603653::1754966017::0::1::::<><><>0<>0<><>::uid://dpf1j7dvd68v8::::res://scenes/StatusEffects/burn.gd
@@ -200,7 +203,7 @@ bgm_gameplay_fd1.ogg::AudioStreamOggVorbis/AudioStreamOggVorbis::753178588295697
 sfx_npc_robothit_fd1.ogg::AudioStreamOggVorbis/AudioStreamOggVorbis::6337160881638885128::1754965774::1754966007::1::::<><><>0<>0<>b7c2fd52dd4396d721b9fad585076248<>res://.godot/imported/sfx_npc_robothit_fd1.ogg-94b040da04d1856c32528722b69f4b0d.oggvorbisstr::
 ::res://trees/::1754946362
 pine_tree.png::CompressedTexture2D/CompressedTexture2D::4806194308614878228::1754361602::1754946362::1::::<><><>0<>0<>6a122cb6169ee7ccf60dc7df23de6a40<>res://.godot/imported/pine_tree.png-d61929395d8fbd7dd9882891dc69101d.ctex::
-::res://UI/::1754966852
+::res://UI/::1754967562
 1-24 Dance Hymn of the Soul (Disco i.mp3::AudioStreamMP3/AudioStreamMP3::5686266098668538034::1754890768::1754946362::1::::<><><>0<>0<>e93c1c3d16d269120c0647cd94972b68<>res://.godot/imported/1-24 Dance Hymn of the Soul (Disco i.mp3-41d8cefa8246c7864a304cb7b8aaa1f7.mp3str::
 9gag or whatever.png::CompressedTexture2D/CompressedTexture2D::1769071061962369853::1754963228::1754966007::1::::<><><>0<>0<>8c41bd755e8495a7177da5bc1fdb59de<>res://.godot/imported/9gag or whatever.png-2b96f58b9682058e677d83d14c963d54.ctex::
 Buttonborderdisabled.png::CompressedTexture2D/CompressedTexture2D::3348061659486787987::1754963228::1754966007::1::::<><><>0<>0<>03228b14253d09210b45cd03f7be5c01<>res://.godot/imported/Buttonborderdisabled.png-9a183fee400a0ae4289999a087224244.ctex::
@@ -213,7 +216,7 @@ MenuBGM.tscn::PackedScene/PackedScene::2550632382183329616::1754966019::0::1::::
 menu_bgm.gd::GDScript/GDScript::6262431248876182265::1754890768::0::1::::<>AudioStreamPlayer<><>0<>0<><>::
 red_dragoon_with_tomatostill.webp::CompressedTexture2D/CompressedTexture2D::1862410547575401727::1754890768::1754946362::1::::<><><>0<>0<>aec24b0309c11cd94f9d3efdb208a251<>res://.godot/imported/red_dragoon_with_tomatostill.webp-7b3351b2f100df9b1bcda3f9c45fdfce.ctex::
 RegularDragoonIdle.webp::CompressedTexture2D/CompressedTexture2D::5384257962641954225::1754890768::1754946362::1::::<><><>0<>0<>1672f070c07331a7ba8cccd2949ca22e<>res://.godot/imported/RegularDragoonIdle.webp-d25710a1a6ba211ce9327b40dae9c40b.ctex::
-Title screen.tres::Theme::5194446097316519267::1754966852::0::1::::<><><>0<>0<><>::uid://bd5fdvq76vys::::res://UI/GrapeSoda.ttf<>uid://bnx3c633paetn::::res://UI/Buttonborderdisabled.png<>uid://cqbwk56225naa::::res://UI/Buttonborderfocus.png<>uid://ce2wqq83p42l6::::res://UI/Buttonborderhover.png<>uid://bo0e7hkjmpmc5::::res://UI/Buttonbordernormal.png
+Title screen.tres::Theme::5194446097316519267::1754967562::0::1::::<><><>0<>0<><>::uid://bd5fdvq76vys::::res://UI/GrapeSoda.ttf<>uid://bnx3c633paetn::::res://UI/Buttonborderdisabled.png<>uid://cqbwk56225naa::::res://UI/Buttonborderfocus.png<>uid://ce2wqq83p42l6::::res://UI/Buttonborderhover.png<>uid://bo0e7hkjmpmc5::::res://UI/Buttonbordernormal.png
 ::res://UI/regidle frames/::1754946362
 tile000.png::CompressedTexture2D/CompressedTexture2D::5252912950073413725::1754890768::1754946362::1::::<><><>0<>0<>e347797abfc3383aa9245c2f4ee5fd5d<>res://.godot/imported/tile000.png-3c6880afb2834294ea9185093f09f340.ctex::
 tile001.png::CompressedTexture2D/CompressedTexture2D::8372087219048188891::1754890768::1754946362::1::::<><><>0<>0<>fe667b5b027f45fe5584bd6334acefa0<>res://.godot/imported/tile001.png-86beb73e3ff577092298096a1a38ed1e.ctex::

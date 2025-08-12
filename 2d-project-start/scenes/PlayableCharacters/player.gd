@@ -14,7 +14,12 @@ var exp_to_next_level = 20
 @onready var exp_bar = %ExpBar
 
 func _ready() -> void:
-	character = %RegularDragoon
+	var selected_player = Autoload.character_selected_player
+	var selected_name = Autoload.character_selected_name
+	if selected_player:
+		character = selected_player.instantiate()
+		add_child(character)
+		character.position = get_parent().global_position
 	level_up.connect(_on_level_up)  
 	level_up_screen.upgrade_selected.connect(_on_upgrade_selected)
 

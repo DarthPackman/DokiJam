@@ -1,8 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://cbcpmhuc0r3uh"]
+[gd_scene load_steps=10 format=3 uid="uid://cbcpmhuc0r3uh"]
 
 [ext_resource type="Script" uid="uid://eiogqwid6kow" path="res://scenes/PlayableCharacters/player.gd" id="1_dfvke"]
 [ext_resource type="PackedScene" uid="uid://c5lnuyav6ht8l" path="res://scenes/Systems/level_up/LevelUpScreen.tscn" id="2_60uwt"]
-[ext_resource type="PackedScene" uid="uid://bnfbtrlt13uif" path="res://scenes/PlayableCharacters/regular_dragoon.tscn" id="3_lwmin"]
 [ext_resource type="AudioStream" uid="uid://dfkpobr43rhwn" path="res://sound/bgm_gameplay_fd1.ogg" id="4_t3gn5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gfie6"]
@@ -26,7 +25,7 @@ bg_color = Color(0.138638, 0.138637, 0.138637, 1)
 bg_color = Color(1, 1, 1, 1)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y8ava"]
-radius = 34.0147
+radius = 50.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_er830"]
 radius = 71.0282
@@ -66,10 +65,6 @@ unique_name_in_owner = true
 [node name="Weapons" type="HBoxContainer" parent="UI"]
 offset_right = 40.0
 offset_bottom = 40.0
-
-[node name="RegularDragoon" parent="." instance=ExtResource("3_lwmin")]
-unique_name_in_owner = true
-position = Vector2(0, -15)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_y8ava")

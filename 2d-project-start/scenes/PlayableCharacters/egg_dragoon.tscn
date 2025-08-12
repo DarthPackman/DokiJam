@@ -1,0 +1,149 @@
+[gd_scene load_steps=22 format=3 uid="uid://o5jy3ud55tnx"]
+
+[ext_resource type="Script" uid="uid://ceijnvhnf64o4" path="res://scenes/PlayableCharacters/dragoon.gd" id="1_hl66v"]
+[ext_resource type="Texture2D" uid="uid://cv7opp1vfi4tr" path="res://art/RegularDragoonShadow.png" id="2_jsogl"]
+[ext_resource type="Texture2D" uid="uid://cdpsqdu6ckbht" path="res://art/EggIdle.png" id="3_hl66v"]
+[ext_resource type="Texture2D" uid="uid://d4arxamxgr5vw" path="res://art/EggWalk.png" id="4_jsogl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k8jms"]
+atlas = ExtResource("3_hl66v")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ab2lm"]
+atlas = ExtResource("3_hl66v")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d08lv"]
+atlas = ExtResource("3_hl66v")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mfn6d"]
+atlas = ExtResource("3_hl66v")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4s20"]
+atlas = ExtResource("3_hl66v")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fgjb3"]
+atlas = ExtResource("3_hl66v")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k0hso"]
+atlas = ExtResource("3_hl66v")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i1s2b"]
+atlas = ExtResource("3_hl66v")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cp362"]
+atlas = ExtResource("3_hl66v")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xt3hn"]
+atlas = ExtResource("3_hl66v")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kuoma"]
+atlas = ExtResource("3_hl66v")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tmb0l"]
+atlas = ExtResource("3_hl66v")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mtvpv"]
+atlas = ExtResource("4_jsogl")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3hpbe"]
+atlas = ExtResource("4_jsogl")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6skcp"]
+atlas = ExtResource("4_jsogl")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i70po"]
+atlas = ExtResource("4_jsogl")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ock1w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k8jms")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ab2lm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d08lv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mfn6d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h4s20")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fgjb3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k0hso")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i1s2b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cp362")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xt3hn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kuoma")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tmb0l")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 7.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mtvpv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3hpbe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6skcp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i70po")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 7.5
+}]
+
+[node name="EggDragoon" type="Node2D"]
+scale = Vector2(4, 4)
+script = ExtResource("1_hl66v")
+
+[node name="RegularDragoonShadow" type="Sprite2D" parent="."]
+modulate = Color(0.0980392, 0.0980392, 0.0980392, 0.588235)
+texture_filter = 1
+position = Vector2(0, 1)
+texture = ExtResource("2_jsogl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_ock1w")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.314022

@@ -142,7 +142,6 @@ custom_minimum_size = Vector2(360, 360)
 layout_mode = 2
 theme = ExtResource("2_oa5m0")
 theme_override_font_sizes/font_size = 72
-disabled = true
 text = "Chonk"
 
 [node name="selecttall" type="Button" parent="Panel/MarginContainer/HBoxContainer"]
@@ -151,7 +150,6 @@ custom_minimum_size = Vector2(360, 360)
 layout_mode = 2
 theme = ExtResource("2_oa5m0")
 theme_override_font_sizes/font_size = 72
-disabled = true
 text = "Tall"
 
 [node name="selectegg" type="Button" parent="Panel/MarginContainer/HBoxContainer"]
@@ -160,7 +158,6 @@ custom_minimum_size = Vector2(360, 360)
 layout_mode = 2
 theme = ExtResource("2_oa5m0")
 theme_override_font_sizes/font_size = 72
-disabled = true
 text = "Egg"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Panel/MarginContainer"]
@@ -239,6 +236,9 @@ volume_db = -33.425
 autoplay = true
 
 [connection signal="pressed" from="Panel/MarginContainer/HBoxContainer/selectreg" to="." method="_on_selectreg_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/HBoxContainer/selectchonk" to="." method="_on_selectchonk_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/HBoxContainer/selecttall" to="." method="_on_selecttall_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/HBoxContainer/selectegg" to="." method="_on_selectegg_pressed"]
 [connection signal="mouse_entered" from="Panel/MarginContainer/HBoxContainer2/TextureButton" to="." method="_on_texture_button_mouse_entered"]
 [connection signal="mouse_exited" from="Panel/MarginContainer/HBoxContainer2/TextureButton" to="." method="_on_texture_button_mouse_exited"]
 [connection signal="pressed" from="Panel/MarginContainer/HBoxContainer2/TextureButton" to="." method="_on_texture_button_pressed"]

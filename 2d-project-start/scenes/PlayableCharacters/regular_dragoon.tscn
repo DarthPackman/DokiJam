@@ -89,7 +89,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 5.0
+"speed": 7.5
 }, {
 "frames": [{
 "duration": 1.0,
@@ -106,7 +106,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk",
-"speed": 5.0
+"speed": 7.5
 }]
 
 [node name="RegularDragoon" type="Node2D"]
@@ -123,5 +123,6 @@ texture = ExtResource("1_8wmd8")
 unique_name_in_owner = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_ock1w")
-animation = &"walk"
+animation = &"idle"
 autoplay = "idle"
+frame_progress = 0.388015

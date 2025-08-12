@@ -8,3 +8,11 @@ res://scenes/Enemies/RegMob.tscn
 res://scenes/Enemies/reg_robot.tscn
 res://scenes/PlayableCharacters/player.tscn
 res://scenes/PlayableCharacters/regular_dragoon.tscn
+res://scenes/PlayableCharacters/chonky_dragoon.tscn
+res://scenes/PlayableCharacters/egg_dragoon.tscn
+res://scenes/PlayableCharacters/long_dragoon.tscn
+res://scenes/pickbird.gd
+res://scenes/pickbird.tscn
+res://scenes/autoload.gd
+res://scenes/Autoload.tscn
+res://scenes/PlayableCharacters/player.gd
