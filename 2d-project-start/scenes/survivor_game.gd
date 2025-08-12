@@ -27,6 +27,8 @@ func _process(delta: float) -> void:
 		triggerEvent()
 	elif minutes == 28:
 		triggerEvent()
+	elif minutes == 30:
+		triggerVictory()
 
 func spawn_mob():
 	var reg_mob = preload("res://scenes/Enemies/RegMob.tscn")
@@ -53,11 +55,14 @@ func _on_timer_timeout() -> void:
 	spawn_mob()
 
 func _on_player_health_depleted() -> void:
-	%GameOver.visible = true
-	get_tree().paused = true
+	get_tree().change_scene_to_file("res://scenes/gameover.tscn")
+
+func triggerVictory():
+	get_tree().change_scene_to_file("res://scenes/winscreen.tscn")
 
 func _on_button_pressed() -> void:
 	get_tree().quit()
 
 func triggerEvent():
 	pass
+	

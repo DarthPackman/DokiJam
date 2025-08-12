@@ -1,11 +1,10 @@
-[gd_scene load_steps=25 format=3 uid="uid://cbcpmhuc0r3uh"]
+[gd_scene load_steps=24 format=3 uid="uid://cbcpmhuc0r3uh"]
 
 [ext_resource type="Script" uid="uid://eiogqwid6kow" path="res://scenes/PlayableCharacters/player.gd" id="1_dfvke"]
 [ext_resource type="PackedScene" uid="uid://c5lnuyav6ht8l" path="res://scenes/Systems/level_up/LevelUpScreen.tscn" id="2_60uwt"]
 [ext_resource type="Script" uid="uid://ct2ir7dq8j2kv" path="res://scenes/Systems/weapon_slots/weapongrid.gd" id="3_60uwt"]
 [ext_resource type="PackedScene" uid="uid://dvrblc4a171aq" path="res://scenes/Systems/weapon_slots/slot.tscn" id="3_dfvke"]
 [ext_resource type="PackedScene" uid="uid://bnfbtrlt13uif" path="res://scenes/PlayableCharacters/regular_dragoon.tscn" id="3_lwmin"]
-[ext_resource type="AudioStream" uid="uid://dfkpobr43rhwn" path="res://sound/bgm_gameplay_fd1.ogg" id="4_t3gn5"]
 [ext_resource type="PackedScene" uid="uid://w4a8mr0bw34i" path="res://scenes/Weapons/Projectiles/Range_Chonk_Shotgun.tscn" id="7_lt7xh"]
 [ext_resource type="PackedScene" uid="uid://c75lvu1b71tom" path="res://scenes/Weapons/Auras/aura.tscn" id="7_sofp6"]
 [ext_resource type="PackedScene" uid="uid://dgtxwbels7nep" path="res://scenes/Weapons/Projectiles/Range_Egg_HardBoiledEgg.tscn" id="8_7hjkf"]
@@ -104,11 +103,6 @@ position = Vector2(0, -15)
 shape = SubResource("CircleShape2D_y8ava")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Camera2D"]
-stream = ExtResource("4_t3gn5")
-autoplay = true
-parameters/looping = true
 
 [node name="HurtBox" type="Area2D" parent="."]
 unique_name_in_owner = true

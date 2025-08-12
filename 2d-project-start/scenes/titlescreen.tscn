@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bo2phtnpp1u4c" path="res://scenes/titlescreen.gd" id="1_bolpj"]
 [ext_resource type="Theme" uid="uid://cgah1efpjglvn" path="res://UI/Title screen.tres" id="2_b4itm"]
 [ext_resource type="Texture2D" uid="uid://0g7lvjca68u0" path="res://UI/9gag or whatever.png" id="3_4bvcf"]
-[ext_resource type="AudioStream" uid="uid://cnap8bqop5noc" path="res://UI/1-24 Dance Hymn of the Soul (Disco i.mp3" id="3_52ih6"]
+[ext_resource type="AudioStream" uid="uid://thjkyjoyx8uh" path="res://sound/bgm_mainmenu_fd1.ogg" id="4_t7v6v"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_55nes"]
 texture = ExtResource("3_4bvcf")
@@ -83,10 +83,13 @@ theme_override_font_sizes/font_size = 64
 text = "Quit"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_52ih6")
-volume_db = -33.425
+stream = ExtResource("4_t7v6v")
+volume_db = -10.0
 autoplay = true
 
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/Playbutton" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Playbutton" to="." method="_on_playbutton_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/Optionsbutton" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Optionsbutton" to="." method="_on_optionsbutton_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/Quitbutton" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Quitbutton" to="." method="_on_quitbutton_pressed"]
