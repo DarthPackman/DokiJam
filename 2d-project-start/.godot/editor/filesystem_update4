@@ -1,10 +1,17 @@
-res://scenes/titlescreen.tscn
-res://UI/Title screen.tres
-res://scenes/PlayableCharacters/RegDragoon.tscn
-res://scenes/Weapons/Projectiles/Range_Chonk_Shotgun.tscn
-res://scenes/Weapons/Projectiles/Range_Chonk_ShotgunBuckshot.tscn
-res://scenes/Weapons/Projectiles/Range_Egg_HardBoiledEgg.tscn
-res://scenes/Enemies/RegMob.tscn
-res://scenes/Enemies/reg_robot.tscn
 res://scenes/PlayableCharacters/player.tscn
 res://scenes/PlayableCharacters/regular_dragoon.tscn
+res://scenes/Systems/weapon_slots/Weapon.gd
+res://scenes/Systems/weapon_slots/slot.gd
+res://scenes/Systems/weapon_slots/slot.tscn
+res://scenes/Systems/weapon_slots/weapongrid.gd
+res://scenes/PlayableCharacters/player.gd
+res://scenes/Systems/weapon_slots/weapon.gd
+res://scenes/Weapons/Projectiles/Range_Long_Bow.tscn
+res://scenes/Weapons/Melees/PicoPicoHammer.tscn
+res://scenes/Weapons/Projectiles/Range_Reg_Riflebullet.tscn
+res://scenes/Weapons/Projectiles/Range_Reg_Rifle.tscn
+res://scenes/Weapons/Projectiles/Range_Egg_HBEProjectile.tscn
+res://scenes/Weapons/Projectiles/Range_Egg_HardBoiledEgg.tscn
+res://scenes/Weapons/Projectiles/Range_Chonk_Shotgun.tscn
+res://scenes/Weapons/Melees/HammerHit.tscn
+res://scenes/Weapons/Melees/OverhardEgg.tscn

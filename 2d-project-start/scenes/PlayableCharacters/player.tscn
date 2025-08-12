@@ -1,9 +1,23 @@
-[gd_scene load_steps=11 format=3 uid="uid://cbcpmhuc0r3uh"]
+[gd_scene load_steps=25 format=3 uid="uid://cbcpmhuc0r3uh"]
 
 [ext_resource type="Script" uid="uid://eiogqwid6kow" path="res://scenes/PlayableCharacters/player.gd" id="1_dfvke"]
 [ext_resource type="PackedScene" uid="uid://c5lnuyav6ht8l" path="res://scenes/Systems/level_up/LevelUpScreen.tscn" id="2_60uwt"]
+[ext_resource type="Script" uid="uid://ct2ir7dq8j2kv" path="res://scenes/Systems/weapon_slots/weapongrid.gd" id="3_60uwt"]
+[ext_resource type="PackedScene" uid="uid://dvrblc4a171aq" path="res://scenes/Systems/weapon_slots/slot.tscn" id="3_dfvke"]
 [ext_resource type="PackedScene" uid="uid://bnfbtrlt13uif" path="res://scenes/PlayableCharacters/regular_dragoon.tscn" id="3_lwmin"]
 [ext_resource type="AudioStream" uid="uid://dfkpobr43rhwn" path="res://sound/bgm_gameplay_fd1.ogg" id="4_t3gn5"]
+[ext_resource type="PackedScene" uid="uid://w4a8mr0bw34i" path="res://scenes/Weapons/Projectiles/Range_Chonk_Shotgun.tscn" id="7_lt7xh"]
+[ext_resource type="PackedScene" uid="uid://c75lvu1b71tom" path="res://scenes/Weapons/Auras/aura.tscn" id="7_sofp6"]
+[ext_resource type="PackedScene" uid="uid://dgtxwbels7nep" path="res://scenes/Weapons/Projectiles/Range_Egg_HardBoiledEgg.tscn" id="8_7hjkf"]
+[ext_resource type="PackedScene" uid="uid://bqr368synoprc" path="res://scenes/Weapons/Auras/burp.tscn" id="8_44o0s"]
+[ext_resource type="PackedScene" uid="uid://oagfu4u7fonq" path="res://scenes/Weapons/Projectiles/Range_Long_Bow.tscn" id="9_mr6oa"]
+[ext_resource type="PackedScene" uid="uid://d0k2jxoacl7c4" path="res://scenes/Weapons/Auras/hoolahoop.tscn" id="9_psgcq"]
+[ext_resource type="PackedScene" uid="uid://becjgrhp41w6q" path="res://scenes/Weapons/Auras/rottenEgg.tscn" id="10_ehq6x"]
+[ext_resource type="PackedScene" uid="uid://cj83crweoun23" path="res://scenes/Weapons/Projectiles/Range_Reg_Rifle.tscn" id="10_h2ms7"]
+[ext_resource type="PackedScene" uid="uid://s1juok152iqw" path="res://scenes/Weapons/Melees/Melee_Long_Spear.tscn" id="15_suj3s"]
+[ext_resource type="PackedScene" uid="uid://w30vum0s5f0g" path="res://scenes/Weapons/Melees/OverhardEgg.tscn" id="16_422pe"]
+[ext_resource type="PackedScene" uid="uid://b1bunl8yrhgul" path="res://scenes/Weapons/Melees/PicoPicoHammer.tscn" id="17_7aegy"]
+[ext_resource type="PackedScene" uid="uid://d11s0633u7mtu" path="res://scenes/Weapons/Melees/WingSlap.tscn" id="18_vriqo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gfie6"]
 bg_color = Color(0.152941, 0.168627, 0.188235, 1)
@@ -62,10 +76,25 @@ layer = 50
 
 [node name="LevelUpScreen" parent="UI" instance=ExtResource("2_60uwt")]
 unique_name_in_owner = true
+visible = false
 
-[node name="Weapons" type="HBoxContainer" parent="UI"]
+[node name="WeaponGrid" type="HBoxContainer" parent="UI"]
+unique_name_in_owner = true
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("3_60uwt")
+
+[node name="Slot" parent="UI/WeaponGrid" instance=ExtResource("3_dfvke")]
+layout_mode = 2
+
+[node name="Slot2" parent="UI/WeaponGrid" instance=ExtResource("3_dfvke")]
+layout_mode = 2
+
+[node name="Slot3" parent="UI/WeaponGrid" instance=ExtResource("3_dfvke")]
+layout_mode = 2
+
+[node name="Slot4" parent="UI/WeaponGrid" instance=ExtResource("3_dfvke")]
+layout_mode = 2
 
 [node name="RegularDragoon" parent="." instance=ExtResource("3_lwmin")]
 unique_name_in_owner = true
@@ -89,3 +118,42 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 shape = SubResource("CircleShape2D_er830")
 debug_color = Color(0.786142, 0.408967, 0.383428, 0.42)
+
+[node name="weapons" type="Node" parent="."]
+
+[node name="a_reg_aura" parent="." instance=ExtResource("7_sofp6")]
+unique_name_in_owner = true
+
+[node name="a_ch_Burp" parent="." instance=ExtResource("8_44o0s")]
+unique_name_in_owner = true
+
+[node name="a_lo_Hoola" parent="." instance=ExtResource("9_psgcq")]
+unique_name_in_owner = true
+
+[node name="a_egg_RottenEgg" parent="." instance=ExtResource("10_ehq6x")]
+unique_name_in_owner = true
+
+[node name="r_ch_shotgun" parent="." instance=ExtResource("7_lt7xh")]
+unique_name_in_owner = true
+
+[node name="r_egg_hbe" parent="." instance=ExtResource("8_7hjkf")]
+unique_name_in_owner = true
+
+[node name="r_lo_bow" parent="." instance=ExtResource("9_mr6oa")]
+unique_name_in_owner = true
+
+[node name="r_reg_rifle" parent="." instance=ExtResource("10_h2ms7")]
+unique_name_in_owner = true
+
+[node name="m_lo_spear" parent="." instance=ExtResource("15_suj3s")]
+unique_name_in_owner = true
+scale = Vector2(1, 1)
+
+[node name="m_egg_OverhardEgg" parent="." instance=ExtResource("16_422pe")]
+unique_name_in_owner = true
+
+[node name="m_ch_PicoPicoHammer" parent="." instance=ExtResource("17_7aegy")]
+unique_name_in_owner = true
+
+[node name="m_r_WingSlap" parent="." instance=ExtResource("18_vriqo")]
+unique_name_in_owner = true
