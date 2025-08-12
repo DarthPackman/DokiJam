@@ -4,6 +4,7 @@
 [ext_resource type="Theme" uid="uid://cgah1efpjglvn" path="res://UI/Title screen.tres" id="2_v265i"]
 
 [node name="options" type="Control"]
+texture_filter = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -65,6 +66,6 @@ theme_override_font_sizes/font_size = 64
 text = "Back"
 
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/volumeslider" to="." method="_on_h_slider_value_changed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Backbutton" to="." method="_on_backbutton_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Backbutton" to="." method="_on_quitbutton_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Backbutton" to="." method="_on_backbutton_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Backbutton" to="MarginContainer/VBoxContainer/Backbutton" method="_on_pressed"]
