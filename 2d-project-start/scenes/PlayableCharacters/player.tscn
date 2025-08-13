@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://c5lnuyav6ht8l" path="res://scenes/Systems/level_up/LevelUpScreen.tscn" id="2_60uwt"]
 [ext_resource type="Script" uid="uid://ct2ir7dq8j2kv" path="res://scenes/Systems/weapon_slots/weapongrid.gd" id="3_60uwt"]
 [ext_resource type="PackedScene" uid="uid://dvrblc4a171aq" path="res://scenes/Systems/weapon_slots/slot.tscn" id="3_dfvke"]
-[ext_resource type="PackedScene" uid="uid://bnfbtrlt13uif" path="res://scenes/PlayableCharacters/regular_dragoon.tscn" id="3_lwmin"]
 [ext_resource type="PackedScene" uid="uid://w4a8mr0bw34i" path="res://scenes/Weapons/Projectiles/Range_Chonk_Shotgun.tscn" id="7_lt7xh"]
 [ext_resource type="PackedScene" uid="uid://c75lvu1b71tom" path="res://scenes/Weapons/Auras/aura.tscn" id="7_sofp6"]
 [ext_resource type="PackedScene" uid="uid://dgtxwbels7nep" path="res://scenes/Weapons/Projectiles/Range_Egg_HardBoiledEgg.tscn" id="8_7hjkf"]
@@ -16,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://s1juok152iqw" path="res://scenes/Weapons/Melees/Melee_Long_Spear.tscn" id="15_suj3s"]
 [ext_resource type="PackedScene" uid="uid://w30vum0s5f0g" path="res://scenes/Weapons/Melees/OverhardEgg.tscn" id="16_422pe"]
 [ext_resource type="PackedScene" uid="uid://b1bunl8yrhgul" path="res://scenes/Weapons/Melees/PicoPicoHammer.tscn" id="17_7aegy"]
+[ext_resource type="PackedScene" uid="uid://dl3ck6gf8whyl" path="res://scenes/Weapons/Zones/grenade_launcher.tscn" id="17_ip7fd"]
 [ext_resource type="PackedScene" uid="uid://d11s0633u7mtu" path="res://scenes/Weapons/Melees/WingSlap.tscn" id="18_vriqo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gfie6"]
@@ -95,10 +95,6 @@ layout_mode = 2
 [node name="Slot4" parent="UI/WeaponGrid" instance=ExtResource("3_dfvke")]
 layout_mode = 2
 
-[node name="RegularDragoon" parent="." instance=ExtResource("3_lwmin")]
-unique_name_in_owner = true
-position = Vector2(0, -15)
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_y8ava")
 
@@ -149,4 +145,7 @@ unique_name_in_owner = true
 unique_name_in_owner = true
 
 [node name="m_r_WingSlap" parent="." instance=ExtResource("18_vriqo")]
+unique_name_in_owner = true
+
+[node name="z_r_Grenade" parent="." instance=ExtResource("17_ip7fd")]
 unique_name_in_owner = true

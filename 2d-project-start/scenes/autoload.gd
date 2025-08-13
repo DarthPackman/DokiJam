@@ -1,7 +1,9 @@
 extends Node2D
 
 var character_selected_name: String = ""
-var character_selected_player: PackedScene = null
+var character_selected: PackedScene = null
+var default_weapon: PackedScene = null
+var default_weapon_name: String = ""
 
 func button_click():
 	$ClickASP.play()
@@ -14,7 +16,12 @@ func button_back():
 	
 func button_confirm():
 	$ConfirmASP.play()
+	
+func robot_hit():
+	$RobotHitASP.play()
 
-func set_selected_character_data(name: String, player: PackedScene):
+func set_selected_character_data(name: String, player: PackedScene, weapon: PackedScene, weapon_name: String):
 	character_selected_name = name
-	character_selected_player = player
+	character_selected = player
+	default_weapon = weapon
+	default_weapon_name = weapon_name

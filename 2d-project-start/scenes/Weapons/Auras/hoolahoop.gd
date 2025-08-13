@@ -15,12 +15,14 @@ func _ready() -> void:
 	areaOfEffect.play("trigger")
 	
 func _physics_process(delta: float) -> void:
-	hoop.rotation += rotationSpeed
-	pivot.rotation += rotationSpeed
 	duration_time_elapsed += delta
 	trigger_time_elapsed += delta
 	if not areaOfEffect.is_playing():
 		areaOfEffect.play("duration")
+	
+	if areaOfEffect.get_animation() == "duration":
+		hoop.rotation += rotationSpeed
+		pivot.rotation += rotationSpeed
 	
 	if  trigger_time_elapsed >= triggerTime:
 		var hit_mobs = hoop.get_overlapping_bodies()

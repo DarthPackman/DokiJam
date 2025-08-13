@@ -1,10 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://behpb8vvtuyi3"]
+[gd_scene load_steps=8 format=3 uid="uid://behpb8vvtuyi3"]
 
 [ext_resource type="Script" uid="uid://dkw4m0ypuoese" path="res://scenes/autoload.gd" id="1_0tcvc"]
 [ext_resource type="AudioStream" uid="uid://dftkka2l0mrw7" path="res://sound/sfx_ui_click_fd1.ogg" id="2_1o35o"]
 [ext_resource type="AudioStream" uid="uid://p6lfkj61uxb2" path="res://sound/sfx_ui_confirm_fd1.ogg" id="3_iv5r0"]
 [ext_resource type="AudioStream" uid="uid://blaxmgmbl3ycl" path="res://sound/sfx_ui_cursor_fd1.ogg" id="4_c1toh"]
 [ext_resource type="AudioStream" uid="uid://clsntg45l3ydq" path="res://sound/sfx_ui_back_fd1.ogg" id="5_0dp71"]
+[ext_resource type="AudioStream" uid="uid://cwj1d4u0t7l1y" path="res://sound/sfx_npc_robothit_fd1.ogg" id="6_iv5r0"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_c1toh"]
+random_pitch = 3.0
+streams_count = 1
+stream_0/stream = ExtResource("6_iv5r0")
 
 [node name="Autoload" type="Node2D"]
 script = ExtResource("1_0tcvc")
@@ -20,3 +26,6 @@ stream = ExtResource("4_c1toh")
 
 [node name="BackASP" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_0dp71")
+
+[node name="RobotHitASP" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_c1toh")

@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://dl3ck6gf8whyl"]
+
+[ext_resource type="Script" uid="uid://b1jo2ylw40rmi" path="res://scenes/Weapons/Zones/grenade_launcher.gd" id="1_0f4a4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0f4a4"]
+radius = 186.968
+
+[node name="GrenadeLauncher" type="Area2D"]
+script = ExtResource("1_0f4a4")
+attackSpeed = 1.5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_0f4a4")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="WeaponPivot" type="Marker2D" parent="."]
+
+[node name="LandingSpot" type="Marker2D" parent="WeaponPivot"]
+unique_name_in_owner = true
+position = Vector2(289, 0)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

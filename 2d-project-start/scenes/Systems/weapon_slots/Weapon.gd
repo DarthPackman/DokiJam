@@ -9,7 +9,7 @@
 # weapon.gd
 extends Control
 
-@export var default_weapon_scene: PackedScene = preload("res://weapons/Range_Long_Bow.tscn")  # adjust if needed
+@export var default_weapon_scene: PackedScene 
 
 func _ready() -> void:
 	if has_node("Icon"):
