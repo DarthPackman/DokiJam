@@ -1,0 +1,80 @@
+[gd_scene load_steps=10 format=3 uid="uid://bbrrqb4evxrxi"]
+
+[ext_resource type="Script" uid="uid://bsrqt0ddywm6j" path="res://scenes/Weapons/Zones/smashedground.gd" id="1_qriov"]
+[ext_resource type="Texture2D" uid="uid://blm6hcj2w5tyw" path="res://art/SmashedGround.png" id="2_4yxro"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6ith"]
+atlas = ExtResource("2_4yxro")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wb8sf"]
+atlas = ExtResource("2_4yxro")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i5bxw"]
+atlas = ExtResource("2_4yxro")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gocuy"]
+atlas = ExtResource("2_4yxro")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bsfy1"]
+atlas = ExtResource("2_4yxro")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d6ulm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q6ith")
+}],
+"loop": true,
+"name": &"duration",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wb8sf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i5bxw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gocuy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bsfy1")
+}],
+"loop": false,
+"name": &"trigger",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qriov"]
+radius = 49.0
+height = 230.0
+
+[node name="SmashedGround" type="Area2D"]
+collision_layer = 0
+collision_mask = 6
+script = ExtResource("1_qriov")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
+texture_filter = 1
+position = Vector2(110, 19)
+scale = Vector2(7, 7)
+sprite_frames = SubResource("SpriteFrames_d6ulm")
+animation = &"duration"
+autoplay = "trigger"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.25
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(106, 14)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_qriov")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

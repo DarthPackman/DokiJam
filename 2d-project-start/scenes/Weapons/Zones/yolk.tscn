@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://bmysvy5aq0rmp"]
+
+[ext_resource type="Script" uid="uid://de6oeqwft58ve" path="res://scenes/Weapons/Zones/yolk.gd" id="1_ltbg1"]
+[ext_resource type="Texture2D" uid="uid://60rcbw1ipbjg" path="res://art/Yolk.png" id="1_ryw8b"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d6ulm"]
+radius = 112.04
+
+[node name="Yolk" type="Area2D"]
+collision_layer = 0
+collision_mask = 6
+script = ExtResource("1_ltbg1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_d6ulm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+texture = ExtResource("1_ryw8b")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.25
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

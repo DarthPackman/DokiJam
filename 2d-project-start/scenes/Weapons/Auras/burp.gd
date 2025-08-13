@@ -33,7 +33,7 @@ func _physics_process(delta: float) -> void:
 				var damageType = DamageNumbers.DamageTypes.NORMAL
 				enemy.take_damage(damage, damageType)
 				if not statusEffectDisabled:
-					StatusEffects.applySlow(enemy)
+					StatusEffects.applyDaze(enemy)
 		trigger_time_elapsed = 0.0
 
 func level_up():

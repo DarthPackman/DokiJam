@@ -1,109 +1,57 @@
 # Godot (4.x) editor/import cache and metadata
-
 .godot/
 */.godot/
 **/.godot/
 
-
-
-# Legacy/compat (older projects or assets migrated from 3.x)
-
 .import/
-
-
+*/.import/
+**/.import/
 
 # Mono/C# artifacts (if not using C#, you can remove these)
-
 .mono/
-
 data_*/
-
 mono_crash.*
 
-
-
 # Local overrides (machine-specific)
-
 override.cfg
 
-
-
 # Exported builds and packages
-
 build/
-
 builds/
-
 export/
-
 exports/
-
 dist/
-
 *.pck
-
 *.zip
-
 *.apk
-
 *.aab
-
 *.ipa
-
 *.exe
-
 *.app
-
 *.dmg
-
 *.pkg
-
 *.deb
-
 *.rpm
 
-
-
 # Logs and temp files
-
 *.log
-
 *.tmp
-
 *.bak
-
 *.backup
-
 *.orig
 
-
-
 # IDE/editor junk
-
 .vscode/
-
 .idea/
-
 *.swp
-
 *.swo
-
 *~
 
-
-
 # OS files
-
 .DS_Store
-
 .DS_Store?
-
 ._*
-
 .Spotlight-V100
-
 .Trashes
-
 Thumbs.db
-
 ehthumbs.db

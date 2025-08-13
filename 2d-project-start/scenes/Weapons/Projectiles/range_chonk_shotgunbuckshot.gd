@@ -19,5 +19,5 @@ func _on_body_entered(body: Node2D) -> void:
 		var damageType = DamageNumbers.DamageTypes.NORMAL
 		body.take_damage(damage, damageType)
 		if not isDisabled:
-			StatusEffects.applySlow(body)
+			StatusEffects.applyDaze(body)
 	queue_free()

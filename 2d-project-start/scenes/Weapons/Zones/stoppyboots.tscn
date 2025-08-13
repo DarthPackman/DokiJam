@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://b46lmlwb7n8jp"]
+
+[ext_resource type="Script" uid="uid://8xygfuvr8rmt" path="res://scenes/Weapons/Zones/stoppyboots.gd" id="1_ncxwj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0f4a4"]
+radius = 186.968
+
+[node name="StoppyBoots" type="Area2D"]
+script = ExtResource("1_ncxwj")
+attackSpeed = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_0f4a4")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="WeaponPivot" type="Marker2D" parent="."]
+
+[node name="LandingSpot" type="Marker2D" parent="WeaponPivot"]
+unique_name_in_owner = true
+position = Vector2(184, 1)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

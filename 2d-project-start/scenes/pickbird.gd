@@ -3,30 +3,25 @@ extends Control
 @onready var regidle = $Panel/MarginContainer/HBoxContainer2/TextureButton/regidle
 
 var playerScene : PackedScene
-var defaultWeapon: PackedScene
 
 func _on_selectreg_pressed() -> void:
 	playerScene = preload("res://scenes/PlayableCharacters/regular_dragoon.tscn")
-	defaultWeapon = preload("res://scenes/Weapons/Melees/WingSlap.tscn")
-	Autoload.set_selected_character_data("Regular", playerScene, defaultWeapon, "m_r_WingSlap")
+	Autoload.set_selected_character_data("Regular", playerScene, "m_r_WingSlap")
 	get_tree().change_scene_to_file("res://scenes/survivor_game.tscn")
 
 func _on_selectchonk_pressed() -> void:
 	playerScene = preload("res://scenes/PlayableCharacters/chonky_dragoon.tscn")
-	defaultWeapon = preload("res://scenes/Weapons/Zones/dragoon_plane.tscn")
-	Autoload.set_selected_character_data("Chonk", playerScene, defaultWeapon, "z_lo_DragoonPlane")
+	Autoload.set_selected_character_data("Chonk", playerScene, "z_egg_RunnyYolk")
 	get_tree().change_scene_to_file("res://scenes/survivor_game.tscn")
 
 func _on_selecttall_pressed() -> void:
 	playerScene = preload("res://scenes/PlayableCharacters/long_dragoon.tscn")
-	defaultWeapon = preload("res://scenes/Weapons/Projectiles/Range_Long_Bow.tscn")
-	Autoload.set_selected_character_data("Long", playerScene, defaultWeapon,"r_lo_bow")
+	Autoload.set_selected_character_data("Long", playerScene,"r_lo_bow")
 	get_tree().change_scene_to_file("res://scenes/survivor_game.tscn")
 
 func _on_selectegg_pressed() -> void:
 	playerScene = preload("res://scenes/PlayableCharacters/egg_dragoon.tscn")
-	defaultWeapon = preload("res://scenes/Weapons/Auras/rottenEgg.tscn")
-	Autoload.set_selected_character_data("Egg", playerScene, defaultWeapon, "a_egg_RottenEgg")
+	Autoload.set_selected_character_data("Egg", playerScene, "a_egg_RottenEgg")
 	get_tree().change_scene_to_file("res://scenes/survivor_game.tscn")
 
 func _on_back_pressed() -> void:
