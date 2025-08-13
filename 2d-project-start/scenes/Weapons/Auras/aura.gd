@@ -3,10 +3,11 @@ extends Area2D
 @export var triggerTime = 0.5
 var trigger_time_elapsed = 0.0
 @export var duration = 5.0
-var damage = 2.5
+var damage = 1
 @export var statusEffectDisabled = false
 @onready var areaOfEffect = %AOE
 @onready var fx = %FX
+var currentLvl = 1
 
 func _ready() -> void:
 	areaOfEffect.play("trigger")
@@ -28,4 +29,8 @@ func _physics_process(delta: float) -> void:
 		trigger_time_elapsed = 0.0
 
 func level_up():
-	pass
+	currentLvl += 1
+	triggerTime = triggerTime * 0.9
+	damage = damage * 1.1
+	if currentLvl % 5 == 0:
+		self.scale = self.scale * 1.25

@@ -2,7 +2,7 @@ extends Area2D
 
 var travelled_distance = 0
 const SPEED = 1000
-const RANGE = 2000
+const RANGE = 3000
 var damage = 5.0
 var bounceCount = 3
 var currentBounce = 0

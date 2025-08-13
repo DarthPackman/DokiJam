@@ -1,13 +1,12 @@
 extends Area2D
 
-var damage = 5
+var damage = 5.0
 var disabled = false
 var duration = 5.0
 var duration_elapsed = 0.0
 var interval = 0.5
 
 func _ready() -> void:
-	push_warning("Dropped")
 	$Timer.wait_time = interval
 	$Dragoon.play("trigger")
 	$FX.play("trigger")

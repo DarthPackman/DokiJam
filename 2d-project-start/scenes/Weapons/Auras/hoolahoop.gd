@@ -10,6 +10,7 @@ var damage = 2.5
 @onready var areaOfEffect = %AOE
 @onready var hoop = %Hoop
 @onready var pivot = $"."
+var currentLvl = 1
 
 func _ready() -> void:
 	areaOfEffect.play("trigger")
@@ -35,4 +36,8 @@ func _physics_process(delta: float) -> void:
 		trigger_time_elapsed = 0.0
 
 func level_up():
-	pass
+	currentLvl += 1
+	triggerTime = triggerTime * 0.9
+	damage = damage * 1.1
+	if currentLvl % 5 == 0:
+		self.scale = self.scale * 1.25

@@ -4,7 +4,7 @@ var damage = 5
 var disabled = false
 var duration = 5.0
 var duration_elapsed = 0.0
-var interval = 0.
+var interval = 1
 
 func _ready() -> void:
 	$Timer.wait_time = interval

@@ -1,12 +1,11 @@
 extends Area2D
 
-var damage = 5
+var damage = 5.0
 var disabled = false
 var interval = 0.25
 
 func _ready() -> void:
 	$Timer.wait_time = interval
-	push_warning("Grenade")
 	$AnimatedSprite2D.play("default")
 
 func _on_animated_sprite_2d_animation_finished() -> void:

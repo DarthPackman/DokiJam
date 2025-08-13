@@ -5,6 +5,9 @@ extends Area2D
 @export var bounceCount = 3
 @export var statusEffectDisabled = false
 @export var duration = 1.0
+var currentLvl = 1
+var lvlDmgMult = 1
+var lvlScaleMult = 1
 
 func _ready() -> void:
 	attackSpeedTimer.wait_time = attackSpeed
@@ -20,6 +23,8 @@ func shoot():
 	var new_egg = BOILEDEGG.instantiate()
 	new_egg.global_position = %ShootingPoint.global_position
 	new_egg.global_rotation = %ShootingPoint.global_rotation
+	new_egg.damage *= lvlDmgMult
+	new_egg.scale *= lvlScaleMult
 	new_egg.bounceCount = bounceCount
 	new_egg.disabled = statusEffectDisabled
 	get_tree().root.add_child(new_egg)
@@ -28,4 +33,12 @@ func _on_timer_timeout() -> void:
 	shoot()
 
 func level_up():
-	pass
+	currentLvl += 1
+	lvlDmgMult *= 1.1
+	attackSpeed *= 0.9
+	attackSpeedTimer.wait_time = attackSpeed
+	
+	if currentLvl % 5 == 0:
+		bounceCount += 3
+	if currentLvl % 5 == 0 and currentLvl > 20:
+		lvlScaleMult *= 1.25

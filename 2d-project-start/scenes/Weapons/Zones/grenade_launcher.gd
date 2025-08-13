@@ -1,9 +1,12 @@
 extends Area2D
 
 @onready var attackSpeedTimer = $Timer
-@export var attackSpeed = 1
+@export var attackSpeed = 0.75
 @export var statusEffectDisabled = false
 @export var duration = 1.0
+var zoneDmgMult = 1.0
+var zoneScaMult = 1.0
+var currentlvl = 1.0
 
 func _ready() -> void:
 	attackSpeedTimer.wait_time = attackSpeed
@@ -18,6 +21,8 @@ func shoot():
 	var new_zone = ZONE.instantiate()
 	new_zone.global_position = %LandingSpot.global_position
 	new_zone.global_rotation = %LandingSpot.global_rotation
+	new_zone.damage *= zoneDmgMult
+	new_zone.scale *= zoneScaMult
 	new_zone.disabled = statusEffectDisabled
 	get_tree().root.add_child(new_zone)
 
@@ -25,4 +30,11 @@ func _on_timer_timeout() -> void:
 	shoot()
 
 func level_up():
-	pass
+	currentlvl += 1
+	
+	zoneDmgMult *= 1.25
+	attackSpeed *= 0.8
+	attackSpeedTimer.wait_time = attackSpeed
+	
+	if currentlvl % 5 == 0:
+		zoneScaMult *= 1.25

@@ -18,31 +18,39 @@ shape = SubResource("CircleShape2D_x3feo")
 
 [node name="ShootingPoint" type="Marker2D" parent="WeaponPivot"]
 unique_name_in_owner = true
-position = Vector2(103, -1)
+position = Vector2(100, 0)
 
 [node name="ShootingPoint2" type="Marker2D" parent="WeaponPivot"]
 unique_name_in_owner = true
-position = Vector2(92, -33)
+position = Vector2(95, -25)
 
 [node name="ShootingPoint3" type="Marker2D" parent="WeaponPivot"]
 unique_name_in_owner = true
-position = Vector2(92, 23)
+position = Vector2(95, 25)
 
 [node name="ShootingPoint4" type="Marker2D" parent="WeaponPivot"]
 unique_name_in_owner = true
-position = Vector2(72, 50)
+position = Vector2(85, 50)
 
 [node name="ShootingPoint5" type="Marker2D" parent="WeaponPivot"]
 unique_name_in_owner = true
-position = Vector2(75, -55)
+position = Vector2(85, -50)
 
 [node name="ShootingPoint6" type="Marker2D" parent="WeaponPivot"]
 unique_name_in_owner = true
-position = Vector2(45, 72)
+position = Vector2(70, 70)
 
 [node name="ShootingPoint7" type="Marker2D" parent="WeaponPivot"]
 unique_name_in_owner = true
-position = Vector2(45, -85)
+position = Vector2(70, -70)
+
+[node name="ShootingPoint8" type="Marker2D" parent="WeaponPivot"]
+unique_name_in_owner = true
+position = Vector2(50, -85)
+
+[node name="ShootingPoint9" type="Marker2D" parent="WeaponPivot"]
+unique_name_in_owner = true
+position = Vector2(50, 85)
 
 [node name="Timer" type="Timer" parent="."]
 unique_name_in_owner = true

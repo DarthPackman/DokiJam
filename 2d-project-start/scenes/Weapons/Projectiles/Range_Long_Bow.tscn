@@ -18,7 +18,15 @@ shape = SubResource("CircleShape2D_x3feo")
 
 [node name="ShootingPoint" type="Marker2D" parent="WeaponPivot"]
 unique_name_in_owner = true
-position = Vector2(72, -1)
+position = Vector2(75, 0)
+
+[node name="ShootingPoint2" type="Marker2D" parent="WeaponPivot"]
+unique_name_in_owner = true
+position = Vector2(50, -50)
+
+[node name="ShootingPoint3" type="Marker2D" parent="WeaponPivot"]
+unique_name_in_owner = true
+position = Vector2(50, 50)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1
