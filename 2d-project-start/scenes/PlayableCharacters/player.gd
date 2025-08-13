@@ -73,8 +73,8 @@ func _physics_process(delta: float) -> void:
 		if health <= 0.0:
 			health_depleted.emit()
 
-<<<<<<< Updated upstream
-=======
+#<<<<<<< Updated upstream
+#=======
 #### MULTI-WEAPON SLOT SYSTEM ####
 
 func _initialize_weapon_system() -> void:
@@ -217,7 +217,6 @@ func get_all_weapon_names() -> Array[String]:
 	for weapon in all_weapons:
 		names.append(weapon.name)
 	return names
->>>>>>> Stashed changes
 
 #### EXP SYSTEM ####
 func exp_tracker() -> void:
@@ -276,81 +275,6 @@ func apply_upgrade(upgrade_data: Dictionary) -> void:
 			print("Unknown upgrade type: ", upgrade_data)
 
 #### MULTI-WEAPON SLOT SYSTEM ####
-
-func _initialize_weapon_system() -> void:
-	# Collect all available weapon nodes from the scene
-	_collect_all_weapons()
-	# Ensure all are inactive initially and clear slots
-	_deactivate_all_weapons()
-
-	var default_weapon_node = _get_weapon_node_by_name(default_weapon_name)
-	# Set up default weapon in the first slot
-	if default_weapon_node:
-		add_weapon_to_slot(default_weapon_node, 0)  # Put default in slot 1 (index 0)
-	else:
-		push_warning("Default weapon '", default_weapon_name, "' not found!")
-
-	# Test code to assign 4 weapons to make sure all weapons work
-	for i in 3:
-		var test_weapon_list: Array[String] = ["a_ch_Burp", "m_r_WingSlap", "r_reg_rifle"]
-		var test_weapon_name = test_weapon_list[i]
-		var test_weapon_node = _get_weapon_node_by_name(test_weapon_name)
-		add_weapon_to_slot(test_weapon_node, i+1)
-
-	# These are legacy functions for testing Activate all weapons currently in slots (only non-empty fire)
-	#_activate_all_slot_weapons()
-	#_debug_dump_weapon_slots()
-
-func _collect_all_weapons() -> void:
-	all_weapons.clear()
-	for child in get_children():
-		if _is_probable_weapon(child):
-			all_weapons.append(child)
-
-func _is_probable_weapon(node: Node) -> bool:
-	var n := node.name.to_lower()
-	return n.begins_with("a_") or n.begins_with("r_") or n.begins_with("m_")
-
-func _get_weapon_node_by_name(weapon_name: String) -> Node:
-	for weapon in all_weapons:
-		if weapon.name == weapon_name:
-			return weapon
-	return null
-
-func _deactivate_all_weapons() -> void:
-	for weapon in all_weapons:
-		_set_weapon_active(weapon, false)
-	weapon_slots.fill(null)
-
-func add_weapon_to_slot(weapon_node: Node, slot_index: int = -1) -> bool:
-	if not weapon_node:
-		push_warning("Attempted to add a null weapon node.")
-		return false
-
-	var target_slot := slot_index
-	if target_slot == -1:
-		target_slot = get_first_empty_slot()
-
-	if target_slot != -1 and target_slot < max_weapon_slots:
-		if weapon_slots[target_slot] != null:
-			_set_weapon_active(weapon_slots[target_slot], false)
-			print("[Weapon Slots] Replaced slot ", target_slot, ": ", weapon_slots[target_slot].name, " -> ", weapon_node.name)
-		else:
-			print("[Weapon Slots] Added '", weapon_node.name, "' to slot ", target_slot)
-
-		weapon_slots[target_slot] = weapon_node
-		_set_weapon_active(weapon_node, true)
-		return true
-
-	push_warning("No available weapon slots or invalid slot index: ", slot_index)
-	return false
-
-func get_first_empty_slot() -> int:
-	for i in range(max_weapon_slots):
-		if weapon_slots[i] == null:
-			return i
-	return -1
-
 # Fire the weapon sequence infinitely
 var is_firing_sequence: bool = false
 var weapon_delays: Array[float] = [1.0, 5.0, 2.5, 1.0]  # Delays for each weapon slot
@@ -375,82 +299,6 @@ func firing_seq() -> void:
 				var delay = weapon_delays[i]    
 				await get_tree().create_timer(delay).timeout    
 				print(str(delay), " Seconds have passed")
-
-
-### debug tools for weapons
-func _activate_all_slot_weapons() -> void:
-	for weapon in weapon_slots:
-		if weapon:
-			_set_weapon_active(weapon, true)
-
-func _debug_dump_weapon_slots() -> void:
-	print("--- Current Weapon Slots ---")
-	var slots_to_show: int = min(max_weapon_slots, weapon_slots.size())
-	for i in range(slots_to_show):
-		var entry := weapon_slots[i]
-		if entry and is_instance_valid(entry):
-			var active := entry.is_processing() or entry.is_physics_processing()
-			print("Slot ", i + 1, ": ", entry.name, " (active=", active, ")")
-		else:
-			print("Slot ", i + 1, ": Empty")
-	print("----")
-
-func _set_weapon_active(weapon: Node, active: bool) -> void:
-	"""Set a weapon's active state"""
-	if not weapon:
-		return
-		
-	# Set processing
-	weapon.set_process(active)
-	weapon.set_physics_process(active)
-	
-	# Set visibility
-	weapon.set_visible(active)
-	
-	# Handle all child nodes (timers, areas, etc.)
-	_set_weapon_children_active(weapon, active)
-
-func _set_weapon_children_active(node: Node, active: bool) -> void:
-	"""Recursively set active state for all children of a weapon"""
-	for child in node.get_children():
-		if child is Timer:
-			if active:
-				child.paused = false
-				child.start()
-			else:
-				child.stop()
-				child.paused = true
-		elif child is Area2D:
-			child.monitoring = active
-			child.monitorable = active
-		
-		# Recurse to grandchildren
-		_set_weapon_children_active(child, active)
-
-#### WEAPON SLOT API ####
-
-func switch_to_weapon(weapon_name: String) -> bool:
-	"""Switch to a different weapon by name. Returns true if successful."""
-	var weapon_node = _get_weapon_node_by_name(weapon_name)
-	if weapon_node:
-		return add_weapon_to_slot(weapon_node, -1)  # Auto-assign to first empty slot
-	return false
-
-func get_active_weapon_names() -> Array[String]:
-	"""Get names of all currently active weapons in slots"""
-	var names: Array[String] = []
-	for weapon in weapon_slots:
-		if weapon:
-			names.append(weapon.name)
-	return names
-
-func get_all_weapon_names() -> Array[String]:
-	"""Get names of all available weapons"""
-	var names: Array[String] = []
-	for weapon in all_weapons:
-		names.append(weapon.name)
-	return names
-
 
 #### WEAPON GRID SYSTEM (Legacy - keeping for compatibility) ####
 func _apply_default_weapon() -> void:
