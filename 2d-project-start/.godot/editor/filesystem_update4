@@ -1,5 +1,5 @@
-res://scenes/PlayableCharacters/player.tscn
-res://UI/Title screen.tres
-res://scenes/PlayableCharacters/player.gd
 res://scenes/titlescreen.tscn
+res://UI/Title screen.tres
 res://scenes/survivor_game.tscn
+res://scenes/PlayableCharacters/player.tscn
+res://scenes/PlayableCharacters/player.gd
