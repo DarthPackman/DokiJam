@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://6ftgwf870l3c"]
+
+[ext_resource type="Script" uid="uid://bk1h7871a1mgm" path="res://scenes/Weapons/Zones/runny_yolk.gd" id="1_dls6o"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0f4a4"]
+radius = 186.968
+
+[node name="RunnyYolk" type="Area2D"]
+script = ExtResource("1_dls6o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_0f4a4")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="LandingSpot" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, 2)

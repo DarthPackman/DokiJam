@@ -28,7 +28,6 @@ func _ready() -> void:
 	# Specify the dragoon, add your function here from the select screen
 	character = Autoload.character_selected.instantiate()
 	$".".add_child(character)
-	default_weapon_scene = Autoload.default_weapon
 	default_weapon_name = Autoload.default_weapon_name
 	
 	# Sets up the leveling system
