@@ -35,7 +35,7 @@ func shoot():
 		var new_shot = BUCKSHOT.instantiate()
 		new_shot.global_position = shooting_point.global_position
 		new_shot.global_rotation = shooting_point.global_rotation + rotation_offset
-		shooting_point.add_child(new_shot)
+		get_tree().root.add_child(new_shot)
 
 func _on_timer_timeout() -> void:
 	shoot()

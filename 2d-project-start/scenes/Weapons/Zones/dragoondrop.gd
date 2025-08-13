@@ -7,6 +7,7 @@ var duration_elapsed = 0.0
 var interval = 0.5
 
 func _ready() -> void:
+	push_warning("Dropped")
 	$Timer.wait_time = interval
 	$Dragoon.play("trigger")
 	$FX.play("trigger")

@@ -1,12 +1,28 @@
-[gd_scene load_steps=4 format=3 uid="uid://bmysvy5aq0rmp"]
+[gd_scene load_steps=6 format=3 uid="uid://bmysvy5aq0rmp"]
 
 [ext_resource type="Script" uid="uid://de6oeqwft58ve" path="res://scenes/Weapons/Zones/yolk.gd" id="1_ltbg1"]
-[ext_resource type="Texture2D" uid="uid://60rcbw1ipbjg" path="res://art/Yolk.png" id="1_ryw8b"]
+[ext_resource type="Texture2D" uid="uid://cbjt83v4p3wq1" path="res://art/yolksoread.png" id="2_ltbg1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d6ulm"]
-radius = 112.04
+radius = 49.0102
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_etw8q"]
+atlas = ExtResource("2_ltbg1")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jbfkw"]
+animations = [{
+"frames": [{
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_etw8q")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Yolk" type="Area2D"]
+scale = Vector2(2, 2)
 collision_layer = 0
 collision_mask = 6
 script = ExtResource("1_ltbg1")
@@ -14,12 +30,15 @@ script = ExtResource("1_ltbg1")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_d6ulm")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-z_index = -1
-texture = ExtResource("1_ryw8b")
-
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.25
 autostart = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = -2
+texture_filter = 1
+rotation = 1.5708
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_jbfkw")
+autoplay = "default"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

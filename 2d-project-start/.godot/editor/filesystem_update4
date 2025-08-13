@@ -1,0 +1,4 @@
+res://scenes/pickbird.tscn
+res://UI/Title screen.tres
+res://scenes/pickbird.gd
+res://scenes/PlayableCharacters/player.tscn

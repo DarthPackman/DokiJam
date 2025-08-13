@@ -1,7 +1,7 @@
 extends Area2D
 
 @onready var attackSpeedTimer = $Timer
-@export var attackSpeed = 0.5
+@export var attackSpeed = 1.0
 @export var statusEffectDisabled = false
 @export var duration = 1.0
 
@@ -15,8 +15,7 @@ func _physics_process(delta: float) -> void:
 		look_at(target_enemy.global_position)
 
 func shoot():
-	push_warning("Grenade launched")
-	const ZONE = preload("res://scenes/Weapons/Zones/stoppyboots.tscn")
+	const ZONE = preload("res://scenes/Weapons/Zones/smashedground.tscn")
 	var new_zone = ZONE.instantiate()
 	new_zone.global_position = %LandingSpot.global_position
 	new_zone.global_rotation = %LandingSpot.global_rotation

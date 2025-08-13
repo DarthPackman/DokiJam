@@ -22,7 +22,7 @@ func shoot():
 	new_egg.global_rotation = %ShootingPoint.global_rotation
 	new_egg.bounceCount = bounceCount
 	new_egg.disabled = statusEffectDisabled
-	%ShootingPoint.add_child(new_egg)
+	get_tree().root.add_child(new_egg)
 
 func _on_timer_timeout() -> void:
 	shoot()

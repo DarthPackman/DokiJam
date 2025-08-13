@@ -6,8 +6,9 @@
 radius = 186.968
 
 [node name="StoppyBoots" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
 script = ExtResource("1_ncxwj")
-attackSpeed = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_0f4a4")
@@ -19,6 +20,7 @@ autostart = true
 
 [node name="LandingSpot" type="Marker2D" parent="WeaponPivot"]
 unique_name_in_owner = true
-position = Vector2(184, 1)
+position = Vector2(0, -1)
+rotation = 1.5708
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

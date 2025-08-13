@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qmqpm6asge1i"
-path="res://.godot/imported/square_upper_leg.png-e1f848aab7dd8805f40f881c2160a53d.ctex"
+uid="uid://cbjt83v4p3wq1"
+path="res://.godot/imported/yolksoread.png-5685fe67cdb3230bb483b5cbd7bd40c3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/happy_boo/square_upper_leg.png"
-dest_files=["res://.godot/imported/square_upper_leg.png-e1f848aab7dd8805f40f881c2160a53d.ctex"]
+source_file="res://art/yolksoread.png"
+dest_files=["res://.godot/imported/yolksoread.png-5685fe67cdb3230bb483b5cbd7bd40c3.ctex"]
 
 [params]
 
