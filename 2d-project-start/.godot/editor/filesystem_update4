@@ -1,5 +1,8 @@
-res://scenes/titlescreen.tscn
-res://UI/Title screen.tres
-res://scenes/survivor_game.tscn
 res://scenes/PlayableCharacters/player.tscn
-res://scenes/PlayableCharacters/player.gd
+res://UI/Title screen.tres
+res://scenes/Weapons/Zones/dragoondrop.tscn
+res://scenes/Weapons/Zones/dragoon_plane.tscn
+res://scenes/Weapons/Zones/dragoondrop.gd
+res://scenes/Weapons/Zones/dragoon_plane.gd
+res://scenes/pickbird.tscn
+res://scenes/pickbird.gd
