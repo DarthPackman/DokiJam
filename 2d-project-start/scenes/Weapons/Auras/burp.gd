@@ -22,9 +22,9 @@ func _physics_process(delta: float) -> void:
 	elif areaOfEffect.frame == 3:
 		burpCollider.shape.radius = 11.0
 	elif areaOfEffect.frame == 4:
-		burpCollider.shape.radius = 13
+		burpCollider.shape.radius = 13.0
 	elif areaOfEffect.frame == 5:
-		burpCollider.shape.radius = 16
+		burpCollider.shape.radius = 16.0
 	
 	if  trigger_time_elapsed >= triggerTime:
 		var hit_mobs = get_overlapping_bodies()
