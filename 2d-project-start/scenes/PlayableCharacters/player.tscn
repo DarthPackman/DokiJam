@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cbcpmhuc0r3uh"]
+[gd_scene load_steps=27 format=3 uid="uid://cbcpmhuc0r3uh"]
 
 [ext_resource type="Script" uid="uid://eiogqwid6kow" path="res://scenes/PlayableCharacters/player.gd" id="1_dfvke"]
 [ext_resource type="PackedScene" uid="uid://c5lnuyav6ht8l" path="res://scenes/Systems/level_up/LevelUpScreen.tscn" id="2_60uwt"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://cbpa8bfyo4b8k" path="res://scenes/Weapons/Zones/dragoon_plane.tscn" id="18_sofp6"]
 [ext_resource type="PackedScene" uid="uid://d11s0633u7mtu" path="res://scenes/Weapons/Melees/WingSlap.tscn" id="18_vriqo"]
 [ext_resource type="PackedScene" uid="uid://6ftgwf870l3c" path="res://scenes/Weapons/Zones/runnyYolk.tscn" id="19_44o0s"]
+[ext_resource type="PackedScene" uid="uid://b46lmlwb7n8jp" path="res://scenes/Weapons/Zones/stoppyboots.tscn" id="20_psgcq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gfie6"]
 bg_color = Color(0.152941, 0.168627, 0.188235, 1)
@@ -156,3 +157,7 @@ unique_name_in_owner = true
 unique_name_in_owner = true
 
 [node name="z_egg_RunnyYolk" parent="." instance=ExtResource("19_44o0s")]
+unique_name_in_owner = true
+
+[node name="z_ch_StoppyBoots" parent="." instance=ExtResource("20_psgcq")]
+unique_name_in_owner = true

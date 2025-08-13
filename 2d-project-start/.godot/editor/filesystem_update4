@@ -1,10 +1,9 @@
-res://scenes/Weapons/Zones/yolk.tscn
-res://scenes/Weapons/Zones/grenade.gd
-res://scenes/Weapons/Zones/runnyYolk.tscn
-res://scenes/Weapons/Zones/yolk.gd
-res://scenes/Weapons/Zones/runny_yolk.gd
+res://scenes/Weapons/Zones/smashedground.tscn
+res://UI/Title screen.tres
+res://scenes/Weapons/Zones/smashedground.gd
+res://scenes/Weapons/Projectiles/range_chonk_shotgunbuckshot.gd
+res://scenes/Weapons/Auras/burp.gd
 res://scenes/PlayableCharacters/player.tscn
-res://scenes/PlayableCharacters/player.gd
 res://scenes/Autoload.tscn
-res://scenes/autoload.gd
-res://scenes/pickbird.gd
+res://scenes/survivor_game.tscn
+res://scenes/Weapons/Zones/stoppyboots.tscn
