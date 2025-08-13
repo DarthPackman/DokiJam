@@ -6,7 +6,6 @@ extends Area2D
 @export var duration = 1.0
 
 func _ready() -> void:
-	push_warning("Grenade Launcher")
 	attackSpeedTimer.wait_time = attackSpeed
 
 func _physics_process(delta: float) -> void:
@@ -15,7 +14,6 @@ func _physics_process(delta: float) -> void:
 		look_at(global_position + direction)
 
 func shoot():
-	push_warning("Grenade launched")
 	const ZONE = preload("res://scenes/Weapons/Zones/grenade.tscn")
 	var new_zone = ZONE.instantiate()
 	new_zone.global_position = %LandingSpot.global_position

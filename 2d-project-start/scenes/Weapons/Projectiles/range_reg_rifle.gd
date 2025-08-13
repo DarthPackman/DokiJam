@@ -20,7 +20,7 @@ func shoot():
 	new_projectile.global_position = %ShootingPoint.global_position
 	new_projectile.global_rotation = %ShootingPoint.global_rotation
 	new_projectile.disabled = statusEffectDisabled
-	%ShootingPoint.add_child(new_projectile)
+	get_tree().root.add_child(new_projectile)
 
 func _on_timer_timeout() -> void:
 	shoot()
