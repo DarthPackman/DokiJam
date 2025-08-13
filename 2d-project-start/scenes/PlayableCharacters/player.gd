@@ -326,7 +326,7 @@ func _test_start_firing_once_ready() -> void:
 
 func _populate_test_weapons() -> void:
 	"""Fill remaining weapon slots (1..max-1) with specific weapon names for testing"""
-	var test_weapon_names: Array[String] = ["r_lo_bow","a_lo_Hoola","z_lo_DragoonPlane"]  # Add your weapon names here for testing
+	var test_weapon_names: Array[String] = []  # Add your weapon names here for testing
 	
 	if test_weapon_names.is_empty():
 		print("[TestWeapons] No test weapon names provided.")

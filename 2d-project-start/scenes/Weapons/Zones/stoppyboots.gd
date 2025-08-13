@@ -1,7 +1,7 @@
 extends Area2D
 
 @onready var attackSpeedTimer = $Timer
-@export var attackSpeed = 0.5
+@export var attackSpeed = 1.0
 @export var statusEffectDisabled = false
 @export var duration = 1.0
 

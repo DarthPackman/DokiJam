@@ -150,14 +150,14 @@ unique_name_in_owner = true
 [node name="m_r_WingSlap" parent="." instance=ExtResource("18_vriqo")]
 unique_name_in_owner = true
 
-[node name="z_r_Grenade" parent="." instance=ExtResource("17_ip7fd")]
+[node name="z_ch_StoppyBoots" parent="." instance=ExtResource("20_psgcq")]
 unique_name_in_owner = true
 
-[node name="z_lo_DragoonPlane" parent="." instance=ExtResource("18_sofp6")]
+[node name="z_r_Grenade" parent="." instance=ExtResource("17_ip7fd")]
 unique_name_in_owner = true
 
 [node name="z_egg_RunnyYolk" parent="." instance=ExtResource("19_44o0s")]
 unique_name_in_owner = true
 
-[node name="z_ch_StoppyBoots" parent="." instance=ExtResource("20_psgcq")]
+[node name="z_lo_DragoonPlane" parent="." instance=ExtResource("18_sofp6")]
 unique_name_in_owner = true

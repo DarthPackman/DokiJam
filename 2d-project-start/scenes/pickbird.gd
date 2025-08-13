@@ -11,7 +11,7 @@ func _on_selectreg_pressed() -> void:
 
 func _on_selectchonk_pressed() -> void:
 	playerScene = preload("res://scenes/PlayableCharacters/chonky_dragoon.tscn")
-	Autoload.set_selected_character_data("Chonk", playerScene, "z_lo_DragoonPlane")
+	Autoload.set_selected_character_data("Chonk", playerScene, "z_ch_StoppyBoots")
 	get_tree().change_scene_to_file("res://scenes/survivor_game.tscn")
 
 func _on_selecttall_pressed() -> void:

@@ -1,7 +1,7 @@
 extends Area2D
 
 @onready var attackSpeedTimer = $Timer
-@export var attackSpeed = 1.5
+@export var attackSpeed = 0.75
 @export var statusEffectDisabled = false
 @export var duration = 1.0
 
@@ -15,6 +15,7 @@ func _physics_process(delta: float) -> void:
 	look_at(random_position)
 
 func shoot():
+	push_warning("Dropping")
 	const ZONE = preload("res://scenes/Weapons/Zones/dragoondrop.tscn")
 	var new_zone = ZONE.instantiate()
 	new_zone.global_position = %LandingSpot.global_position

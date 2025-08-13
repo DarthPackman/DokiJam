@@ -1,16 +1,4 @@
-res://scenes/Autoload.tscn
-res://UI/Title screen.tres
-res://scenes/PlayableCharacters/player.tscn
-res://scenes/survivor_game.tscn
-res://scenes/Weapons/Zones/smashedground.tscn
-res://scenes/Weapons/Zones/stoppyboots.tscn
 res://scenes/pickbird.tscn
+res://UI/Title screen.tres
 res://scenes/pickbird.gd
-res://scenes/Weapons/Projectiles/Range_Chonk_Shotgun.tscn
-res://scenes/Weapons/Projectiles/range_chonk_shotgun.gd
-res://scenes/Weapons/Projectiles/range_egg_hardboiledegg.gd
-res://scenes/Weapons/Projectiles/range_long_bow.gd
-res://scenes/Weapons/Projectiles/range_reg_rifle.gd
-res://scenes/Weapons/Zones/smashedground.gd
-res://scenes/Weapons/Zones/dragoon_plane.gd
-res://scenes/Weapons/Zones/grenade_launcher.gd
+res://scenes/PlayableCharacters/player.tscn

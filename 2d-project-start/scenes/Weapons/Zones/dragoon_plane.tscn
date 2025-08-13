@@ -11,13 +11,12 @@ script = ExtResource("1_4dlvw")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_0f4a4")
 
-[node name="Timer" type="Timer" parent="."]
-autostart = true
-
 [node name="WeaponPivot" type="Marker2D" parent="."]
 
 [node name="LandingSpot" type="Marker2D" parent="WeaponPivot"]
 unique_name_in_owner = true
 position = Vector2(289, 0)
+
+[node name="Timer" type="Timer" parent="."]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
