@@ -1,0 +1,154 @@
+[gd_scene load_steps=3 format=3 uid="uid://218qe3qy6wpm"]
+
+[ext_resource type="Script" uid="uid://d11eiwwld5a22" path="res://scenes/Systems/weapon_sorter/weapon_order_ui.gd" id="1_abc123"]
+[ext_resource type="PackedScene" uid="uid://dvrblc4a171aq" path="res://scenes/Systems/weapon_slots_ui/slot.tscn" id="2_ovhen"]
+
+[node name="WeaponOrderUI" type="Control"]
+layout_mode = 3
+anchor_right = 0.462
+anchor_bottom = 0.668
+offset_left = 110.0
+offset_top = 65.0
+offset_right = -111.04
+offset_bottom = -372.44
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_abc123")
+
+[node name="DropZones" type="HBoxContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+offset_left = 33.0
+offset_top = 22.0
+offset_right = 633.0
+offset_bottom = 142.0
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="Slot1" type="MarginContainer" parent="DropZones"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+mouse_filter = 0
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="BlackBG" type="ColorRect" parent="DropZones/Slot1"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.15, 0.15, 0.15, 1)
+
+[node name="slotnum" type="Label" parent="DropZones/Slot1"]
+layout_mode = 2
+text = "Slot 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slot2" type="MarginContainer" parent="DropZones"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+mouse_filter = 0
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="BlackBG" type="ColorRect" parent="DropZones/Slot2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.15, 0.15, 0.15, 1)
+
+[node name="slotnum" type="Label" parent="DropZones/Slot2"]
+layout_mode = 2
+text = "Slot 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slot3" type="MarginContainer" parent="DropZones"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+mouse_filter = 0
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="BlackBG" type="ColorRect" parent="DropZones/Slot3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.15, 0.15, 0.15, 1)
+
+[node name="slotnum" type="Label" parent="DropZones/Slot3"]
+layout_mode = 2
+text = "Slot 3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slot4" type="MarginContainer" parent="DropZones"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+mouse_filter = 0
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="BlackBG" type="ColorRect" parent="DropZones/Slot4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.15, 0.15, 0.15, 1)
+
+[node name="slotnum" type="Label" parent="DropZones/Slot4"]
+layout_mode = 2
+text = "Slot 4"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SlotContainer" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+anchors_preset = 0
+offset_left = 69.0
+offset_top = 25.0
+offset_right = 594.0
+offset_bottom = 145.0
+
+[node name="Slot" parent="SlotContainer" instance=ExtResource("2_ovhen")]
+layout_mode = 2
+offset_right = 120.0
+offset_bottom = 120.0
+
+[node name="Slot2" parent="SlotContainer" instance=ExtResource("2_ovhen")]
+layout_mode = 2
+offset_left = 135.0
+offset_right = 255.0
+offset_bottom = 120.0
+
+[node name="Slot3" parent="SlotContainer" instance=ExtResource("2_ovhen")]
+layout_mode = 2
+offset_left = 270.0
+offset_right = 390.0
+offset_bottom = 120.0
+
+[node name="Slot4" parent="SlotContainer" instance=ExtResource("2_ovhen")]
+layout_mode = 2
+offset_left = 405.0
+offset_right = 525.0
+offset_bottom = 120.0
+
+[node name="Instructions" type="Label" parent="SlotContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = -131.0
+offset_top = 131.0
+offset_right = 679.0
+offset_bottom = 170.0
+theme_override_font_sizes/font_size = 28
+text = "Arrange your weapons for some interesting chain reactions!"
+horizontal_alignment = 1

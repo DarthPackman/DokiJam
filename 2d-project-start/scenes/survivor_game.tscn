@@ -30,6 +30,7 @@ grow_vertical = 2
 color = Color(0.690196, 0.623529, 0.94902, 1)
 
 [node name="Player" parent="." instance=ExtResource("3_2gh8j")]
+unique_name_in_owner = true
 position = Vector2(960, 540)
 
 [node name="Path2D" type="Path2D" parent="Player"]

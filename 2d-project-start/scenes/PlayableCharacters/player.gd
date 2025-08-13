@@ -20,11 +20,12 @@ var weapon_slots: Array[Node] = [null, null, null, null]  # 4 weapon slots
 var max_weapon_slots: int = 4
 
 # Weapon Slots
-@onready var weapon_grid = %WeaponGrid
-@export var weapon_grid_path: NodePath  
-var default_weapon_scene: PackedScene 
+@onready var weapon_slots_ui = %WeaponSlotsUI  # HBoxContainer with 4 Slot children
+signal weapon_slots_changed(weapon_names: Array[String])
 
 func _ready() -> void:
+	# Loads the player node into the group "player" for easier access anywhere
+	add_to_group("player")
 	# Specify the dragoon, add your function here from the select screen
 	character = Autoload.character_selected.instantiate()
 	$".".add_child(character)
@@ -38,14 +39,10 @@ func _ready() -> void:
 	_initialize_weapon_system()
 	_populate_test_weapons() # test function - comment out
 	call_deferred("_test_start_firing_once_ready")  
-	call_deferred("_start_firing_once_ready")  
-	#_start_firing_once_ready()
+	call_deferred("_start_firing_once_ready") 
 	
 	# Sets up the weapon grid system
-	#call_deferred("_apply_default_weapon")  
-	#call_deferred("_connect_weapon_grid_signals")
-	#call_deferred("_debug_dump_weapon_grid")  
-	#call_deferred("_ensure_weapon_instanced")
+	call_deferred("_initialize_weapon_slots_ui")
 
 func _physics_process(delta: float) -> void:
 	var direction = Input.get_vector("move_left","move_right", "move_up", "move_down")
@@ -181,27 +178,37 @@ func _start_firing_once_ready() -> void:
 	is_firing_sequence = true    
 	firing_seq()  
 	
-func firing_seq() -> void:
-	while true:
-		for i in range(weapon_slots.size()):
-			var weapon = weapon_slots[i]
-			if weapon:
-				# Get weapon name and duration from the actual weapon
-				var weapon_name = weapon.name
-				var weapon_duration = _get_weapon_duration(weapon)
-
-				print("Weapon ", weapon_name, " is activated")
-				_set_weapon_active(weapon, true)  # Turn weapon ON
-
-				# Simulate weapon firing with countdown for each second
-				for countdown in range(int(weapon_duration), 0, -1):
-					print("Weapon ", weapon_name, " firing... ", countdown, " seconds remaining")
-					await get_tree().create_timer(1.0).timeout
-
-				_set_weapon_active(weapon, false)  # Turn weapon OFF
-				print("Weapon ", weapon_name, " is deactivated")
-				print("Weapon delay is ", weapon_duration, " seconds")
+func firing_seq() -> void:  
+	while true:  
+		# Check if game is paused before processing weapons  
+		if get_tree().paused:  
+			await get_tree().process_frame  # Wait one frame and check again  
+			continue  
+			  
+		for i in range(weapon_slots.size()):  
+			var weapon = weapon_slots[i]  
+			if weapon:  
+				# Check pause state before activating each weapon  
+				if get_tree().paused:  
+					break  # Exit weapon loop if paused  
+					  
+				var weapon_name = weapon.name  
+				var weapon_duration = _get_weapon_duration(weapon)  
   
+				print("Weapon ",i, " ", weapon_name, " is activated")  
+				_set_weapon_active(weapon, true)  
+  
+				# Check pause during countdown  
+				for countdown in range(int(weapon_duration), 0, -1):  
+					if get_tree().paused:  
+						break  # Exit countdown if paused  
+					print("Weapon ", weapon_name, " firing... ", countdown, " seconds remaining")  
+					await get_tree().create_timer(1.0).timeout  
+  
+				_set_weapon_active(weapon, false)  
+				print("Weapon ", i, " ", weapon_name, " is deactivated")  
+				print("Weapon delay is ", weapon_duration, " seconds")
+				
 func _get_weapon_duration(weapon: Node) -> float:
 	"""Get the duration property from a weapon node, with fallback"""
 	if weapon.has_method("get") and "duration" in weapon:
@@ -264,7 +271,7 @@ func add_weapon_to_slot(weapon_node: Node, slot_index: int = -1) -> bool:
 			print("[Weapon Slots] Added '", weapon_node.name, "' to slot ", target_slot)
 
 		weapon_slots[target_slot] = weapon_node
-		#_set_weapon_active(weapon_node, true)
+		_update_weapon_slots_ui()
 		return true
 
 	push_warning("No available weapon slots or invalid slot index: ", slot_index)
@@ -307,14 +314,14 @@ func firing_seq_test() -> void:
 				var weapon_name = weapon.name
 				var weapon_duration = _get_weapon_duration(weapon)
 
-				print("Weapon ", weapon_name, " is activated")
+				print("Weapon ", i, " ",  weapon_name, " is activated")
 
 				# Simulate weapon firing with countdown for each second
 				for countdown in range(int(weapon_duration), 0, -1):
 					print("Weapon ", weapon_name, " firing... ", countdown, " seconds remaining")
 					await get_tree().create_timer(1.0).timeout
 
-				print("Weapon ", weapon_name, " is deactivated")
+				print("Weapon ", i, " ",weapon_name, " is deactivated")
 				print("Weapon delay is ", weapon_duration, " seconds")
 
 # Fire the weapon sequence infinitely (start once, then stop processing)  
@@ -348,7 +355,25 @@ func _populate_test_weapons() -> void:
 	_debug_dump_weapon_slots()
 
 
+#### WEAPON SLOTS UI SYSTEM ####
 
+func _initialize_weapon_slots_ui() -> void:
+	if not weapon_slots_ui:
+		push_warning("WeaponSlotsUI not found")
+		return
+	_update_weapon_slots_ui()
+
+func _update_weapon_slots_ui() -> void:
+	if not weapon_slots_ui:
+		return
+	var slots = weapon_slots_ui.get_children()
+	for i in range(min(4, slots.size())):
+		var slot = slots[i]
+		if slot.has_method("set_weapon_display"):
+			var weapon_name = ""
+			if i < weapon_slots.size() and weapon_slots[i]:
+				weapon_name = weapon_slots[i].name
+			slot.set_weapon_display(weapon_name)
 
 #### WEAPON SLOT API ####
 
@@ -375,59 +400,23 @@ func get_all_weapon_names() -> Array[String]:
 	return names
 
 
-#### WEAPON GRID SYSTEM (Legacy - keeping for compatibility) ####
-func _apply_default_weapon() -> void:
-	if not weapon_grid:
-		push_warning("WeaponGrid node not found; cannot seed default weapon")
-		return
-	weapon_grid.set_weapons([default_weapon_scene, null, null, null])
+### Ordering mechanic
 
-func _connect_weapon_grid_signals() -> void:
-	var grid := get_node_or_null(weapon_grid_path)
-	if not grid:
-		return
-	if not grid.is_connected("order_changed", _on_weapon_order_changed):
-		grid.connect("order_changed", _on_weapon_order_changed)
+# refreshes weapon order from the pause screen
 
-func _on_weapon_order_changed(new_order: Array) -> void:
-	print("[WeaponGrid] order_changed: ", new_order)
-	_ensure_weapon_instanced()
-
-var equipped_weapon_instance: Node = null
-
-func _debug_dump_weapon_grid() -> void:
-	var grid := get_node_or_null(weapon_grid_path)
-	if not grid:
-		print("[WeaponGrid] Not found at path: ", weapon_grid_path)
-		return
-	if not grid.has_method("get_order"):
-		print("[WeaponGrid] get_order() not found")
-		return
-	var order: Array = grid.get_order()
-	print("[WeaponGrid] Current order: ", order)
-
-func _ensure_weapon_instanced() -> void:
-	var grid := get_node_or_null(weapon_grid_path)
-	if not grid:
-		push_warning("WeaponGrid not found; cannot equip weapon")
-		return
-	var order: Array = grid.get_order()
-	if order.is_empty() or order[0] == null:
-		push_warning("No weapon in slot 1; nothing to equip")
-		return
-
-	# Clean up previous instance if any
-	if equipped_weapon_instance and is_instance_valid(equipped_weapon_instance):
-		equipped_weapon_instance.queue_free()
-		equipped_weapon_instance = null
-
-	var weapon_scene: PackedScene = order[0]
-	equipped_weapon_instance = weapon_scene.instantiate()
-	add_child(equipped_weapon_instance)
-	print("[WeaponEquip] Instanced and attached: ", weapon_scene.resource_path, 
-		" as child of Player. Child count now: ", get_child_count())
-
-	if equipped_weapon_instance.has_node("Timer"):
-		print("[WeaponEquip] Found Timer in equipped weapon.")
-	else:
-		push_warning("[WeaponEquip] No Timer node found in equipped weapon! It may not fire automatically.")
+func set_weapon_order(new_order: Array[String]) -> void:
+	# Clear current slots
+	for i in range(weapon_slots.size()):
+		if weapon_slots[i]:
+			_set_weapon_active(weapon_slots[i], false)
+		weapon_slots[i] = null
+	
+	# Apply new order
+	for i in range(min(new_order.size(), max_weapon_slots)):
+		if new_order[i] != "":
+			var weapon_node = _get_weapon_node_by_name(new_order[i])
+			if weapon_node:
+				weapon_slots[i] = weapon_node
+	
+	_update_weapon_slots_ui()
+	print("Weapon order updated: ", new_order)

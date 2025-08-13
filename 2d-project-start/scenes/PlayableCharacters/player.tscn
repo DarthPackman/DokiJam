@@ -1,9 +1,8 @@
-[gd_scene load_steps=27 format=3 uid="uid://cbcpmhuc0r3uh"]
+[gd_scene load_steps=26 format=3 uid="uid://cbcpmhuc0r3uh"]
 
 [ext_resource type="Script" uid="uid://eiogqwid6kow" path="res://scenes/PlayableCharacters/player.gd" id="1_dfvke"]
 [ext_resource type="PackedScene" uid="uid://c5lnuyav6ht8l" path="res://scenes/Systems/level_up/LevelUpScreen.tscn" id="2_60uwt"]
-[ext_resource type="Script" uid="uid://ct2ir7dq8j2kv" path="res://scenes/Systems/weapon_slots/weapongrid.gd" id="3_60uwt"]
-[ext_resource type="PackedScene" uid="uid://dvrblc4a171aq" path="res://scenes/Systems/weapon_slots/slot.tscn" id="3_dfvke"]
+[ext_resource type="PackedScene" uid="uid://dvrblc4a171aq" path="res://scenes/Systems/weapon_slots_ui/slot.tscn" id="3_dfvke"]
 [ext_resource type="PackedScene" uid="uid://w4a8mr0bw34i" path="res://scenes/Weapons/Projectiles/Range_Chonk_Shotgun.tscn" id="7_lt7xh"]
 [ext_resource type="PackedScene" uid="uid://c75lvu1b71tom" path="res://scenes/Weapons/Auras/aura.tscn" id="7_sofp6"]
 [ext_resource type="PackedScene" uid="uid://dgtxwbels7nep" path="res://scenes/Weapons/Projectiles/Range_Egg_HardBoiledEgg.tscn" id="8_7hjkf"]
@@ -80,22 +79,21 @@ layer = 50
 unique_name_in_owner = true
 visible = false
 
-[node name="WeaponGrid" type="HBoxContainer" parent="UI"]
+[node name="WeaponSlotsUI" type="HBoxContainer" parent="UI"]
 unique_name_in_owner = true
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("3_60uwt")
 
-[node name="Slot" parent="UI/WeaponGrid" instance=ExtResource("3_dfvke")]
+[node name="Slot" parent="UI/WeaponSlotsUI" instance=ExtResource("3_dfvke")]
 layout_mode = 2
 
-[node name="Slot2" parent="UI/WeaponGrid" instance=ExtResource("3_dfvke")]
+[node name="Slot2" parent="UI/WeaponSlotsUI" instance=ExtResource("3_dfvke")]
 layout_mode = 2
 
-[node name="Slot3" parent="UI/WeaponGrid" instance=ExtResource("3_dfvke")]
+[node name="Slot3" parent="UI/WeaponSlotsUI" instance=ExtResource("3_dfvke")]
 layout_mode = 2
 
-[node name="Slot4" parent="UI/WeaponGrid" instance=ExtResource("3_dfvke")]
+[node name="Slot4" parent="UI/WeaponSlotsUI" instance=ExtResource("3_dfvke")]
 layout_mode = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

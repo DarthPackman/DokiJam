@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 @onready var pause_menu = $"."
+@onready var weapon_order_ui: WeaponOrderUI = %WeaponOrderUI
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
@@ -13,6 +14,8 @@ func _toggle_pause() -> void:
 	else:
 		pause_menu.show()
 		get_tree().paused = true
+		# Initialize weapon cards when pause menu opens
+		weapon_order_ui.initialize()
 
 func _on_resume_button_pressed() -> void:
 	_toggle_pause()

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b1877pj0ym0de"]
+[gd_scene load_steps=5 format=3 uid="uid://b1877pj0ym0de"]
 
 [ext_resource type="Script" uid="uid://cegtpqd1qbdl4" path="res://scenes/pause.gd" id="1_vfqig"]
 [ext_resource type="Theme" uid="uid://cgah1efpjglvn" path="res://UI/Title screen.tres" id="2_xgs7t"]
+[ext_resource type="PackedScene" uid="uid://218qe3qy6wpm" path="res://scenes/Systems/weapon_sorter/WeaponOrderUI.tscn" id="3_aicil"]
 [ext_resource type="AudioStream" uid="uid://yxq23doaoe0l" path="res://sound/bgm_pause_fd1.ogg" id="3_m0klm"]
 
 [node name="Pause" type="CanvasLayer"]
@@ -23,9 +24,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -246.5
-offset_top = -236.0
+offset_top = -332.0
 offset_right = 246.5
-offset_bottom = 236.0
+offset_bottom = 140.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -56,10 +57,20 @@ theme_override_font_sizes/font_size = 64
 text = "Menu"
 
 [node name="ExitButton" type="Button" parent="MarginContainer/VBoxContainer2"]
-visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 64
 text = "Exit"
+
+[node name="WeaponOrderUI" parent="." instance=ExtResource("3_aicil")]
+unique_name_in_owner = true
+anchor_left = 0.328
+anchor_top = 0.668
+anchor_right = 0.675
+anchor_bottom = 0.933
+offset_left = 0.23999
+offset_top = -73.44
+offset_right = 0.0
+offset_bottom = -75.64
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_m0klm")
