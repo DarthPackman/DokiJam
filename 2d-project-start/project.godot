@@ -79,6 +79,10 @@ run/main_scene="res://scenes/titlescreen.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.png"
 
+[audio]
+
+buses/channel_disable_threshold_db=-56.1
+
 [autoload]
 
 DamageNumbers="*res://scenes/DamageNumbers.gd"

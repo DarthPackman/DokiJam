@@ -4,3 +4,5 @@ res://scenes/survivor_game.tscn
 res://scenes/PlayableCharacters/player.tscn
 res://scenes/PlayableCharacters/player.gd
 res://scenes/pickbird.gd
+res://scenes/Weapons/Zones/dragoondrop.tscn
+res://scenes/Weapons/Zones/dragoon_plane.tscn

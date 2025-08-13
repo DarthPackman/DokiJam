@@ -37,7 +37,9 @@ func _ready() -> void:
 	
 	# Initialize weapon system
 	_initialize_weapon_system()
-	# call_deferred("_start_firing_once_ready")  
+	_populate_test_weapons() # test function - comment out
+	call_deferred("_test_start_firing_once_ready")  
+	call_deferred("_start_firing_once_ready")  
 	#_start_firing_once_ready()
 	
 	# Sets up the weapon grid system
@@ -170,31 +172,47 @@ func _deactivate_all_weapons() -> void:
 		_set_weapon_active(weapon, false)
 	weapon_slots.fill(null)
 
-# Fire the weapon sequence infinitely
-var is_firing_sequence: bool = false
-var weapon_delays: Array[float] = [1.0, 5.0, 2.5, 1.0]  # Delays for each weapon slot
-
-# Fire the weapon sequence infinitely (start once, then stop processing)
-func _start_firing_once_ready() -> void:  
-	if is_firing_sequence:  
-		return  
-	is_firing_sequence = true  
-	firing_seq()
+# Fire the weapon sequence infinitely  
+var is_firing_sequence: bool = false  
   
-func firing_seq() -> void:    
-	while true:    
-		for i in range(weapon_slots.size()):    
-			var weapon = weapon_slots[i]    
-			if weapon:    
-				# _set_weapon_active(weapon, true)    
-				print("Weapon ", weapon.name, " Activated")  
-				print("Weapon ", weapon.name, " Fired")    
-				# _set_weapon_active(weapon, false)  
-				print("Weapon ", weapon.name, " Deactivated")  
-				var delay = weapon_delays[i]    
-				await get_tree().create_timer(delay).timeout    
-				print(str(delay), " Seconds have passed")
+# Fire the weapon sequence infinitely (start once, then stop processing)  
+func _start_firing_once_ready() -> void:    
+	if is_firing_sequence:    
+		return    
+	is_firing_sequence = true    
+	firing_seq()  
+	
+func firing_seq() -> void:
+	while true:
+		for i in range(weapon_slots.size()):
+			var weapon = weapon_slots[i]
+			if weapon:
+				# Get weapon name and duration from the actual weapon
+				var weapon_name = weapon.name
+				var weapon_duration = _get_weapon_duration(weapon)
 
+				print("Weapon ", weapon_name, " is activated")
+				_set_weapon_active(weapon, true)  # Turn weapon ON
+
+				# Simulate weapon firing with countdown for each second
+				for countdown in range(int(weapon_duration), 0, -1):
+					print("Weapon ", weapon_name, " firing... ", countdown, " seconds remaining")
+					await get_tree().create_timer(1.0).timeout
+
+				_set_weapon_active(weapon, false)  # Turn weapon OFF
+				print("Weapon ", weapon_name, " is deactivated")
+				print("Weapon delay is ", weapon_duration, " seconds")
+  
+func _get_weapon_duration(weapon: Node) -> float:
+	"""Get the duration property from a weapon node, with fallback"""
+	if weapon.has_method("get") and "duration" in weapon:
+		return weapon.duration
+	elif weapon.get("duration") != null:
+		return weapon.get("duration")
+	else:
+		# Fallback to default duration if weapon doesn't have duration property
+		push_warning("Weapon ", weapon.name, " doesn't have duration property, using default 10.0")
+		return 10.0
 
 func _set_weapon_active(weapon: Node, active: bool) -> void:
 	"""Set a weapon's active state"""
@@ -259,8 +277,9 @@ func get_first_empty_slot() -> int:
 			return i
 	return -1
 
-# Debugging for Weapon slot assignment
+# DEBUGGING FOR WEAPON SLOT ASSIGNMENT
 
+# Prints out the weapon slots at the beginning
 func _debug_dump_weapon_slots() -> void:
 	print("--- Current Weapon Slots ---")
 	var slots_to_show: int = min(max_weapon_slots, weapon_slots.size())
@@ -279,6 +298,55 @@ func _activate_all_slot_weapons() -> void:
 		if weapon:
 			_set_weapon_active(weapon, true)
 
+# prints out the relevant weapons when you test them out
+func firing_seq_test() -> void:
+	while true:
+		for i in range(weapon_slots.size()):
+			var weapon = weapon_slots[i]
+			if weapon:
+				# Get weapon name and duration from the actual weapon
+				var weapon_name = weapon.name
+				var weapon_duration = _get_weapon_duration(weapon)
+
+				print("Weapon ", weapon_name, " is activated")
+
+				# Simulate weapon firing with countdown for each second
+				for countdown in range(int(weapon_duration), 0, -1):
+					print("Weapon ", weapon_name, " firing... ", countdown, " seconds remaining")
+					await get_tree().create_timer(1.0).timeout
+
+				print("Weapon ", weapon_name, " is deactivated")
+				print("Weapon delay is ", weapon_duration, " seconds")
+
+# Fire the weapon sequence infinitely (start once, then stop processing)  
+func _test_start_firing_once_ready() -> void:    
+	if is_firing_sequence:    
+		return    
+	is_firing_sequence = true    
+	firing_seq()  
+
+func _populate_test_weapons() -> void:
+	"""Fill remaining weapon slots (1..max-1) with specific weapon names for testing"""
+	var test_weapon_names: Array[String] = ["r_lo_bow","a_lo_Hoola","z_lo_DragoonPlane"]  # Add your weapon names here for testing
+	
+	if test_weapon_names.is_empty():
+		print("[TestWeapons] No test weapon names provided.")
+		return
+
+	var slot_index := 1  # keep slot 0 for default weapon
+	for weapon_name in test_weapon_names:
+		if slot_index >= max_weapon_slots:
+			break
+		if weapon_name == default_weapon_name:
+			continue
+		var weapon_node := _get_weapon_node_by_name(weapon_name)
+		if weapon_node:
+			add_weapon_to_slot(weapon_node, slot_index)
+			slot_index += 1
+		else:
+			push_warning("[TestWeapons] Weapon not found: ", weapon_name)
+
+	_debug_dump_weapon_slots()
 
 
 
