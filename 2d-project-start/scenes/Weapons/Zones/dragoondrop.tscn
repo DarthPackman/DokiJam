@@ -1,0 +1,224 @@
+[gd_scene load_steps=31 format=3 uid="uid://d3v2e6u1e01jm"]
+
+[ext_resource type="Texture2D" uid="uid://csr6e3gso2xp3" path="res://art/DragoonDrogTRigger.png" id="1_2olv1"]
+[ext_resource type="Script" uid="uid://be0k2ad5liwdp" path="res://scenes/Weapons/Zones/dragoondrop.gd" id="1_114xw"]
+[ext_resource type="Texture2D" uid="uid://bs16qascsuark" path="res://art/DragoonDrogFX.png" id="1_kvv6u"]
+[ext_resource type="Texture2D" uid="uid://crkorhq8vaao" path="res://art/DragoonDropDuration.png" id="2_114xw"]
+[ext_resource type="Texture2D" uid="uid://bi5qa2ua6nll2" path="res://art/DragoonDrogFXTRigger.png" id="2_kvv6u"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d6ulm"]
+radius = 112.04
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_41h56"]
+atlas = ExtResource("2_114xw")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x71eq"]
+atlas = ExtResource("2_114xw")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0iguk"]
+atlas = ExtResource("2_114xw")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4n0jy"]
+atlas = ExtResource("2_114xw")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mnl7h"]
+atlas = ExtResource("2_114xw")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yxy8r"]
+atlas = ExtResource("2_114xw")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_31bpm"]
+atlas = ExtResource("2_114xw")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nh5i8"]
+atlas = ExtResource("1_2olv1")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_114xw"]
+atlas = ExtResource("1_2olv1")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_krl7j"]
+atlas = ExtResource("1_2olv1")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mwevl"]
+atlas = ExtResource("1_2olv1")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d6ulm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_41h56")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x71eq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0iguk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4n0jy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mnl7h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yxy8r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_31bpm")
+}],
+"loop": true,
+"name": &"duration",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nh5i8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_114xw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_krl7j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mwevl")
+}],
+"loop": false,
+"name": &"trigger",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_si4k1"]
+atlas = ExtResource("1_kvv6u")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b164l"]
+atlas = ExtResource("1_kvv6u")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xp8n6"]
+atlas = ExtResource("1_kvv6u")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_swlul"]
+atlas = ExtResource("1_kvv6u")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rlabc"]
+atlas = ExtResource("1_kvv6u")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qxsfj"]
+atlas = ExtResource("1_kvv6u")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lb5m7"]
+atlas = ExtResource("1_kvv6u")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pf5um"]
+atlas = ExtResource("2_kvv6u")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_10by3"]
+atlas = ExtResource("2_kvv6u")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_usgng"]
+atlas = ExtResource("2_kvv6u")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nhn3j"]
+atlas = ExtResource("2_kvv6u")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_41h56"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_si4k1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b164l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xp8n6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xp8n6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_swlul")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rlabc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qxsfj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lb5m7")
+}],
+"loop": true,
+"name": &"duration",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pf5um")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_10by3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_usgng")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nhn3j")
+}],
+"loop": false,
+"name": &"trigger",
+"speed": 5.0
+}]
+
+[node name="DragoonDrop" type="Area2D"]
+collision_layer = 0
+collision_mask = 6
+script = ExtResource("1_114xw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_d6ulm")
+
+[node name="Dragoon" type="AnimatedSprite2D" parent="."]
+z_index = 1
+texture_filter = 1
+position = Vector2(0, -7)
+scale = Vector2(7, 7)
+sprite_frames = SubResource("SpriteFrames_d6ulm")
+animation = &"duration"
+autoplay = "trigger"
+
+[node name="FX" type="AnimatedSprite2D" parent="."]
+z_index = -2
+texture_filter = 1
+scale = Vector2(7, 7)
+sprite_frames = SubResource("SpriteFrames_41h56")
+animation = &"duration"
+autoplay = "trigger"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.25
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

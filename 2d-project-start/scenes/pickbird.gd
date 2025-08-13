@@ -13,8 +13,8 @@ func _on_selectreg_pressed() -> void:
 
 func _on_selectchonk_pressed() -> void:
 	playerScene = preload("res://scenes/PlayableCharacters/chonky_dragoon.tscn")
-	defaultWeapon = preload("res://scenes/Weapons/Zones/grenade_launcher.tscn")
-	Autoload.set_selected_character_data("Chonk", playerScene, defaultWeapon, "z_r_Grenade")
+	defaultWeapon = preload("res://scenes/Weapons/Zones/dragoon_plane.tscn")
+	Autoload.set_selected_character_data("Chonk", playerScene, defaultWeapon, "z_lo_DragoonPlane")
 	get_tree().change_scene_to_file("res://scenes/survivor_game.tscn")
 
 func _on_selecttall_pressed() -> void:

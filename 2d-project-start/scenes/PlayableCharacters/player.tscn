@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cbcpmhuc0r3uh"]
+[gd_scene load_steps=25 format=3 uid="uid://cbcpmhuc0r3uh"]
 
 [ext_resource type="Script" uid="uid://eiogqwid6kow" path="res://scenes/PlayableCharacters/player.gd" id="1_dfvke"]
 [ext_resource type="PackedScene" uid="uid://c5lnuyav6ht8l" path="res://scenes/Systems/level_up/LevelUpScreen.tscn" id="2_60uwt"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://w30vum0s5f0g" path="res://scenes/Weapons/Melees/OverhardEgg.tscn" id="16_422pe"]
 [ext_resource type="PackedScene" uid="uid://b1bunl8yrhgul" path="res://scenes/Weapons/Melees/PicoPicoHammer.tscn" id="17_7aegy"]
 [ext_resource type="PackedScene" uid="uid://dl3ck6gf8whyl" path="res://scenes/Weapons/Zones/grenade_launcher.tscn" id="17_ip7fd"]
+[ext_resource type="PackedScene" uid="uid://cbpa8bfyo4b8k" path="res://scenes/Weapons/Zones/dragoon_plane.tscn" id="18_sofp6"]
 [ext_resource type="PackedScene" uid="uid://d11s0633u7mtu" path="res://scenes/Weapons/Melees/WingSlap.tscn" id="18_vriqo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gfie6"]
@@ -148,4 +149,7 @@ unique_name_in_owner = true
 unique_name_in_owner = true
 
 [node name="z_r_Grenade" parent="." instance=ExtResource("17_ip7fd")]
+unique_name_in_owner = true
+
+[node name="z_lo_DragoonPlane" parent="." instance=ExtResource("18_sofp6")]
 unique_name_in_owner = true
