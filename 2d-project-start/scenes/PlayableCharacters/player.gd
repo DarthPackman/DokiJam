@@ -34,12 +34,14 @@ func _ready() -> void:
 	
 	# Initialize weapon system
 	_initialize_weapon_system()
+	# call_deferred("_start_firing_once_ready")  
+	_start_firing_once_ready()
 	
 	# Sets up the weapon grid system
-	call_deferred("_apply_default_weapon")  
-	call_deferred("_connect_weapon_grid_signals")
-	call_deferred("_debug_dump_weapon_grid")  
-	call_deferred("_ensure_weapon_instanced")
+	#call_deferred("_apply_default_weapon")  
+	#call_deferred("_connect_weapon_grid_signals")
+	#call_deferred("_debug_dump_weapon_grid")  
+	#call_deferred("_ensure_weapon_instanced")
 
 func _physics_process(delta: float) -> void:
 	var direction = Input.get_vector("move_left","move_right", "move_up", "move_down")
@@ -68,6 +70,63 @@ func _physics_process(delta: float) -> void:
 		if health <= 0.0:
 			health_depleted.emit()
 
+
+#### EXP SYSTEM ####
+func exp_tracker() -> void:
+	var leveled = false  
+	while current_exp >= exp_to_next_level:  
+		current_exp -= exp_to_next_level  
+		current_level += 1  
+		exp_to_next_level = calculate_exp_requirement(current_level)  
+		leveled = true  
+		print("LEVEL UP! Now level ", current_level)  
+		level_up.emit(current_level)  
+	if exp_bar:  
+		if leveled:  
+			exp_bar.max_value = exp_to_next_level  
+		exp_bar.value = clamp(current_exp, exp_bar.min_value, exp_bar.max_value)
+
+func exp_gain(exp_amount: int) -> void:
+	current_exp += exp_amount
+	print("Gained ", exp_amount, " EXP! Total: ", current_exp, "/", exp_to_next_level)
+	exp_tracker()
+
+func collect_exp_orb(exp_amount: int) -> void:  
+	exp_gain(exp_amount)  
+	print("Collected EXP orb worth ", exp_amount, " EXP!")
+
+# Exponential scaling: each level requires 20% more exp than the previous
+func calculate_exp_requirement(level: int)->int:
+	return int(20 * pow(1.2, level - 1))
+
+func _on_level_up(new_level: int) -> void:  
+	level_up_screen.show_upgrade_screen()
+
+# Pressing space adds a 10 EXP for Testing
+func debug_add_exp() -> void:
+	exp_gain(10)
+	print("TEST: Added 10 EXP via debug")
+
+#### UPGRADE SYSTEM ####
+func _on_upgrade_selected(upgrade_data: Dictionary) -> void:  
+	apply_upgrade(upgrade_data)  
+  
+func apply_upgrade(upgrade_data: Dictionary) -> void:  
+	match upgrade_data.get("type", ""):  
+		"weapon":  
+			var name: String = upgrade_data.get("name", "Unknown") as String
+			print("Added weapon: ", name)  
+			# Use the new slot system to add weapons
+			var weapon_node = _get_weapon_node_by_name(name)
+			if weapon_node:
+				add_weapon_to_slot(weapon_node, -1)  # Auto-assign to first empty slot
+		"stat":  
+			var name: String = upgrade_data.get("name", "Unknown") as String 
+			print("Applied stat boost: ", name)  
+			# TODO: modify player stats here  
+		_:  
+			print("Unknown upgrade type: ", upgrade_data)
+
 #### MULTI-WEAPON SLOT SYSTEM ####
 
 func _initialize_weapon_system() -> void:
@@ -76,17 +135,23 @@ func _initialize_weapon_system() -> void:
 	# Ensure all are inactive initially and clear slots
 	_deactivate_all_weapons()
 
-	# Set up default weapon in the first slot
 	var default_weapon_node = _get_weapon_node_by_name(default_weapon_name)
+	# Set up default weapon in the first slot
 	if default_weapon_node:
 		add_weapon_to_slot(default_weapon_node, 0)  # Put default in slot 1 (index 0)
 	else:
 		push_warning("Default weapon '", default_weapon_name, "' not found!")
 
-	# Activate all weapons currently in slots (only non-empty fire)
-	_activate_all_slot_weapons()
+	# Test code to assign 4 weapons to make sure all weapons work
+	for i in 3:
+		var test_weapon_list: Array[String] = ["a_ch_Burp", "m_r_WingSlap", "r_reg_rifle"]
+		var test_weapon_name = test_weapon_list[i]
+		var test_weapon_node = _get_weapon_node_by_name(test_weapon_name)
+		add_weapon_to_slot(test_weapon_node, i+1)
 
-	_debug_dump_weapon_slots()
+	# These are legacy functions for testing Activate all weapons currently in slots (only non-empty fire)
+	#_activate_all_slot_weapons()
+	#_debug_dump_weapon_slots()
 
 func _collect_all_weapons() -> void:
 	all_weapons.clear()
@@ -138,6 +203,33 @@ func get_first_empty_slot() -> int:
 			return i
 	return -1
 
+# Fire the weapon sequence infinitely
+var is_firing_sequence: bool = false
+var weapon_delays: Array[float] = [1.0, 5.0, 2.5, 1.0]  # Delays for each weapon slot
+
+# Fire the weapon sequence infinitely (start once, then stop processing)
+func _start_firing_once_ready() -> void:  
+	if is_firing_sequence:  
+		return  
+	is_firing_sequence = true  
+	firing_seq()
+  
+func firing_seq() -> void:    
+	while true:    
+		for i in range(weapon_slots.size()):    
+			var weapon = weapon_slots[i]    
+			if weapon:    
+				# _set_weapon_active(weapon, true)    
+				print("Weapon ", weapon.name, " Activated")  
+				print("Weapon ", weapon.name, " Fired")    
+				# _set_weapon_active(weapon, false)  
+				print("Weapon ", weapon.name, " Deactivated")  
+				var delay = weapon_delays[i]    
+				await get_tree().create_timer(delay).timeout    
+				print(str(delay), " Seconds have passed")
+
+
+### debug tools for weapons
 func _activate_all_slot_weapons() -> void:
 	for weapon in weapon_slots:
 		if weapon:
@@ -153,7 +245,7 @@ func _debug_dump_weapon_slots() -> void:
 			print("Slot ", i + 1, ": ", entry.name, " (active=", active, ")")
 		else:
 			print("Slot ", i + 1, ": Empty")
-	print("---------------------------")
+	print("----")
 
 func _set_weapon_active(weapon: Node, active: bool) -> void:
 	"""Set a weapon's active state"""
@@ -211,61 +303,6 @@ func get_all_weapon_names() -> Array[String]:
 		names.append(weapon.name)
 	return names
 
-#### EXP SYSTEM ####
-func exp_tracker() -> void:
-	var leveled = false  
-	while current_exp >= exp_to_next_level:  
-		current_exp -= exp_to_next_level  
-		current_level += 1  
-		exp_to_next_level = calculate_exp_requirement(current_level)  
-		leveled = true  
-		print("LEVEL UP! Now level ", current_level)  
-		level_up.emit(current_level)  
-	if exp_bar:  
-		if leveled:  
-			exp_bar.max_value = exp_to_next_level  
-		exp_bar.value = clamp(current_exp, exp_bar.min_value, exp_bar.max_value)
-
-func exp_gain(exp_amount: int) -> void:
-	current_exp += exp_amount
-	print("Gained ", exp_amount, " EXP! Total: ", current_exp, "/", exp_to_next_level)
-	exp_tracker()
-
-func collect_exp_orb(exp_amount: int) -> void:  
-	exp_gain(exp_amount)  
-	print("Collected EXP orb worth ", exp_amount, " EXP!")
-
-# Exponential scaling: each level requires 20% more exp than the previous
-func calculate_exp_requirement(level: int)->int:
-	return int(20 * pow(1.2, level - 1))
-
-func _on_level_up(new_level: int) -> void:  
-	level_up_screen.show_upgrade_screen()
-
-# Pressing space adds a 10 EXP for Testing
-func debug_add_exp() -> void:
-	exp_gain(10)
-	print("TEST: Added 10 EXP via debug")
-
-#### UPGRADE SYSTEM ####
-func _on_upgrade_selected(upgrade_data: Dictionary) -> void:  
-	apply_upgrade(upgrade_data)  
-  
-func apply_upgrade(upgrade_data: Dictionary) -> void:  
-	match upgrade_data.get("type", ""):  
-		"weapon":  
-			var name: String = upgrade_data.get("name", "Unknown") as String
-			print("Added weapon: ", name)  
-			# Use the new slot system to add weapons
-			var weapon_node = _get_weapon_node_by_name(name)
-			if weapon_node:
-				add_weapon_to_slot(weapon_node, -1)  # Auto-assign to first empty slot
-		"stat":  
-			var name: String = upgrade_data.get("name", "Unknown") as String 
-			print("Applied stat boost: ", name)  
-			# TODO: modify player stats here  
-		_:  
-			print("Unknown upgrade type: ", upgrade_data)
 
 #### WEAPON GRID SYSTEM (Legacy - keeping for compatibility) ####
 func _apply_default_weapon() -> void:
