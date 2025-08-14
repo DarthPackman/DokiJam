@@ -1,12 +1,14 @@
 extends Area2D
 
 @onready var attackSpeedTimer = $Timer
+@export var w_name: String = "Reg's Grenade"
+@export var weapon_icon: Texture2D
 @export var attackSpeed = 0.75
 @export var statusEffectDisabled = false
 @export var duration = 1.0
 var zoneDmgMult = 1.0
 var zoneScaMult = 1.0
-var currentlvl = 1.0
+var currentlvl = 1
 
 func _ready() -> void:
 	attackSpeedTimer.wait_time = attackSpeed

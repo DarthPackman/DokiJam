@@ -1,5 +1,7 @@
 extends Area2D
 
+@export var w_name: String = "Chonk's Hammer"
+@export var weapon_icon: Texture2D
 @onready var attackSpeedTimer = $Timer
 @export var attackSpeed = 1.5
 @export var statusEffectDisabled = false
@@ -9,7 +11,7 @@ var attackDuration_time_elapsed = 0.0
 var target_enemy
 var enemies_in_range
 var random_enemy
-var currentLvl = 1
+var currentLvl = 1.0
 
 @onready var all_hit_visuals = [
 	%Hit,

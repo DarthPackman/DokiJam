@@ -1,6 +1,8 @@
 extends Area2D
 
 @onready var attackSpeedTimer = $Timer
+@export var w_name: String = "Long's Bow"
+@export var weapon_icon: Texture2D
 @export var attackSpeed = 0.5
 @export var statusEffectDisabled = false
 @export var duration = 1.0

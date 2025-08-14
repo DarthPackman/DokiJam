@@ -1,5 +1,7 @@
 extends Area2D
 
+@export var w_name: String = "Long's Hoola"
+@export var weapon_icon: Texture2D
 @export var triggerTime = 0.5
 var trigger_time_elapsed = 0.0
 var duration = 5.0
@@ -10,7 +12,7 @@ var damage = 2.5
 @onready var areaOfEffect = %AOE
 @onready var hoop = %Hoop
 @onready var pivot = $"."
-var currentLvl = 1
+var currentLvl = 1.0
 
 func _ready() -> void:
 	areaOfEffect.play("trigger")

@@ -1,6 +1,8 @@
 extends Area2D
 
 @onready var attackSpeedTimer = %Timer
+@export var w_name: String = "Chonk's Shotgun"
+@export var weapon_icon: Texture2D
 @export var attackSpeed = 0.5
 @export var shotCount = 3
 @export var statusEffectDisabled = false
