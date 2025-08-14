@@ -11,6 +11,7 @@ position = Vector2(0, 1)
 collision_layer = 2
 collision_mask = 6
 script = ExtResource("1_nf082")
+damageDealt = 5.0
 
 [node name="RegRobot" parent="." instance=ExtResource("2_8qrps")]
 unique_name_in_owner = true

@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 signal health_depleted
-var health = 100.0
-var player_speed = 600
+@export var health = 10000000000000000000000000.0
+@export var player_speed = 600
 var character
 
 # Experience system variables
@@ -37,8 +37,8 @@ func _ready() -> void:
 	
 	# Initialize weapon system
 	_initialize_weapon_system()
-	_populate_test_weapons() # test function - comment out
-	call_deferred("_test_start_firing_once_ready")  
+	_populate_test_weapons() # test function - comment out to stop this from working
+	#call_deferred("_test_start_firing_once_ready")  # test function do not use
 	call_deferred("_start_firing_once_ready") 
 	
 	# Sets up the weapon grid system
@@ -333,7 +333,7 @@ func _test_start_firing_once_ready() -> void:
 
 func _populate_test_weapons() -> void:
 	"""Fill remaining weapon slots (1..max-1) with specific weapon names for testing"""
-	var test_weapon_names: Array[String] = []  # Add your weapon names here for testing
+	var test_weapon_names: Array[String] = ["z_egg_RunnyYolk","r_lo_bow","a_reg_aura"]  # Add your weapon names here for testing
 	
 	if test_weapon_names.is_empty():
 		print("[TestWeapons] No test weapon names provided.")

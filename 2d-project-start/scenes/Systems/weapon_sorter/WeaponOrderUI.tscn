@@ -124,11 +124,23 @@ layout_mode = 2
 offset_right = 120.0
 offset_bottom = 120.0
 
+[node name="highlight" type="ColorRect" parent="SlotContainer/Slot"]
+visible = false
+layout_mode = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0.313726)
+
 [node name="Slot2" parent="SlotContainer" instance=ExtResource("2_ovhen")]
 layout_mode = 2
 offset_left = 135.0
 offset_right = 255.0
 offset_bottom = 120.0
+
+[node name="highlight" type="ColorRect" parent="SlotContainer/Slot2"]
+visible = false
+layout_mode = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0.313726)
 
 [node name="Slot3" parent="SlotContainer" instance=ExtResource("2_ovhen")]
 layout_mode = 2
@@ -136,11 +148,23 @@ offset_left = 270.0
 offset_right = 390.0
 offset_bottom = 120.0
 
+[node name="highlight" type="ColorRect" parent="SlotContainer/Slot3"]
+visible = false
+layout_mode = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0.313726)
+
 [node name="Slot4" parent="SlotContainer" instance=ExtResource("2_ovhen")]
 layout_mode = 2
 offset_left = 405.0
 offset_right = 525.0
 offset_bottom = 120.0
+
+[node name="highlight" type="ColorRect" parent="SlotContainer/Slot4"]
+visible = false
+layout_mode = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0.313726)
 
 [node name="Instructions" type="Label" parent="SlotContainer"]
 unique_name_in_owner = true

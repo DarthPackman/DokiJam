@@ -54,32 +54,32 @@ func _collect_slots() -> void:
 	"""Gather all weapon slot nodes"""
 	print("[WeaponOrderUI] Collecting slots...")
 	slots.clear()
-	
+
 	for child in slot_container.get_children():
 		if child is WeaponSlot:
 			slots.append(child)
-	
+
 	print("[WeaponOrderUI] Found", slots.size(), "weapon slots")
 
 func _connect_slot_signals() -> void:
 	"""Connect click handlers to all weapon slots"""
 	print("[WeaponOrderUI] Connecting slot signals...")
-	
+
 	for i in range(slots.size()):
 		var slot = slots[i]
 		if slot == null:
 			continue
-			
+
 		# Ensure slot receives mouse input
 		slot.mouse_filter = Control.MOUSE_FILTER_STOP
-		
+
 		# Connect click events (disconnect first to avoid duplicates)
 		if slot.gui_input.is_connected(_on_slot_clicked):
 			slot.gui_input.disconnect(_on_slot_clicked)
 		slot.gui_input.connect(_on_slot_clicked.bind(i))
-		
+
 		print("[WeaponOrderUI] Connected slot", i)
-	
+
 	print("[WeaponOrderUI] All slots connected")
 
 func _create_drag_cursor() -> void:
@@ -89,21 +89,21 @@ func _create_drag_cursor() -> void:
 	drag_cursor.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	drag_cursor.visible = false
 	drag_cursor.z_index = 100
-	
+
 	# Background
 	var bg = ColorRect.new()
 	bg.color = Color(0.2, 0.6, 1.0, 0.8)
 	bg.size = Vector2(100, 100)
 	bg.position = Vector2(-50, -50)
 	drag_cursor.add_child(bg)
-	
+
 	# Label
 	var label = Label.new()
 	label.text = "Dragging"
 	label.position = Vector2(-30, -10)
 	label.add_theme_color_override("font_color", Color.WHITE)
 	drag_cursor.add_child(label)
-	
+
 	add_child(drag_cursor)
 
 # === CLICK HANDLING ===
@@ -112,9 +112,9 @@ func _on_slot_clicked(event: InputEvent, slot_index: int) -> void:
 	"""Handle weapon slot clicks for selection and swapping"""
 	if not _is_valid_click(event):
 		return
-	
+
 	print("[WeaponOrderUI] Slot", slot_index, "clicked")
-	
+
 	if selected_slot_index == -1:
 		_start_selection(slot_index)
 	else:
@@ -135,36 +135,36 @@ func _start_selection(slot_index: int) -> void:
 	"""Begin weapon selection process"""
 	print("[WeaponOrderUI] Starting selection of slot", slot_index)
 	selected_slot_index = slot_index
-	
+
 	_highlight_slot(slot_index, true)
 	_update_drag_cursor(weapon_order[slot_index])
 
 func _end_selection() -> void:
 	"""End weapon selection process"""
 	print("[WeaponOrderUI] Ending selection")
-	
+
 	if selected_slot_index != -1:
 		_highlight_slot(selected_slot_index, false)
-	
+
 	selected_slot_index = -1
 	drag_cursor.visible = false
 
 func _perform_swap(from_index: int, to_index: int) -> void:
 	"""Swap weapons between two slots"""
 	print("[WeaponOrderUI] Swapping slot", from_index, "with slot", to_index)
-	
+
 	if not _is_valid_swap(from_index, to_index):
 		return
-	
+
 	# Swap in weapon_order array
 	var temp = weapon_order[from_index]
 	weapon_order[from_index] = weapon_order[to_index]
 	weapon_order[to_index] = temp
-	
+
 	# Update visual displays
 	slots[from_index].set_weapon_display(weapon_order[from_index])
 	slots[to_index].set_weapon_display(weapon_order[to_index])
-	
+
 	# Notify systems of change
 	_apply_new_order()
 
@@ -184,20 +184,25 @@ func _highlight_slot(slot_index: int, highlight: bool) -> void:
 	"""Highlight or unhighlight a weapon slot"""
 	if slot_index < 0 or slot_index >= slots.size():
 		return
-	
+
 	var slot = slots[slot_index]
-	if highlight:
-		slot.modulate = Color(1.2, 1.2, 1.2)
-		print("[WeaponOrderUI] Highlighted slot", slot_index)
+	var highlight_box := slot.get_node_or_null("highlight")
+	if highlight_box:
+		highlight_box.visible = highlight
+		print("[WeaponOrderUI] Highlighted slot", slot_index, ":", highlight)
 	else:
-		slot.modulate = Color.WHITE
-		print("[WeaponOrderUI] Unhighlighted slot", slot_index)
+		# Fallback to modulation if highlight box doesn't exist
+		if highlight:
+			slot.modulate = Color(1.2, 1.2, 1.2)
+		else:
+			slot.modulate = Color.WHITE
+		print("[WeaponOrderUI] Fallback highlight for slot", slot_index, ":", highlight)
 
 func _update_drag_cursor(weapon_name: String) -> void:
 	"""Update drag cursor with current weapon info"""
 	if not drag_cursor:
 		return
-	
+
 	var label = drag_cursor.get_child(1) as Label
 	if label:
 		label.text = weapon_name if weapon_name != "" else "Empty"
@@ -209,12 +214,12 @@ func _input(event: InputEvent) -> void:
 	"""Handle global input events"""
 	if selected_slot_index == -1:
 		return
-	
+
 	# Update drag cursor position
 	if event is InputEventMouseMotion:
 		var mouse_event = event as InputEventMouseMotion
 		drag_cursor.position = mouse_event.position
-	
+
 	# Cancel selection
 	elif _is_cancel_input(event):
 		_end_selection()
@@ -235,7 +240,7 @@ func _apply_new_order() -> void:
 	"""Apply new weapon order to player and emit signals"""
 	# Emit signal for external listeners
 	order_changed.emit(weapon_order.duplicate())
-	
+
 	# Direct call to player if available
 	if player and player.has_method("set_weapon_order"):
 		player.set_weapon_order(weapon_order.duplicate())
@@ -251,9 +256,9 @@ func set_weapon_order(new_order: Array[String]) -> void:
 	if new_order.size() != 4:
 		push_warning("Invalid weapon order size: " + str(new_order.size()))
 		return
-	
+
 	weapon_order = new_order.duplicate()
-	
+
 	# Update slot displays
 	for i in range(min(4, slots.size())):
 		slots[i].set_weapon_display(weapon_order[i])

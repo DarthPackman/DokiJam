@@ -5,31 +5,49 @@ extends Node2D
 var difficulty = 0
 var activeTime = 0
 
+const DEFAULT_mult_speed : float = 1.0
+const DEFAULT_mult_dam_dealt : float = 1.0
+const DEFAULT_mult_dam_taken : float = 1.0
+const DEFAULT_mult_exp : float = 1.0
+const DEFAULT_mult_hp : float = 1.0
+
+var mult_speed : float = 1.0
+var mult_dam_dealt : float = 1.0
+var mult_dam_taken : float = 1.0
+var mult_exp : float = 1.0
+var mult_hp : float = 1.0
+
+var mutation_times = [1, 4, 7, 10]  
+var victory_time = 18  
+var triggered_events = {}
+
 func _process(delta: float) -> void:
 	activeTime += delta
 	var minutes = floor(activeTime/60)
 	var seconds = fmod(activeTime, 60)
 	timerLabel.text = "%02d:%02d" % [minutes, seconds]
-	if minutes == 10:
+	if minutes == 5:
 		difficulty = 1
-	elif minutes == 20:
+	elif minutes == 10:
 		difficulty = 2
+
 	if difficulty == 1: 
 		spawnTimer.wait_time = 0.2
 	elif difficulty == 2:
 		spawnTimer.wait_time = 0.1
 
-	if minutes == 7:
-		triggerEvent()
-	elif minutes == 14:
-		triggerEvent()
-	elif minutes == 21:
-		triggerEvent()
-	elif minutes == 28:
-		triggerEvent()
-	elif minutes == 30:
-		triggerVictory()
+# Check for mutation times  
+	for time in mutation_times:  
+		if minutes == time and not triggered_events.get(time, false):  
+			mutation()  
+			triggered_events[time] = true  
+			break  # Only trigger one mutation per frame  
+	  
+	# Check for victory time  
+	if minutes == victory_time:  
+		triggerVictory()  
 
+		
 func spawn_mob():
 	var reg_mob = preload("res://scenes/Enemies/RegMob.tscn")
 	var slow_mob = preload("res://scenes/Enemies/SlowMob.tscn")
@@ -39,13 +57,21 @@ func spawn_mob():
 	
 	if currentSpawn == 0:
 		new_mob = reg_mob.instantiate()
-		new_mob.exp_amt = 10
+		
+		#Mutation Factor for Each Round - Multipliers Exist
+		new_mob.expMult = mult_exp
+		
+		new_mob.hpMult = mult_hp
+		new_mob.speedMult = mult_speed
+		
+		new_mob.dmgTakenMult = mult_dam_taken
+		new_mob.dmgDealtMult = mult_dam_dealt
+
 	elif currentSpawn == 1:
 		new_mob = slow_mob.instantiate()
-		new_mob.exp_amt = 15
+	
 	elif currentSpawn == 2:
 		new_mob = fast_mob.instantiate()
-		new_mob.exp_amt = 2
 	
 	%PathFollow2D.progress_ratio = randf()
 	new_mob.global_position = %PathFollow2D.global_position
@@ -63,6 +89,20 @@ func triggerVictory():
 func _on_button_pressed() -> void:
 	get_tree().quit()
 
-func triggerEvent():
-	pass
+func mutation():
+	# reset to default
+	mult_speed = DEFAULT_mult_speed
+	mult_dam_dealt = DEFAULT_mult_dam_dealt 
+	mult_dam_taken =DEFAULT_mult_dam_taken
+	mult_exp = DEFAULT_mult_exp
+	mult_hp = DEFAULT_mult_hp 
+	# random mutation
+	mult_speed = randf_range(0.1, 2.0)
+	mult_dam_dealt = randf_range(0.1, 2.0) 
+	mult_dam_taken = randf_range(0.1, 2.0)
+	mult_exp = randf_range(0.1, 2.0)
+	mult_hp = randf_range(0.1, 2.0)
 	
+	print("mult_speed: ", mult_speed, " mult_dam_dealt: ", 
+	mult_dam_dealt, " mult_dam_taken: ", mult_dam_taken, 
+	" mult_exp: ", mult_exp, " mult_hp: ", mult_hp)
