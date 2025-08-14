@@ -11,7 +11,7 @@ var attackDuration_time_elapsed = 0.0
 var target_enemy
 var enemies_in_range
 var random_enemy
-var currentLvl = 1.0
+var currentLvl = 1
 
 @onready var all_hit_visuals = [
 	%Hit,

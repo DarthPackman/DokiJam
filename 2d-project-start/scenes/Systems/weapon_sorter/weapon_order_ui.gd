@@ -36,13 +36,23 @@ func refresh_from_player() -> void:
 	if slots.is_empty():
 		_collect_slots()
 
-	# Sync weapon_order array with player data
+	# Sync weapon_order array with player data and update slot visuals
 	for i in range(min(4, slots.size())):
 		var weapon_name := ""
+		var weapon_node: Node = null
+		
 		if i < player.weapon_slots.size() and player.weapon_slots[i]:
-			weapon_name = player.weapon_slots[i].name
+			weapon_node = player.weapon_slots[i]
+			weapon_name = weapon_node.name
+		
 		weapon_order[i] = weapon_name
+		
+		# Update slot display with weapon name
 		slots[i].set_weapon_display(weapon_name)
+		
+		# Update slot with actual weapon node for proper visual display
+		if slots[i].has_method("set_weapon_node"):
+			slots[i].set_weapon_node(weapon_node)
 
 func _find_player() -> void:
 	"""Locate the player node"""
@@ -161,9 +171,46 @@ func _perform_swap(from_index: int, to_index: int) -> void:
 	weapon_order[from_index] = weapon_order[to_index]
 	weapon_order[to_index] = temp
 
-	# Update visual displays
+	# Swap actual weapon nodes in player's weapon_slots if player exists
+	if player and player.weapon_slots:
+		var temp_weapon = null
+		if from_index < player.weapon_slots.size():
+			temp_weapon = player.weapon_slots[from_index]
+		
+		if to_index < player.weapon_slots.size():
+			if from_index < player.weapon_slots.size():
+				player.weapon_slots[from_index] = player.weapon_slots[to_index]
+			else:
+				player.weapon_slots.append(player.weapon_slots[to_index])
+		else:
+			if from_index < player.weapon_slots.size():
+				player.weapon_slots.append(null)
+		
+		if to_index < player.weapon_slots.size():
+			player.weapon_slots[to_index] = temp_weapon
+		else:
+			player.weapon_slots.append(temp_weapon)
+
+	# Update visual displays with weapon names
 	slots[from_index].set_weapon_display(weapon_order[from_index])
 	slots[to_index].set_weapon_display(weapon_order[to_index])
+	
+	# Update slots with actual weapon nodes for proper visual display
+	if slots[from_index].has_method("set_weapon_node"):
+		var from_weapon = null
+		if player and from_index < player.weapon_slots.size():
+			from_weapon = player.weapon_slots[from_index]
+		slots[from_index].set_weapon_node(from_weapon)
+	
+	if slots[to_index].has_method("set_weapon_node"):
+		var to_weapon = null
+		if player and to_index < player.weapon_slots.size():
+			to_weapon = player.weapon_slots[to_index]
+		slots[to_index].set_weapon_node(to_weapon)
+
+	# Update player's weapon slots UI if it exists
+	if player and player.has_method("_update_weapon_slots_ui"):
+		player._update_weapon_slots_ui()
 
 	# Notify systems of change
 	_apply_new_order()
@@ -259,6 +306,13 @@ func set_weapon_order(new_order: Array[String]) -> void:
 
 	weapon_order = new_order.duplicate()
 
-	# Update slot displays
+	# Update slot displays and weapon nodes
 	for i in range(min(4, slots.size())):
 		slots[i].set_weapon_display(weapon_order[i])
+		
+		# Update slot with actual weapon node for proper visual display
+		if slots[i].has_method("set_weapon_node"):
+			var weapon_node = null
+			if player and i < player.weapon_slots.size():
+				weapon_node = player.weapon_slots[i]
+			slots[i].set_weapon_node(weapon_node)

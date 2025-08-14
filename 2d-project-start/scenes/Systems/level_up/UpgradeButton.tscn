@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhan2o8r1puxq"]
+
+[ext_resource type="Script" uid="uid://c1w4t3yf33pyo" path="res://scenes/Systems/level_up/upgrade_button.gd" id="1_p88pd"]
+
+[sub_resource type="Theme" id="Theme_p88pd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p88pd"]
+bg_color = Color(0, 0, 0, 0.372549)
+border_color = Color(0, 0, 0, 0.372549)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+shadow_color = Color(0, 0, 0, 0)
+
+[node name="UpgradeOption" type="TextureButton"]
+custom_minimum_size = Vector2(120, 120)
+offset_right = 120.0
+offset_bottom = 120.0
+theme = SubResource("Theme_p88pd")
+script = ExtResource("1_p88pd")
+
+[node name="background" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_p88pd")
+
+[node name="Icon" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 117.0
+offset_bottom = 117.0
+
+[node name="WeaponName" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 4.0
+offset_top = 49.0
+offset_right = 115.0
+offset_bottom = 72.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+text = "Test"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3

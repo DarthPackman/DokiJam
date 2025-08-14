@@ -4,7 +4,11 @@ extends CanvasLayer
 @onready var weapon_order_ui: WeaponOrderUI = %WeaponOrderUI
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_cancel"):
+	if event.is_action_pressed("ui_cancel"):  
+		# Check if level up screen is active before allowing pause  
+		var level_up_screen = get_tree().get_first_node_in_group("level_up_screen")  
+		if level_up_screen and level_up_screen.visible:  
+			return  # Don't allow pause while level up screen is active  
 		_toggle_pause()
 
 func _toggle_pause() -> void:

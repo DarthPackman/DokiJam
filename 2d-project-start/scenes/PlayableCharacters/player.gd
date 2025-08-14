@@ -1,9 +1,10 @@
 extends CharacterBody2D
 
 signal health_depleted
-@export var health = 10000000000000000000000000.0
+@export var health = 100
 @export var player_speed = 600
 var character
+var defaultSpeed = 100
 
 # Experience system variables
 @onready var level_up_screen: Control = %LevelUpScreen  
@@ -33,11 +34,10 @@ func _ready() -> void:
 	
 	# Sets up the leveling system
 	level_up.connect(_on_level_up)  
-	level_up_screen.upgrade_selected.connect(_on_upgrade_selected)
 	
 	# Initialize weapon system
 	_initialize_weapon_system()
-	_populate_test_weapons() # test function - comment out to stop this from working
+	#_populate_test_weapons() # test function - comment out to stop this from working
 	#call_deferred("_test_start_firing_once_ready")  # test function do not use
 	call_deferred("_start_firing_once_ready") 
 	
@@ -99,33 +99,13 @@ func collect_exp_orb(exp_amount: int) -> void:
 func calculate_exp_requirement(level: int)->int:
 	return int(20 * pow(1.2, level - 1))
 
-func _on_level_up(new_level: int) -> void:  
+func _on_level_up(new_level: int) -> void:
 	level_up_screen.show_upgrade_screen()
 
 # Pressing space adds a 10 EXP for Testing
 func debug_add_exp() -> void:
 	exp_gain(10)
 	print("TEST: Added 10 EXP via debug")
-
-#### UPGRADE SYSTEM ####
-func _on_upgrade_selected(upgrade_data: Dictionary) -> void:  
-	apply_upgrade(upgrade_data)  
-  
-func apply_upgrade(upgrade_data: Dictionary) -> void:  
-	match upgrade_data.get("type", ""):  
-		"weapon":  
-			var name: String = upgrade_data.get("name", "Unknown") as String
-			print("Added weapon: ", name)  
-			# Use the new slot system to add weapons
-			var weapon_node = _get_weapon_node_by_name(name)
-			if weapon_node:
-				add_weapon_to_slot(weapon_node, -1)  # Auto-assign to first empty slot
-		"stat":  
-			var name: String = upgrade_data.get("name", "Unknown") as String 
-			print("Applied stat boost: ", name)  
-			# TODO: modify player stats here  
-		_:  
-			print("Unknown upgrade type: ", upgrade_data)
 
 #### WEAPON FIRING SEQUENCE
 
@@ -369,38 +349,21 @@ func _update_weapon_slots_ui() -> void:
 	var slots = weapon_slots_ui.get_children()
 	for i in range(min(4, slots.size())):
 		var slot = slots[i]
-		if slot.has_method("set_weapon_display"):
+		if slot.has_method("set_weapon_node"):
+			# Pass the weapon node directly to the slot
+			var weapon_node = null
+			if i < weapon_slots.size() and weapon_slots[i]:
+				weapon_node = weapon_slots[i]
+			slot.set_weapon_node(weapon_node)
+		elif slot.has_method("set_weapon_display"):
+			# Fallback to old method
 			var weapon_name = ""
 			if i < weapon_slots.size() and weapon_slots[i]:
 				weapon_name = weapon_slots[i].name
 			slot.set_weapon_display(weapon_name)
 
-#### WEAPON SLOT API ####
 
-func switch_to_weapon(weapon_name: String) -> bool:
-	"""Switch to a different weapon by name. Returns true if successful."""
-	var weapon_node = _get_weapon_node_by_name(weapon_name)
-	if weapon_node:
-		return add_weapon_to_slot(weapon_node, -1)  # Auto-assign to first empty slot
-	return false
-
-func get_active_weapon_names() -> Array[String]:
-	"""Get names of all currently active weapons in slots"""
-	var names: Array[String] = []
-	for weapon in weapon_slots:
-		if weapon:
-			names.append(weapon.name)
-	return names
-
-func get_all_weapon_names() -> Array[String]:
-	"""Get names of all available weapons"""
-	var names: Array[String] = []
-	for weapon in all_weapons:
-		names.append(weapon.name)
-	return names
-
-
-### Ordering mechanic
+#### ORDERING MECHANICS TO UPDATE
 
 # refreshes weapon order from the pause screen
 

@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://oagfu4u7fonq"]
+[gd_scene load_steps=4 format=3 uid="uid://oagfu4u7fonq"]
 
 [ext_resource type="Script" uid="uid://cj2kxbgxsr4au" path="res://scenes/Weapons/Projectiles/range_long_bow.gd" id="1_mfpuh"]
+[ext_resource type="Texture2D" uid="uid://g6ugmcmy7wdd" path="res://UI/weaponicons/bowicon.png" id="2_yiky1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x3feo"]
 radius = 737.024
@@ -9,6 +10,7 @@ radius = 737.024
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_mfpuh")
+weapon_icon = ExtResource("2_yiky1")
 attackSpeed = 0.75
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
