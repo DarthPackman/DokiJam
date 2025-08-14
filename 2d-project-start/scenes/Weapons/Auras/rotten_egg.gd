@@ -10,7 +10,7 @@ var damage = 2.5
 @export var statusEffectDisabled = false
 @onready var areaOfEffect = %AOE
 @onready var fx = %FX
-var currentLvl = 1.0
+var currentLvl = 1
 
 func _ready() -> void:
 	areaOfEffect.play("trigger")

@@ -10,7 +10,7 @@ var damage = 2.5
 @export var statusEffectDisabled = false
 @onready var areaOfEffect = %AOE
 @onready var burpCollider = %BurpC2D
-var currentLvl = 1.0
+var currentLvl = 1
 	
 func _physics_process(delta: float) -> void:
 	duration_time_elapsed += delta

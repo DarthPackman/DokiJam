@@ -31,16 +31,85 @@ func _find_player() -> void:
 		push_warning("Player not found in group 'player'")
 
 func weapon_lottery() -> Array:
-	"""Generate weapon lottery options - returns list of 4 weapons (all r_lo_bow for now)"""
+	"""Generate weapon lottery options based on duplicate chance logic"""
 	var weapon_options: Array = []
-
-	# For now, manually set all to refer to "r_lo_bow"
-	weapon_options.append("r_lo_bow")
-	weapon_options.append("a_reg_aura")
-	weapon_options.append("z_ch_StoppyBoots")
-	weapon_options.append("z_egg_RunnyYolk")
-	print("levelupscreen", weapon_options)
+	
+	# Create list of inactive weapons (pool) and duplicates (active weapons)
+	var inactive_weapons: Array = []
+	var duplicate_weapons: Array = []
+	
+	# Get all weapon nodes from player
+	var all_weapons = player.get_children().filter(func(child): return child.name.begins_with("r_") or child.name.begins_with("a_") or child.name.begins_with("z_") or child.name.begins_with("m_"))
+	
+	for weapon in all_weapons:
+		var is_active = false
+		# Check if weapon is in active slots
+		for slot_weapon in player.weapon_slots:
+			if slot_weapon == weapon:
+				is_active = true
+				break
+		
+		if is_active:
+			duplicate_weapons.append(weapon.name)
+		else:
+			inactive_weapons.append(weapon.name)
+	
+	print("Inactive weapons pool: ", inactive_weapons)
+	print("Duplicate weapons pool: ", duplicate_weapons)
+	
+	# Count filled slots (active weapons)
+	var filled_slots = 0
+	for slot in player.weapon_slots:
+		if slot != null:
+			filled_slots += 1
+	
+	print("Filled slots: ", filled_slots)
+	
+	# 2. Use duplicate chance logic
+	var duplicate_chance = 0.0
+	if filled_slots < 4:
+		duplicate_chance = 0.10  # 10% chance for duplicates
+	else:
+		duplicate_chance = 1.0   # upgrade only
+	
+	print("Duplicate chance: ", duplicate_chance * 100, "%")
+	
+	# Generate 4 weapon options
+	for i in range(4):
+		var selected_weapon: String
+		
+		# Roll for duplicate vs new weapon
+		if randf() < duplicate_chance and duplicate_weapons.size() > 0:
+			# Pick from duplicates
+			selected_weapon = duplicate_weapons[randi() % duplicate_weapons.size()]
+			print("Selected duplicate: ", selected_weapon)
+		else:
+			# Pick from inactive weapons
+			if inactive_weapons.size() > 0:
+				selected_weapon = inactive_weapons[randi() % inactive_weapons.size()]
+				print("Selected new weapon: ", selected_weapon)
+			else:
+				# Fallback to duplicates if no inactive weapons available
+				if duplicate_weapons.size() > 0:
+					selected_weapon = duplicate_weapons[randi() % duplicate_weapons.size()]
+					print("Fallback to duplicate: ", selected_weapon)
+				else:
+					print("ERROR: No weapons available!")
+					continue
+		
+		weapon_options.append(selected_weapon)
+	
+	print("Final weapon options: ", weapon_options)
 	return weapon_options
+
+	## Dummy Upgrade 
+	#weapon_options.clear()
+	#weapon_options.append("r_lo_bow")
+	#weapon_options.append("a_reg_aura")
+	#weapon_options.append("z_ch_StoppyBoots")
+	#weapon_options.append("z_egg_RunnyYolk")
+	#print("levelupscreen", weapon_options)
+	#return weapon_options
 
 func _generate_options():
 	if not player:

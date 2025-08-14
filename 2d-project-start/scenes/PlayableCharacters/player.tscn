@@ -136,7 +136,7 @@ unique_name_in_owner = true
 [node name="r_reg_rifle" parent="." instance=ExtResource("10_h2ms7")]
 unique_name_in_owner = true
 
-[node name="m_lo_spear" parent="." instance=ExtResource("15_suj3s")]
+[node name="q_lo_spear" parent="." instance=ExtResource("15_suj3s")]
 unique_name_in_owner = true
 
 [node name="m_egg_OverhardEgg" parent="." instance=ExtResource("16_422pe")]

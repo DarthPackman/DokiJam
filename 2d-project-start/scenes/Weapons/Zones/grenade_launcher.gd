@@ -8,7 +8,7 @@ extends Area2D
 @export var duration = 1.0
 var zoneDmgMult = 1.0
 var zoneScaMult = 1.0
-var currentlvl = 1
+var currentLvl = 1
 
 func _ready() -> void:
 	attackSpeedTimer.wait_time = attackSpeed
@@ -32,11 +32,11 @@ func _on_timer_timeout() -> void:
 	shoot()
 
 func level_up():
-	currentlvl += 1
+	currentLvl += 1
 	
 	zoneDmgMult *= 1.25
 	attackSpeed *= 0.8
 	attackSpeedTimer.wait_time = attackSpeed
 	
-	if currentlvl % 5 == 0:
+	if currentLvl % 5 == 0:
 		zoneScaMult *= 1.25
