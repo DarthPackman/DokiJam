@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://cfxf7vp2if2lv" path="res://scenes/pickbird.gd" id="1_y6hrr"]
 [ext_resource type="Theme" uid="uid://cgah1efpjglvn" path="res://UI/Title screen.tres" id="2_oa5m0"]
 [ext_resource type="Texture2D" uid="uid://1sfvn3p3p5dj" path="res://UI/red_dragoon_with_tomatostill.webp" id="3_albn4"]
-[ext_resource type="AudioStream" uid="uid://cnap8bqop5noc" path="res://UI/1-24 Dance Hymn of the Soul (Disco i.mp3" id="3_oqyll"]
 [ext_resource type="Texture2D" uid="uid://ciyf7a7fshs4x" path="res://UI/RegularDragoonIdle.webp" id="4_dhlu5"]
+[ext_resource type="AudioStream" uid="uid://thjkyjoyx8uh" path="res://sound/bgm_mainmenu_fd1.ogg" id="5_t3ycx"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_qyulf"]
 
@@ -231,8 +231,8 @@ theme_override_font_sizes/font_size = 64
 text = "Back"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_oqyll")
-volume_db = -33.425
+stream = ExtResource("5_t3ycx")
+volume_db = -10.0
 autoplay = true
 
 [connection signal="pressed" from="Panel/MarginContainer/HBoxContainer/selectreg" to="." method="_on_selectreg_pressed"]
