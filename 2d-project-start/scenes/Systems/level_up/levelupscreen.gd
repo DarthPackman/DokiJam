@@ -8,6 +8,7 @@ signal upgrade_selected(upgrade_data: Dictionary)
 var upgrade_options: Array = []
 var input_locked := false
 var player: Node = null
+var lottery_weapons = null
 
 func _ready():
 	process_mode = Node.PROCESS_MODE_WHEN_PAUSED
@@ -31,75 +32,54 @@ func _find_player() -> void:
 		push_warning("Player not found in group 'player'")
 
 func weapon_lottery() -> Array:
-	"""Generate weapon lottery options based on duplicate chance logic"""
-	var weapon_options: Array = []
-	
-	# Create list of inactive weapons (pool) and duplicates (active weapons)
+	# Initial weapon pool setup
 	var inactive_weapons: Array = []
 	var duplicate_weapons: Array = []
+	var filled_slots = 0
 	
-	# Get all weapon nodes from player
 	var all_weapons = player.get_children().filter(func(child): return child.name.begins_with("r_") or child.name.begins_with("a_") or child.name.begins_with("z_") or child.name.begins_with("m_"))
 	
+	# Categorize weapons and count filled slots
 	for weapon in all_weapons:
-		var is_active = false
-		# Check if weapon is in active slots
-		for slot_weapon in player.weapon_slots:
-			if slot_weapon == weapon:
-				is_active = true
-				break
-		
+		var is_active = weapon in player.weapon_slots
 		if is_active:
 			duplicate_weapons.append(weapon.name)
 		else:
 			inactive_weapons.append(weapon.name)
 	
-	print("Inactive weapons pool: ", inactive_weapons)
-	print("Duplicate weapons pool: ", duplicate_weapons)
-	
-	# Count filled slots (active weapons)
-	var filled_slots = 0
 	for slot in player.weapon_slots:
 		if slot != null:
 			filled_slots += 1
 	
+	print("Inactive weapons pool: ", inactive_weapons)
+	print("Duplicate weapons pool: ", duplicate_weapons)
 	print("Filled slots: ", filled_slots)
 	
-	# 2. Use duplicate chance logic
-	var duplicate_chance = 0.0
-	if filled_slots < 4:
-		duplicate_chance = 0.10  # 10% chance for duplicates
-	else:
-		duplicate_chance = 1.0   # upgrade only
-	
+	var duplicate_chance = 0.10 if filled_slots < 4 else 1.0
 	print("Duplicate chance: ", duplicate_chance * 100, "%")
 	
-	# Generate 4 weapon options
-	for i in range(4):
+	var weapon_options: Array = []
+	
+	# Generate 4 unique weapons
+	while weapon_options.size() < 4:
 		var selected_weapon: String
 		
-		# Roll for duplicate vs new weapon
+		# Determine pool and select weapon
 		if randf() < duplicate_chance and duplicate_weapons.size() > 0:
-			# Pick from duplicates
 			selected_weapon = duplicate_weapons[randi() % duplicate_weapons.size()]
+			duplicate_weapons.erase(selected_weapon)
 			print("Selected duplicate: ", selected_weapon)
+		elif inactive_weapons.size() > 0:
+			selected_weapon = inactive_weapons[randi() % inactive_weapons.size()]
+			inactive_weapons.erase(selected_weapon)
+			print("Selected new weapon: ", selected_weapon)
 		else:
-			# Pick from inactive weapons
-			if inactive_weapons.size() > 0:
-				selected_weapon = inactive_weapons[randi() % inactive_weapons.size()]
-				print("Selected new weapon: ", selected_weapon)
-			else:
-				# Fallback to duplicates if no inactive weapons available
-				if duplicate_weapons.size() > 0:
-					selected_weapon = duplicate_weapons[randi() % duplicate_weapons.size()]
-					print("Fallback to duplicate: ", selected_weapon)
-				else:
-					print("ERROR: No weapons available!")
-					continue
-		
+			print("ERROR: No weapons available!")
+			break
+	
 		weapon_options.append(selected_weapon)
 	
-	print("Final weapon options: ", weapon_options)
+	print("Levelup: Generated lottery weapon list ", weapon_options)
 	return weapon_options
 
 	## Dummy Upgrade 
@@ -112,15 +92,9 @@ func weapon_lottery() -> Array:
 	#return weapon_options
 
 func _generate_options():
-	if not player:
-		_find_player()
-
-	if not player:
-		push_warning("Player not found - cannot generate upgrade options")
-		return
 
 	# Get weapon lottery results
-	var lottery_weapons = weapon_lottery()
+	lottery_weapons = weapon_lottery()
 	
 	# Get existing slots from UpgradeContainer
 	var existing_slots = upgrade_container.get_children()
@@ -130,7 +104,7 @@ func _generate_options():
 		var weapon_name = lottery_weapons[i]
 		var slot = existing_slots[i]
 		
-		# Access weapon node from player
+		# Access weapon node from playerww
 		var weapon_node = player._get_weapon_node_by_name(weapon_name)
 		if weapon_node:
 			# Get weapon information
@@ -161,29 +135,20 @@ func _generate_options():
 				slot.connect("pressed", _on_button_pressed.bind(i))
 
 func _on_button_pressed(index: int):
-	print("Button ", index, " clicked!")
-
-	# Validate index bounds
-	var existing_slots = upgrade_container.get_children()
-	if index < 0 or index >= existing_slots.size():
-		push_warning("Invalid button index: ", index)
-		return
-
-	# Get weapon lottery results
-	var lottery_weapons = weapon_lottery()
-	if index >= lottery_weapons.size():
-		push_warning("No weapon data for button index: ", index)
-		return
-
+	print("Levelup: ", "Button ", index, " clicked!")
+	print("Levelup: Checking list of  ", lottery_weapons)
+	# Access the correct weapon from the generated lottery weapons
 	var weapon_name = lottery_weapons[index]
+	print("Levelup: You have chosen ", weapon_name)
+	
 	var weapon_node = player._get_weapon_node_by_name(weapon_name)
 
 	# Print out the display name of the weapon clicked
-	var display_name = weapon_node.get("w_name") if weapon_node.has_method("get") and weapon_node.get("w_name") else weapon_name
+	var display_name = weapon_node.w_name
 	print("Weapon clicked: ", display_name)
 
 	# Store the old level before leveling up
-	var old_level = weapon_node.get("currentLvl") if weapon_node.has_method("get") and weapon_node.get("currentLvl") else 1
+	var old_level = weapon_node.currentLvl
 
 	# Call the weapon's level_up function
 	if weapon_node.has_method("level_up"):
