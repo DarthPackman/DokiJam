@@ -52,6 +52,10 @@ func _physics_process(delta: float) -> void:
 	if attackDuration_time_elapsed >= attackDuration:
 		for hit_visual in active_hit_visuals:
 			hit_visual.hide()
+	
+	for i in range(active_hit_visuals.size()):
+		active_hit_visuals[i].global_position = active_melee_points[i].global_position
+		active_hit_visuals[i].global_rotation = active_melee_points[i].global_rotation
 
 
 func attack():
