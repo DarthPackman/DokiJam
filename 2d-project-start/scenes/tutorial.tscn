@@ -1,0 +1,221 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2er3n3ikvuv2"]
+
+[ext_resource type="Script" uid="uid://dt2r6patjb74p" path="res://scenes/tutorial.gd" id="1_yb1ct"]
+[ext_resource type="Theme" uid="uid://cgah1efpjglvn" path="res://UI/Title screen.tres" id="2_ehuit"]
+
+[node name="Tutorial" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yb1ct")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+offset_right = 1921.0
+offset_bottom = 1077.0
+theme = ExtResource("2_ehuit")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_right = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 2.38782)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(0, 0, 0, 0.588235)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+texture_filter = 1
+offset_left = 32.0
+offset_top = 193.0
+offset_right = 954.0
+offset_bottom = 551.0
+scale = Vector2(2, 2)
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_ehuit")
+theme_override_font_sizes/font_size = 48
+text = "How To Play"
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="Gameplay" type="Label" parent="CanvasLayer/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_ehuit")
+theme_override_font_sizes/font_size = 32
+text = "Gameplay"
+
+[node name="Gameplay2" type="Label" parent="CanvasLayer/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_ehuit")
+text = "This is a Survivor Style Game"
+
+[node name="Gameplay3" type="Label" parent="CanvasLayer/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_ehuit")
+text = "Just Try Not To Get Hit"
+
+[node name="Gameplay4" type="Label" parent="CanvasLayer/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_ehuit")
+text = "Eventually Select New Items"
+
+[node name="Gameplay5" type="Label" parent="CanvasLayer/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_ehuit")
+text = "Chain your items effects"
+
+[node name="MarginContainer3" type="MarginContainer" parent="CanvasLayer/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Progress" type="VBoxContainer" parent="CanvasLayer/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer3"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="Type" type="Label" parent="CanvasLayer/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer3/Progress"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_ehuit")
+theme_override_font_sizes/font_size = 32
+text = "Types"
+
+[node name="Type2" type="Label" parent="CanvasLayer/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer3/Progress"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_ehuit")
+text = "Each Weapon Has a Type"
+
+[node name="Type3" type="Label" parent="CanvasLayer/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer3/Progress"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_ehuit")
+text = "Theres Chonk which applies CCs"
+
+[node name="Type4" type="Label" parent="CanvasLayer/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer3/Progress"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_ehuit")
+text = "Theres Tall which applies Debuffs"
+
+[node name="Type5" type="Label" parent="CanvasLayer/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer3/Progress"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_ehuit")
+text = "Theres Egg which applies DOTs"
+
+[node name="Type6" type="Label" parent="CanvasLayer/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer3/Progress"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_ehuit")
+text = "And theres Regular."
+
+[node name="Type7" type="Label" parent="CanvasLayer/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer3/Progress"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_ehuit")
+text = "It doesn't apply anything :P"
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="Chains" type="Label" parent="CanvasLayer/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_ehuit")
+theme_override_font_sizes/font_size = 32
+text = "Chains"
+
+[node name="Chains2" type="Label" parent="CanvasLayer/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_ehuit")
+text = "The effects can also chain."
+
+[node name="Chains3" type="Label" parent="CanvasLayer/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_ehuit")
+text = "Debuffs & CC Enhance"
+
+[node name="Chains4" type="Label" parent="CanvasLayer/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_ehuit")
+text = "Debuffs & Dots will spread"
+
+[node name="Chains5" type="Label" parent="CanvasLayer/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_ehuit")
+text = "CCs & Dots will detonate"
+
+[node name="Chains6" type="Label" parent="CanvasLayer/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_ehuit")
+text = "Regular resets durations"
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 300
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 300
+
+[node name="Button" type="Button" parent="CanvasLayer/VBoxContainer/MarginContainer2"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_ehuit")
+theme_override_font_sizes/font_size = 32
+text = "START"
+
+[connection signal="mouse_entered" from="CanvasLayer/VBoxContainer/MarginContainer2/Button" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/MarginContainer2/Button" to="." method="_on_button_pressed"]
