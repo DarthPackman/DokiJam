@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmkxjfnht3f1k"]
+
+[ext_resource type="PackedScene" uid="uid://ceg4kqfltdyk0" path="res://scenes/Systems/weapon_sorter/Fix/NewWeaponSlot.tscn" id="1_jq05s"]
+[ext_resource type="Script" uid="uid://cb54dpxnb7ycb" path="res://scenes/Systems/weapon_sorter/Fix/new_weapon_order_ui.gd" id="1_uf2vr"]
+
+[node name="NewWeaponOrderUI" type="Control"]
+layout_mode = 3
+anchor_right = 0.462
+anchor_bottom = 0.668
+offset_left = 110.0
+offset_top = 65.0
+offset_right = -111.04
+offset_bottom = -372.44
+script = ExtResource("1_uf2vr")
+
+[node name="SlotContainer" type="HBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 69.0
+offset_top = 25.0
+offset_right = 594.0
+offset_bottom = 145.0
+theme_override_constants/separation = 15
+
+[node name="WeaponSlot" parent="SlotContainer" instance=ExtResource("1_jq05s")]
+layout_mode = 2
+
+[node name="WeaponSlot2" parent="SlotContainer" instance=ExtResource("1_jq05s")]
+layout_mode = 2
+
+[node name="WeaponSlot3" parent="SlotContainer" instance=ExtResource("1_jq05s")]
+layout_mode = 2
+
+[node name="WeaponSlot4" parent="SlotContainer" instance=ExtResource("1_jq05s")]
+layout_mode = 2
+
+[node name="Instructions" type="Label" parent="."]
+layout_mode = 2
+offset_left = -62.0
+offset_top = 156.0
+offset_right = 748.0
+offset_bottom = 195.0
+theme_override_font_sizes/font_size = 28
+text = "Click and swap your weapon order for interesting chain reactions!"
+horizontal_alignment = 1

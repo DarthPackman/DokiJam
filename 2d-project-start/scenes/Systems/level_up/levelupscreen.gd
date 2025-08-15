@@ -67,15 +67,23 @@ func weapon_lottery() -> Array:
 		# Determine pool and select weapon
 		if randf() < duplicate_chance and duplicate_weapons.size() > 0:
 			selected_weapon = duplicate_weapons[randi() % duplicate_weapons.size()]
-			duplicate_weapons.erase(selected_weapon)
 			print("Selected duplicate: ", selected_weapon)
 		elif inactive_weapons.size() > 0:
 			selected_weapon = inactive_weapons[randi() % inactive_weapons.size()]
-			inactive_weapons.erase(selected_weapon)
 			print("Selected new weapon: ", selected_weapon)
 		else:
 			print("ERROR: No weapons available!")
 			break
+		
+		# Skip if weapon already selected
+		if selected_weapon in weapon_options:
+			continue
+		
+		# Remove from pools only after confirming it's unique
+		if selected_weapon in duplicate_weapons:
+			duplicate_weapons.erase(selected_weapon)
+		elif selected_weapon in inactive_weapons:
+			inactive_weapons.erase(selected_weapon)
 	
 		weapon_options.append(selected_weapon)
 	
@@ -175,7 +183,6 @@ func _on_button_pressed(index: int):
 		
 		player._update_weapon_slots_ui()
 		
-
 	else:
 		push_warning("Weapon ", weapon_name, " does not have a level_up method")
 

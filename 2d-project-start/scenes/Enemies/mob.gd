@@ -17,6 +17,7 @@ extends CharacterBody2D
 @export var exp_amt: int = 5
 @export var expMult = 1.0
 @export var orb_spawn_radius: float = 2
+@export var defaultSpeed = 100
 
 var character
 var canBeStunned = true

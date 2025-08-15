@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://33tqhb5p6ylb"]
+[gd_scene load_steps=7 format=3 uid="uid://33tqhb5p6ylb"]
 
 [ext_resource type="Script" uid="uid://dqkqb518uysll" path="res://scenes/Weapons/Melees/melee_long_spearjab.gd" id="1_wa0lo"]
+[ext_resource type="Texture2D" uid="uid://du25lna3pkmk7" path="res://UI/weaponicons/spearicon.png" id="2_fb84e"]
 [ext_resource type="PackedScene" uid="uid://s1juok152iqw" path="res://scenes/Weapons/Melees/Melee_Long_Spear.tscn" id="2_sxkrg"]
 [ext_resource type="AudioStream" uid="uid://cpka1jy22e1g2" path="res://sound/pc/sfx_pc_attackspear_fd1.ogg" id="3_t7jj3"]
 
@@ -16,6 +17,7 @@ stream_0/stream = ExtResource("3_t7jj3")
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_wa0lo")
+weapon_icon = ExtResource("2_fb84e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_x3feo")

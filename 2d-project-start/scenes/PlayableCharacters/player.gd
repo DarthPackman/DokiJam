@@ -21,8 +21,9 @@ var weapon_slots: Array[Node] = [null, null, null, null]  # 4 weapon slots
 var max_weapon_slots: int = 4
 
 # Weapon Slots
-@onready var weapon_slots_ui = %WeaponSlotsUI  # HBoxContainer with 4 Slot children
+@onready var weapon_slots_ui = %NewWeaponSlotsUI  # HBoxContainer with 4 Slot children
 signal weapon_slots_changed(weapon_names: Array[String])
+
 
 func _ready() -> void:
 	# Loads the player node into the group "player" for easier access anywhere
@@ -158,16 +159,27 @@ func _start_firing_once_ready() -> void:
 	is_firing_sequence = true    
 	firing_seq()  
 	
+# Add this variable to your class
+var firing_sequence_active: bool = true
+
 func firing_seq() -> void:  
 	while true:  
+		# Check if node is still in tree (for scene changes)
+		if not is_inside_tree():
+			break
+			
 		# Check if game is paused before processing weapons  
 		if get_tree().paused:  
 			await get_tree().process_frame  # Wait one frame and check again  
 			continue  
 			  
-		for i in range(weapon_slots.size()):  
-			var weapon = weapon_slots[i]  
-			if weapon:  
+		for i in range(weapon_slots.size()):
+			# Check if node is still in tree
+			if not is_inside_tree():
+				return
+				
+			var weapon = weapon_slots[i]
+			if weapon:
 				# Check pause state before activating each weapon  
 				if get_tree().paused:  
 					break  # Exit weapon loop if paused  
@@ -179,15 +191,22 @@ func firing_seq() -> void:
 				_set_weapon_active(weapon, true)  
   
 				# Check pause during countdown  
-				for countdown in range(int(weapon_duration), 0, -1):  
+				for countdown in range(int(weapon_duration), 0, -1):
+					# Check if node is still in tree
+					if not is_inside_tree():
+						return
 					if get_tree().paused:  
 						break  # Exit countdown if paused  
 					print("Weapon ", weapon_name, " firing... ", countdown, " seconds remaining")  
 					await get_tree().create_timer(1.0).timeout  
-  
+
+				# Check if node is still in tree before deactivating
+				if not is_inside_tree():
+					return
 				_set_weapon_active(weapon, false)  
 				print("Weapon ", i, " ", weapon_name, " is deactivated")  
 				print("Weapon delay is ", weapon_duration, " seconds")
+				
 				
 func _get_weapon_duration(weapon: Node) -> float:
 	"""Get the duration property from a weapon node, with fallback"""
@@ -334,7 +353,6 @@ func _populate_test_weapons() -> void:
 
 	_debug_dump_weapon_slots()
 
-
 #### WEAPON SLOTS UI SYSTEM ####
 
 func _initialize_weapon_slots_ui() -> void:
@@ -346,21 +364,21 @@ func _initialize_weapon_slots_ui() -> void:
 func _update_weapon_slots_ui() -> void:
 	if not weapon_slots_ui:
 		return
+	
 	var slots = weapon_slots_ui.get_children()
 	for i in range(min(4, slots.size())):
 		var slot = slots[i]
-		if slot.has_method("set_weapon_node"):
-			# Pass the weapon node directly to the slot
-			var weapon_node = null
-			if i < weapon_slots.size() and weapon_slots[i]:
-				weapon_node = weapon_slots[i]
-			slot.set_weapon_node(weapon_node)
-		elif slot.has_method("set_weapon_display"):
-			# Fallback to old method
-			var weapon_name = ""
-			if i < weapon_slots.size() and weapon_slots[i]:
-				weapon_name = weapon_slots[i].name
-			slot.set_weapon_display(weapon_name)
+		
+		# Set the weapon node (automatically updates display name and icon)
+		var weapon_node = null
+		if i < weapon_slots.size() and weapon_slots[i]:
+			weapon_node = weapon_slots[i]
+		slot.set_weapon_node(weapon_node)
+		
+		# Update slot number (1-based)
+		slot.set_slot_number(i + 1)
+
+
 
 
 #### ORDERING MECHANICS TO UPDATE

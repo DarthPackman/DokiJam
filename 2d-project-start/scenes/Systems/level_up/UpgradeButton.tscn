@@ -5,7 +5,7 @@
 [sub_resource type="Theme" id="Theme_p88pd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p88pd"]
-bg_color = Color(0, 0, 0, 0.372549)
+bg_color = Color(0.258824, 0.364706, 0.760784, 1)
 border_color = Color(0, 0, 0, 0.372549)
 corner_radius_top_left = 2
 corner_radius_top_right = 2
@@ -24,8 +24,8 @@ script = ExtResource("1_p88pd")
 unique_name_in_owner = true
 custom_minimum_size = Vector2(120, 120)
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 120.0
+offset_bottom = 182.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_p88pd")
 
 [node name="Icon" type="TextureRect" parent="."]
@@ -34,15 +34,15 @@ layout_mode = 0
 offset_left = 2.0
 offset_top = 2.0
 offset_right = 117.0
-offset_bottom = 117.0
+offset_bottom = 97.0
 
 [node name="WeaponName" type="Label" parent="."]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 4.0
-offset_top = 49.0
+offset_top = 98.0
 offset_right = 115.0
-offset_bottom = 72.0
+offset_bottom = 121.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
 text = "Test"

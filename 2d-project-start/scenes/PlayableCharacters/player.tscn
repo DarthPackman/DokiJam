@@ -1,24 +1,38 @@
-[gd_scene load_steps=26 format=3 uid="uid://cbcpmhuc0r3uh"]
+[gd_scene load_steps=40 format=3 uid="uid://cbcpmhuc0r3uh"]
 
 [ext_resource type="Script" uid="uid://eiogqwid6kow" path="res://scenes/PlayableCharacters/player.gd" id="1_dfvke"]
 [ext_resource type="PackedScene" uid="uid://c5lnuyav6ht8l" path="res://scenes/Systems/level_up/LevelUpScreen.tscn" id="2_60uwt"]
-[ext_resource type="PackedScene" uid="uid://dvrblc4a171aq" path="res://scenes/Systems/weapon_slots_ui/slot.tscn" id="3_dfvke"]
+[ext_resource type="PackedScene" uid="uid://ceg4kqfltdyk0" path="res://scenes/Systems/weapon_sorter/Fix/NewWeaponSlot.tscn" id="4_k2qg6"]
+[ext_resource type="Texture2D" uid="uid://d4fr3rk4bjwtb" path="res://UI/weaponicons/auraicon.png" id="5_7paq1"]
+[ext_resource type="Texture2D" uid="uid://27pk32a2bsg0" path="res://UI/weaponicons/sodaicon.png" id="7_k2qg6"]
 [ext_resource type="PackedScene" uid="uid://w4a8mr0bw34i" path="res://scenes/Weapons/Projectiles/Range_Chonk_Shotgun.tscn" id="7_lt7xh"]
 [ext_resource type="PackedScene" uid="uid://c75lvu1b71tom" path="res://scenes/Weapons/Auras/aura.tscn" id="7_sofp6"]
 [ext_resource type="PackedScene" uid="uid://dgtxwbels7nep" path="res://scenes/Weapons/Projectiles/Range_Egg_HardBoiledEgg.tscn" id="8_7hjkf"]
 [ext_resource type="PackedScene" uid="uid://bqr368synoprc" path="res://scenes/Weapons/Auras/burp.tscn" id="8_44o0s"]
+[ext_resource type="Texture2D" uid="uid://tn51yavixcwv" path="res://UI/weaponicons/hulahoopicon.png" id="9_g5142"]
 [ext_resource type="PackedScene" uid="uid://oagfu4u7fonq" path="res://scenes/Weapons/Projectiles/Range_Long_Bow.tscn" id="9_mr6oa"]
 [ext_resource type="PackedScene" uid="uid://d0k2jxoacl7c4" path="res://scenes/Weapons/Auras/hoolahoop.tscn" id="9_psgcq"]
 [ext_resource type="PackedScene" uid="uid://becjgrhp41w6q" path="res://scenes/Weapons/Auras/rottenEgg.tscn" id="10_ehq6x"]
 [ext_resource type="PackedScene" uid="uid://cj83crweoun23" path="res://scenes/Weapons/Projectiles/Range_Reg_Rifle.tscn" id="10_h2ms7"]
-[ext_resource type="PackedScene" uid="uid://s1juok152iqw" path="res://scenes/Weapons/Melees/Melee_Long_Spear.tscn" id="15_suj3s"]
+[ext_resource type="Texture2D" uid="uid://bxwu2uq08phrr" path="res://UI/weaponicons/rottenicon.png" id="11_48cmo"]
+[ext_resource type="Texture2D" uid="uid://dwymfu4d6ti0j" path="res://UI/weaponicons/shotgunicon.png" id="13_1ygwp"]
+[ext_resource type="Texture2D" uid="uid://boy1monfq84yt" path="res://UI/weaponicons/hardboiledicon.png" id="15_q0b77"]
 [ext_resource type="PackedScene" uid="uid://w30vum0s5f0g" path="res://scenes/Weapons/Melees/OverhardEgg.tscn" id="16_422pe"]
 [ext_resource type="PackedScene" uid="uid://b1bunl8yrhgul" path="res://scenes/Weapons/Melees/PicoPicoHammer.tscn" id="17_7aegy"]
 [ext_resource type="PackedScene" uid="uid://dl3ck6gf8whyl" path="res://scenes/Weapons/Zones/grenade_launcher.tscn" id="17_ip7fd"]
+[ext_resource type="Texture2D" uid="uid://2uwwjnbiup2p" path="res://UI/weaponicons/revolvericon.png" id="18_pbgmv"]
 [ext_resource type="PackedScene" uid="uid://cbpa8bfyo4b8k" path="res://scenes/Weapons/Zones/dragoon_plane.tscn" id="18_sofp6"]
 [ext_resource type="PackedScene" uid="uid://d11s0633u7mtu" path="res://scenes/Weapons/Melees/WingSlap.tscn" id="18_vriqo"]
 [ext_resource type="PackedScene" uid="uid://6ftgwf870l3c" path="res://scenes/Weapons/Zones/runnyYolk.tscn" id="19_44o0s"]
+[ext_resource type="PackedScene" uid="uid://33tqhb5p6ylb" path="res://scenes/Weapons/Melees/Melee_Long_SpearJab.tscn" id="19_hsyhi"]
 [ext_resource type="PackedScene" uid="uid://b46lmlwb7n8jp" path="res://scenes/Weapons/Zones/stoppyboots.tscn" id="20_psgcq"]
+[ext_resource type="Texture2D" uid="uid://csmvuw50qg1ev" path="res://UI/weaponicons/overhardicon.png" id="21_cg8p5"]
+[ext_resource type="Texture2D" uid="uid://c44gupjpwkyak" path="res://UI/weaponicons/hammericon.png" id="23_cgktx"]
+[ext_resource type="Texture2D" uid="uid://0dsndlf8dhv3" path="res://UI/weaponicons/wingicon.png" id="25_opi8d"]
+[ext_resource type="Texture2D" uid="uid://ctcyw6aox4rja" path="res://UI/weaponicons/bootsicon.png" id="27_ju7sw"]
+[ext_resource type="Texture2D" uid="uid://gp2vej0q1plg" path="res://UI/weaponicons/grenadeicon.png" id="29_iq1ov"]
+[ext_resource type="Texture2D" uid="uid://bqom252p620df" path="res://UI/weaponicons/runnyyolkicon.png" id="31_dtux0"]
+[ext_resource type="Texture2D" uid="uid://g2jqcw8flvjf" path="res://UI/weaponicons/airsupporticon.png" id="33_jxftc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gfie6"]
 bg_color = Color(0.152941, 0.168627, 0.188235, 1)
@@ -79,21 +93,21 @@ layer = 50
 unique_name_in_owner = true
 visible = false
 
-[node name="WeaponSlotsUI" type="HBoxContainer" parent="UI"]
+[node name="NewWeaponSlotsUI" type="HBoxContainer" parent="UI"]
 unique_name_in_owner = true
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Slot" parent="UI/WeaponSlotsUI" instance=ExtResource("3_dfvke")]
+[node name="WeaponSlot" parent="UI/NewWeaponSlotsUI" instance=ExtResource("4_k2qg6")]
 layout_mode = 2
 
-[node name="Slot2" parent="UI/WeaponSlotsUI" instance=ExtResource("3_dfvke")]
+[node name="WeaponSlot2" parent="UI/NewWeaponSlotsUI" instance=ExtResource("4_k2qg6")]
 layout_mode = 2
 
-[node name="Slot3" parent="UI/WeaponSlotsUI" instance=ExtResource("3_dfvke")]
+[node name="WeaponSlot3" parent="UI/NewWeaponSlotsUI" instance=ExtResource("4_k2qg6")]
 layout_mode = 2
 
-[node name="Slot4" parent="UI/WeaponSlotsUI" instance=ExtResource("3_dfvke")]
+[node name="WeaponSlot4" parent="UI/NewWeaponSlotsUI" instance=ExtResource("4_k2qg6")]
 layout_mode = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -114,48 +128,62 @@ debug_color = Color(0.786142, 0.408967, 0.383428, 0.42)
 
 [node name="a_reg_aura" parent="." instance=ExtResource("7_sofp6")]
 unique_name_in_owner = true
+weapon_icon = ExtResource("5_7paq1")
 
 [node name="a_ch_Burp" parent="." instance=ExtResource("8_44o0s")]
 unique_name_in_owner = true
+weapon_icon = ExtResource("7_k2qg6")
 
 [node name="a_lo_Hoola" parent="." instance=ExtResource("9_psgcq")]
 unique_name_in_owner = true
+weapon_icon = ExtResource("9_g5142")
 
 [node name="a_egg_RottenEgg" parent="." instance=ExtResource("10_ehq6x")]
 unique_name_in_owner = true
+weapon_icon = ExtResource("11_48cmo")
 
 [node name="r_ch_shotgun" parent="." instance=ExtResource("7_lt7xh")]
 unique_name_in_owner = true
+weapon_icon = ExtResource("13_1ygwp")
 
 [node name="r_egg_hbe" parent="." instance=ExtResource("8_7hjkf")]
 unique_name_in_owner = true
+weapon_icon = ExtResource("15_q0b77")
 
 [node name="r_lo_bow" parent="." instance=ExtResource("9_mr6oa")]
 unique_name_in_owner = true
 
-[node name="r_reg_rifle" parent="." instance=ExtResource("10_h2ms7")]
+[node name="r_reg_revolver" parent="." instance=ExtResource("10_h2ms7")]
 unique_name_in_owner = true
+weapon_icon = ExtResource("18_pbgmv")
 
-[node name="q_lo_spear" parent="." instance=ExtResource("15_suj3s")]
+[node name="m_lo_spear" parent="." instance=ExtResource("19_hsyhi")]
 unique_name_in_owner = true
 
 [node name="m_egg_OverhardEgg" parent="." instance=ExtResource("16_422pe")]
 unique_name_in_owner = true
+weapon_icon = ExtResource("21_cg8p5")
 
 [node name="m_ch_PicoPicoHammer" parent="." instance=ExtResource("17_7aegy")]
 unique_name_in_owner = true
+weapon_icon = ExtResource("23_cgktx")
 
 [node name="m_r_WingSlap" parent="." instance=ExtResource("18_vriqo")]
 unique_name_in_owner = true
+weapon_icon = ExtResource("25_opi8d")
 
 [node name="z_ch_StoppyBoots" parent="." instance=ExtResource("20_psgcq")]
 unique_name_in_owner = true
+weapon_icon = ExtResource("27_ju7sw")
 
 [node name="z_r_Grenade" parent="." instance=ExtResource("17_ip7fd")]
 unique_name_in_owner = true
+weapon_icon = ExtResource("29_iq1ov")
 
 [node name="z_egg_RunnyYolk" parent="." instance=ExtResource("19_44o0s")]
 unique_name_in_owner = true
+weapon_icon = ExtResource("31_dtux0")
 
 [node name="z_lo_DragoonPlane" parent="." instance=ExtResource("18_sofp6")]
 unique_name_in_owner = true
+weapon_icon = ExtResource("33_jxftc")
