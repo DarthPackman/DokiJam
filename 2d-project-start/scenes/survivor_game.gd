@@ -18,13 +18,19 @@ var mult_exp : float = 1.0
 var mult_hp : float = 1.0
 
 var mutation_times = [1, 4, 7, 10]  
-var victory_time = 18  
+var victory_time = 15  
 var triggered_events = {}
+var boss_spawned = false
+var minutes
+var seconds
+
+func _ready() -> void:
+	Autoload.play_gameplay()
 
 func _process(delta: float) -> void:
 	activeTime += delta
-	var minutes = floor(activeTime/60)
-	var seconds = fmod(activeTime, 60)
+	minutes = floor(activeTime/60)
+	seconds = fmod(activeTime, 60)
 	timerLabel.text = "%02d:%02d" % [minutes, seconds]
 	if minutes == 5:
 		difficulty = 1
@@ -42,7 +48,6 @@ func _process(delta: float) -> void:
 			mutation()  
 			triggered_events[time] = true  
 			break  # Only trigger one mutation per frame  
-	  
 	# Check for victory time  
 	if minutes == victory_time:  
 		triggerVictory()  
@@ -52,26 +57,26 @@ func spawn_mob():
 	var reg_mob = preload("res://scenes/Enemies/RegMob.tscn")
 	var slow_mob = preload("res://scenes/Enemies/SlowMob.tscn")
 	var fast_mob = preload("res://scenes/Enemies/FastMob.tscn")
+	var boss_mob = preload("res://scenes/Enemies/BossRobot.tscn")
 	var currentSpawn = randi() % 3
 	var new_mob
 	
-	if currentSpawn == 0:
+	if minutes == 13 and not boss_spawned:
+		new_mob = boss_mob.instantiate()
+		boss_spawned = true
+	elif currentSpawn == 0:
 		new_mob = reg_mob.instantiate()
-		
-		#Mutation Factor for Each Round - Multipliers Exist
-		new_mob.expMult = mult_exp
-		
-		new_mob.hpMult = mult_hp
-		new_mob.speedMult = mult_speed
-		
-		new_mob.dmgTakenMult = mult_dam_taken
-		new_mob.dmgDealtMult = mult_dam_dealt
-
 	elif currentSpawn == 1:
 		new_mob = slow_mob.instantiate()
-	
 	elif currentSpawn == 2:
 		new_mob = fast_mob.instantiate()
+	
+	#Mutation Factor for Each Round - Multipliers Exist
+	new_mob.expMult = mult_exp
+	new_mob.hpMult = mult_hp
+	new_mob.speedMult = mult_speed
+	new_mob.dmgTakenMult = mult_dam_taken
+	new_mob.dmgDealtMult = mult_dam_dealt
 	
 	%PathFollow2D.progress_ratio = randf()
 	new_mob.global_position = %PathFollow2D.global_position

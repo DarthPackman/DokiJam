@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://w30vum0s5f0g"]
+[gd_scene load_steps=5 format=3 uid="uid://w30vum0s5f0g"]
 
 [ext_resource type="Script" uid="uid://cfnbs5ic7yaox" path="res://scenes/Weapons/Melees/overhard_egg.gd" id="1_iflvl"]
 [ext_resource type="PackedScene" uid="uid://br2s6r534yv13" path="res://scenes/Weapons/Melees/EggSlap.tscn" id="2_fyhn0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x3feo"]
 radius = 232.009
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_uspxi"]
+random_pitch = 1.5
 
 [node name="OverhardEgg" type="Area2D"]
 collision_layer = 0
@@ -61,5 +64,8 @@ rotation = 3.14159
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1
 autostart = true
+
+[node name="OverhardEggASP" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_uspxi")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

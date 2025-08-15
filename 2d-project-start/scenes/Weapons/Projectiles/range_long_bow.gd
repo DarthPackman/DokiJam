@@ -28,6 +28,7 @@ func _physics_process(delta: float) -> void:
 		look_at(target_enemy.global_position)
 
 func shoot():
+	$BowASP.play()
 	const PROJECTILE = preload("res://scenes/Weapons/Projectiles/Range_Long_BowArrow.tscn")
 	
 	for i in range(arrowCount):

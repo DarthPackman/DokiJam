@@ -35,8 +35,6 @@ func _on_back_pressed() -> void:
 func _on_button_mouse_entered() -> void:
 	Autoload.button_hover()
 
-
-
 ##func _on_texture_button_mouse_entered() -> void:
 ##	pass # Replace with function body.
 

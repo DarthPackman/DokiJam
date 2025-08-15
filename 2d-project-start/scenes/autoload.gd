@@ -18,6 +18,17 @@ func button_confirm():
 	
 func robot_hit():
 	$RobotHitASP.play()
+	
+func play_menus():
+	$MenuMusicASP.play()
+	$PlayMusicASP.stop()
+	
+func play_gameplay():
+	$PlayMusicASP.play()
+	$MenuMusicASP.stop()
+	
+func play_step():
+	$StepASP.play()
 
 func set_selected_character_data(name: String, player: PackedScene, weapon_name: String):
 	character_selected_name = name

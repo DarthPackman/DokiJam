@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://d0k2jxoacl7c4"]
+[gd_scene load_steps=12 format=3 uid="uid://d0k2jxoacl7c4"]
 
 [ext_resource type="Script" uid="uid://pvh8fg5q0n2l" path="res://scenes/Weapons/Auras/hoolahoop.gd" id="1_ryvyh"]
 [ext_resource type="Texture2D" uid="uid://do6201pso35ub" path="res://art/HoolaHoopActivation.png" id="2_kmgbt"]
@@ -57,6 +57,10 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_gsp1k"]
+random_pitch = 1.5
+streams_count = 1
+
 [node name="Hoola" type="Area2D"]
 scale = Vector2(10, 10)
 collision_layer = 2
@@ -87,3 +91,7 @@ scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_5ts7x")
 animation = &"duration"
 autoplay = "trigger"
+
+[node name="HoolaASP" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_gsp1k")
+autoplay = true

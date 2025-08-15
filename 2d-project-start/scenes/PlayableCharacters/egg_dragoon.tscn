@@ -144,6 +144,7 @@ texture = ExtResource("2_jsogl")
 unique_name_in_owner = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_ock1w")
-animation = &"idle"
+animation = &"walk"
 autoplay = "idle"
-frame_progress = 0.314022
+
+[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]

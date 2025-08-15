@@ -1,9 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://cbpa8bfyo4b8k"]
+[gd_scene load_steps=5 format=3 uid="uid://cbpa8bfyo4b8k"]
 
 [ext_resource type="Script" uid="uid://by75v61ekk2k1" path="res://scenes/Weapons/Zones/dragoon_plane.gd" id="1_4dlvw"]
+[ext_resource type="AudioStream" uid="uid://w1kmx3fo007r" path="res://sound/pc/sfx_pc_attackairsupport_fd1.ogg" id="2_uht8i"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0f4a4"]
 radius = 186.968
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_4dlvw"]
+random_pitch = 1.5
+streams_count = 1
+stream_0/stream = ExtResource("2_uht8i")
 
 [node name="DragoonPlane" type="Area2D"]
 script = ExtResource("1_4dlvw")
@@ -18,5 +24,8 @@ unique_name_in_owner = true
 position = Vector2(289, 0)
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="DragoonASP" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_4dlvw")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

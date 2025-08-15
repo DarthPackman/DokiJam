@@ -126,3 +126,5 @@ sprite_frames = SubResource("SpriteFrames_ock1w")
 animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.388015
+
+[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]

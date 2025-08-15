@@ -1,0 +1,75 @@
+[gd_scene load_steps=11 format=3 uid="uid://bo8vfmx1a4bo0"]
+
+[ext_resource type="Script" uid="uid://lj5ogvo2i730" path="res://scenes/Enemies/reg_robot.gd" id="1_jq83x"]
+[ext_resource type="Texture2D" uid="uid://c72qaapcg00h4" path="res://art/RegRobotShadow.png" id="2_86ga0"]
+[ext_resource type="Texture2D" uid="uid://b611v25v54ke5" path="res://art/BossRobotHurt.png" id="3_jq83x"]
+[ext_resource type="Texture2D" uid="uid://dtycyh5kk2f4a" path="res://art/BossRobotWalkt.png" id="4_86ga0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e70y2"]
+atlas = ExtResource("3_jq83x")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bdhi5"]
+atlas = ExtResource("4_86ga0")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qxyws"]
+atlas = ExtResource("4_86ga0")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jouek"]
+atlas = ExtResource("4_86ga0")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_an0ag"]
+atlas = ExtResource("4_86ga0")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p6t1m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e70y2")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bdhi5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qxyws")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jouek")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_an0ag")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="BossRobot" type="Node2D"]
+scale = Vector2(4, 4)
+script = ExtResource("1_jq83x")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 0.588235)
+texture_filter = 1
+position = Vector2(0, -1)
+texture = ExtResource("2_86ga0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+modulate = Color(0.592424, 0.57182, 1, 1)
+texture_filter = 1
+position = Vector2(0, -1.25)
+scale = Vector2(1, 0.995458)
+sprite_frames = SubResource("SpriteFrames_p6t1m")
+animation = &"walk"
+autoplay = "walk"
+frame_progress = 0.366093

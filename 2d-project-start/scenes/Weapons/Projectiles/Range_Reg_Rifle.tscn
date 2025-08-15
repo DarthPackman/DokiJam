@@ -1,9 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://cj83crweoun23"]
+[gd_scene load_steps=5 format=3 uid="uid://cj83crweoun23"]
 
 [ext_resource type="Script" uid="uid://d1qifws2etoml" path="res://scenes/Weapons/Projectiles/range_reg_rifle.gd" id="1_mpn4r"]
+[ext_resource type="AudioStream" uid="uid://diud2w1cufdyb" path="res://sound/pc/sfx_pc_attackrevolver_fd1.ogg" id="2_jmgl5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x3feo"]
 radius = 737.024
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_k7jrs"]
+random_pitch = 1.5
+streams_count = 1
+stream_0/stream = ExtResource("2_jmgl5")
 
 [node name="Rifle" type="Area2D"]
 collision_layer = 0
@@ -22,5 +28,8 @@ position = Vector2(95, -1)
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1
 autostart = true
+
+[node name="RevolverASP" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_k7jrs")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
