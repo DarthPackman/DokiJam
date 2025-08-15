@@ -55,6 +55,7 @@ func _physics_process(delta: float) -> void:
 
 
 func attack():
+	$SpearASP.play()
 	for hit_visual in active_hit_visuals:
 		hit_visual.show()
 		hit_visual.hit()

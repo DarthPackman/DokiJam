@@ -1,16 +1,24 @@
-[gd_scene load_steps=8 format=3 uid="uid://behpb8vvtuyi3"]
+[gd_scene load_steps=12 format=3 uid="uid://behpb8vvtuyi3"]
 
 [ext_resource type="Script" uid="uid://dkw4m0ypuoese" path="res://scenes/autoload.gd" id="1_0tcvc"]
-[ext_resource type="AudioStream" uid="uid://dftkka2l0mrw7" path="res://sound/sfx_ui_click_fd1.ogg" id="2_1o35o"]
-[ext_resource type="AudioStream" uid="uid://p6lfkj61uxb2" path="res://sound/sfx_ui_confirm_fd1.ogg" id="3_iv5r0"]
-[ext_resource type="AudioStream" uid="uid://blaxmgmbl3ycl" path="res://sound/sfx_ui_cursor_fd1.ogg" id="4_c1toh"]
-[ext_resource type="AudioStream" uid="uid://clsntg45l3ydq" path="res://sound/sfx_ui_back_fd1.ogg" id="5_0dp71"]
+[ext_resource type="AudioStream" uid="uid://dftkka2l0mrw7" path="res://sound/ui/sfx_ui_click_fd1.ogg" id="2_1o35o"]
+[ext_resource type="AudioStream" uid="uid://p6lfkj61uxb2" path="res://sound/ui/sfx_ui_confirm_fd1.ogg" id="3_iv5r0"]
+[ext_resource type="AudioStream" uid="uid://blaxmgmbl3ycl" path="res://sound/ui/sfx_ui_cursor_fd1.ogg" id="4_c1toh"]
+[ext_resource type="AudioStream" uid="uid://clsntg45l3ydq" path="res://sound/ui/sfx_ui_back_fd1.ogg" id="5_0dp71"]
 [ext_resource type="AudioStream" uid="uid://cwj1d4u0t7l1y" path="res://sound/sfx_npc_robothit_fd1.ogg" id="6_iv5r0"]
+[ext_resource type="AudioStream" uid="uid://thjkyjoyx8uh" path="res://sound/bgm/bgm_mainmenu_fd1.ogg" id="7_c1toh"]
+[ext_resource type="AudioStream" uid="uid://dfkpobr43rhwn" path="res://sound/bgm/bgm_gameplay_fd1.ogg" id="8_0dp71"]
+[ext_resource type="AudioStream" uid="uid://dbgbdmh7f1fj1" path="res://sound/pc/sfx_pc_walk_fd1.ogg" id="9_ektyd"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_c1toh"]
 random_pitch = 3.0
 streams_count = 1
 stream_0/stream = ExtResource("6_iv5r0")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_62578"]
+random_pitch = 2.5
+streams_count = 1
+stream_0/stream = ExtResource("9_ektyd")
 
 [node name="Autoload" type="Node2D"]
 script = ExtResource("1_0tcvc")
@@ -29,3 +37,13 @@ stream = ExtResource("5_0dp71")
 
 [node name="RobotHitASP" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_c1toh")
+volume_db = -5.0
+
+[node name="MenuMusicASP" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_c1toh")
+
+[node name="PlayMusicASP" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_0dp71")
+
+[node name="StepASP" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_62578")

@@ -22,11 +22,17 @@ func _toggle_pause() -> void:
 		weapon_order_ui.initialize()
 
 func _on_resume_button_pressed() -> void:
+	Autoload.button_click()
 	_toggle_pause()
 
 func _on_main_menu_button_pressed() -> void:
+	Autoload.button_click()
 	_toggle_pause()
 	get_tree().change_scene_to_file("res://scenes/titlescreen.tscn")
 
 func _on_exit_button_pressed() -> void:
+	Autoload.button_click()
 	get_tree().quit()
+	
+func _on_button_mouse_entered() -> void:
+	Autoload.button_hover()

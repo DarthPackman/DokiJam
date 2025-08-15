@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://c75lvu1b71tom"]
+[gd_scene load_steps=31 format=3 uid="uid://c75lvu1b71tom"]
 
 [ext_resource type="Script" uid="uid://cg5fxw0dkwmjs" path="res://scenes/Weapons/Auras/aura.gd" id="1_a4qu0"]
 [ext_resource type="Texture2D" uid="uid://bubwtmtduc3bl" path="res://art/AuraFarmDuration.png" id="2_p5wf1"]
@@ -186,6 +186,10 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_hy21y"]
+random_pitch = 1.5
+streams_count = 1
+
 [node name="AuraFarm" type="Area2D"]
 scale = Vector2(15, 15)
 collision_layer = 6
@@ -209,3 +213,7 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_uam7d")
 animation = &"trigger"
 autoplay = "trigger"
+
+[node name="AuraASP" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_hy21y")
+autoplay = true

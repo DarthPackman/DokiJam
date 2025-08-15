@@ -1,5 +1,7 @@
 extends Control
 
+func _ready() -> void:
+	Autoload.play_menus()
 
 func _on_playbutton_pressed() -> void:
 	Autoload.button_click()

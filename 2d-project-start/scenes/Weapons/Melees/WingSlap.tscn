@@ -1,10 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://d11s0633u7mtu"]
+[gd_scene load_steps=6 format=3 uid="uid://d11s0633u7mtu"]
 
 [ext_resource type="Script" uid="uid://bgp0tghr87hke" path="res://scenes/Weapons/Melees/wing_slap.gd" id="1_hbfq1"]
 [ext_resource type="PackedScene" uid="uid://bd82ta27leyu0" path="res://scenes/Weapons/Melees/Slap.tscn" id="2_vy0ba"]
+[ext_resource type="AudioStream" uid="uid://c6048mvf044a2" path="res://sound/pc/sfx_pc_attackwingslap_fd1.ogg" id="3_ma4uj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x3feo"]
 radius = 232.009
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ctriq"]
+random_pitch = 1.5
+streams_count = 1
+stream_0/stream = ExtResource("3_ma4uj")
 
 [node name="WingSlap" type="Area2D"]
 collision_layer = 0
@@ -58,5 +64,8 @@ position = Vector2(137, 0)
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1
 autostart = true
+
+[node name="WingASP" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_ctriq")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,9 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://b46lmlwb7n8jp"]
+[gd_scene load_steps=5 format=3 uid="uid://b46lmlwb7n8jp"]
 
 [ext_resource type="Script" uid="uid://8xygfuvr8rmt" path="res://scenes/Weapons/Zones/stoppyboots.gd" id="1_ncxwj"]
+[ext_resource type="AudioStream" uid="uid://cs1lftyjk7nvh" path="res://sound/pc/sfx_pc_attackboots_fd1.ogg" id="2_50dki"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0f4a4"]
 radius = 186.968
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ncxwj"]
+random_pitch = 1.5
+streams_count = 1
+stream_0/stream = ExtResource("2_50dki")
 
 [node name="StoppyBoots" type="Area2D"]
 collision_layer = 0
@@ -22,5 +28,8 @@ autostart = true
 unique_name_in_owner = true
 position = Vector2(0, -1)
 rotation = 1.5708
+
+[node name="BootsASP" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_ncxwj")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

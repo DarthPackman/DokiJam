@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://6ftgwf870l3c"]
+[gd_scene load_steps=4 format=3 uid="uid://6ftgwf870l3c"]
 
 [ext_resource type="Script" uid="uid://bk1h7871a1mgm" path="res://scenes/Weapons/Zones/runny_yolk.gd" id="1_dls6o"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0f4a4"]
 radius = 186.968
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_dls6o"]
+random_pitch = 1.5
+streams_count = 1
 
 [node name="RunnyYolk" type="Area2D"]
 script = ExtResource("1_dls6o")
@@ -20,5 +24,8 @@ autostart = true
 [node name="LandingSpot" type="Marker2D" parent="Marker2D"]
 unique_name_in_owner = true
 position = Vector2(0, 2)
+
+[node name="YolkASP" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_dls6o")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

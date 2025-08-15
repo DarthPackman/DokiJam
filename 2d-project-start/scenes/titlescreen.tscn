@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://w4bxcvu2q3eg"]
+[gd_scene load_steps=5 format=3 uid="uid://w4bxcvu2q3eg"]
 
 [ext_resource type="Script" uid="uid://bo2phtnpp1u4c" path="res://scenes/titlescreen.gd" id="1_bolpj"]
 [ext_resource type="Theme" uid="uid://cgah1efpjglvn" path="res://UI/Title screen.tres" id="2_b4itm"]
 [ext_resource type="Texture2D" uid="uid://0g7lvjca68u0" path="res://UI/9gag or whatever.png" id="3_4bvcf"]
-[ext_resource type="AudioStream" uid="uid://thjkyjoyx8uh" path="res://sound/bgm_mainmenu_fd1.ogg" id="4_t7v6v"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_55nes"]
 texture = ExtResource("3_4bvcf")
@@ -81,11 +80,6 @@ layout_mode = 2
 theme = ExtResource("2_b4itm")
 theme_override_font_sizes/font_size = 64
 text = "Quit"
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_t7v6v")
-volume_db = -10.0
-autoplay = true
 
 [connection signal="mouse_entered" from="MarginContainer/VBoxContainer/Playbutton" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Playbutton" to="." method="_on_playbutton_pressed"]

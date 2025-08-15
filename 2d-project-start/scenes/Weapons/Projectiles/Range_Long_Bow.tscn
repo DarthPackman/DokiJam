@@ -1,10 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://oagfu4u7fonq"]
+[gd_scene load_steps=6 format=3 uid="uid://oagfu4u7fonq"]
 
 [ext_resource type="Script" uid="uid://cj2kxbgxsr4au" path="res://scenes/Weapons/Projectiles/range_long_bow.gd" id="1_mfpuh"]
 [ext_resource type="Texture2D" uid="uid://g6ugmcmy7wdd" path="res://UI/weaponicons/bowicon.png" id="2_yiky1"]
+[ext_resource type="AudioStream" uid="uid://swqvutlbubl4" path="res://sound/pc/sfx_pc_attackbow_fd1.ogg" id="3_0ei3f"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x3feo"]
 radius = 737.024
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_a36og"]
+random_pitch = 1.5
+streams_count = 1
+stream_0/stream = ExtResource("3_0ei3f")
 
 [node name="Bow" type="Area2D"]
 collision_layer = 0
@@ -33,5 +39,8 @@ position = Vector2(50, 50)
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1
 autostart = true
+
+[node name="BowASP" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_a36og")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

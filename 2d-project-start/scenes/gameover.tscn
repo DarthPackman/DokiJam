@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bs2f1ike2rety" path="res://scenes/gameover.gd" id="1_2mkfd"]
 [ext_resource type="Theme" uid="uid://cgah1efpjglvn" path="res://UI/Title screen.tres" id="2_h8i2o"]
-[ext_resource type="AudioStream" uid="uid://y8iwirbb808u" path="res://sound/bgm_gamelose_fd1.ogg" id="3_2mkfd"]
+[ext_resource type="AudioStream" uid="uid://y8iwirbb808u" path="res://sound/bgm/bgm_gamelose_fd1.ogg" id="3_2mkfd"]
 
 [node name="gameover" type="Control"]
 texture_filter = 1
@@ -54,12 +54,12 @@ theme = ExtResource("2_h8i2o")
 theme_override_font_sizes/font_size = 64
 text = "Menu"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="LoseASP" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_2mkfd")
 volume_db = -33.425
 autoplay = true
 
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/retrybutton" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/retrybutton" to="." method="_on_retrybutton_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/retrybutton" to="." method="_on_playbutton_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/Menubutton" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Menubutton" to="." method="_on_menubutton_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Menubutton" to="." method="_on_quitbutton_pressed"]

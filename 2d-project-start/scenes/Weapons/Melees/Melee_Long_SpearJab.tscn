@@ -1,10 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://33tqhb5p6ylb"]
+[gd_scene load_steps=6 format=3 uid="uid://33tqhb5p6ylb"]
 
 [ext_resource type="Script" uid="uid://dqkqb518uysll" path="res://scenes/Weapons/Melees/melee_long_spearjab.gd" id="1_wa0lo"]
 [ext_resource type="PackedScene" uid="uid://s1juok152iqw" path="res://scenes/Weapons/Melees/Melee_Long_Spear.tscn" id="2_sxkrg"]
+[ext_resource type="AudioStream" uid="uid://cpka1jy22e1g2" path="res://sound/pc/sfx_pc_attackspear_fd1.ogg" id="3_t7jj3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x3feo"]
 radius = 232.009
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_fb84e"]
+random_pitch = 1.5
+streams_count = 1
+stream_0/stream = ExtResource("3_t7jj3")
 
 [node name="SpearJab" type="Area2D"]
 collision_layer = 0
@@ -62,5 +68,8 @@ rotation = -3.14159
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1
 autostart = true
+
+[node name="SpearASP" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_fb84e")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

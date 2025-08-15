@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1vgrvy0hc5i2"]
+
+[ext_resource type="Script" uid="uid://bk81dxkk24v2x" path="res://scenes/Enemies/boss_robot.gd" id="1_s2lbm"]
+[ext_resource type="PackedScene" uid="uid://bo8vfmx1a4bo0" path="res://scenes/Enemies/Boss_Robot.tscn" id="1_xl0uu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4gd1i"]
+size = Vector2(63, 120)
+
+[node name="BossMob" type="CharacterBody2D"]
+scale = Vector2(2, 2)
+collision_layer = 2
+collision_mask = 6
+script = ExtResource("1_s2lbm")
+
+[node name="BossRobot" parent="." instance=ExtResource("1_xl0uu")]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_4gd1i")
+
+[node name="DamageNumberOrigins" type="Node2D" parent="."]
+position = Vector2(0, -60)

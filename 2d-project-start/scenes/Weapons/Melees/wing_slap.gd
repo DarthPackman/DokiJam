@@ -59,6 +59,7 @@ func _physics_process(delta: float) -> void:
 
 
 func attack():
+	$WingASP.play()
 	if enemies_in_range.size() > 0:
 		look_at(target_enemy.global_position)
 		

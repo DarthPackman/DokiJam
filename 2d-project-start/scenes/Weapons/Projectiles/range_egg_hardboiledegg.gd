@@ -21,6 +21,7 @@ func _physics_process(delta: float) -> void:
 		look_at(target_enemy.global_position)
 
 func shoot():
+	$HardBoiledEggASP.play()
 	const BOILEDEGG = preload("res://scenes/Weapons/Projectiles/Range_Egg_HBEProjectile.tscn")
 	var new_egg = BOILEDEGG.instantiate()
 	new_egg.global_position = %ShootingPoint.global_position

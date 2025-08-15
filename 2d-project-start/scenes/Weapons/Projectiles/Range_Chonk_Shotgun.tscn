@@ -1,9 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://w4a8mr0bw34i"]
+[gd_scene load_steps=5 format=3 uid="uid://w4a8mr0bw34i"]
 
 [ext_resource type="Script" uid="uid://bgtd03ovxq05x" path="res://scenes/Weapons/Projectiles/range_chonk_shotgun.gd" id="1_43b16"]
+[ext_resource type="AudioStream" uid="uid://3akaa260mqvk" path="res://sound/pc/sfx_pc_attackshoutgun_fd1.ogg" id="2_xu8ny"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x3feo"]
 radius = 256.195
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_u34qh"]
+random_pitch = 1.5
+streams_count = 1
+stream_0/stream = ExtResource("2_xu8ny")
 
 [node name="ShotGun" type="Area2D"]
 collision_layer = 0
@@ -56,5 +62,8 @@ position = Vector2(50, 85)
 unique_name_in_owner = true
 wait_time = 0.1
 autostart = true
+
+[node name="ShotgunASP" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_u34qh")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

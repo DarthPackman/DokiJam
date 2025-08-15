@@ -1,9 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://dgtxwbels7nep"]
+[gd_scene load_steps=5 format=3 uid="uid://dgtxwbels7nep"]
 
 [ext_resource type="Script" uid="uid://d1dcw3uwf30kf" path="res://scenes/Weapons/Projectiles/range_egg_hardboiledegg.gd" id="1_01ltc"]
+[ext_resource type="AudioStream" uid="uid://cksfbcagjmbrm" path="res://sound/pc/sfx_pc_attackhardboiledegg_fd1.ogg" id="2_rnawl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x3feo"]
 radius = 737.024
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_vbdl0"]
+random_pitch = 1.5
+streams_count = 1
+stream_0/stream = ExtResource("2_rnawl")
 
 [node name="HardBoiledEgg" type="Area2D"]
 collision_layer = 0
@@ -22,5 +28,8 @@ position = Vector2(103, -1)
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1
 autostart = true
+
+[node name="HardBoiledEggASP" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_vbdl0")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
