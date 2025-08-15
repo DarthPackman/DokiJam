@@ -43,7 +43,7 @@ position = Vector2(-175, -128)
 rotation = 0.00268937
 
 [node name="MobSpawnTimer" type="Timer" parent="."]
-wait_time = 0.3
+wait_time = 0.5
 autostart = true
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]

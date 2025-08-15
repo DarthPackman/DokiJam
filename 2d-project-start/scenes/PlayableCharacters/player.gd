@@ -378,9 +378,6 @@ func _update_weapon_slots_ui() -> void:
 		# Update slot number (1-based)
 		slot.set_slot_number(i + 1)
 
-
-
-
 #### ORDERING MECHANICS TO UPDATE
 
 # refreshes weapon order from the pause screen

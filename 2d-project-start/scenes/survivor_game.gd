@@ -40,10 +40,16 @@ func _process(delta: float) -> void:
 		difficulty = 3
 	elif minutes == 12:
 		difficulty = 4
-
-	if difficulty == 1: 
-		spawnTimer.wait_time = 0.2
+	
+	if difficulty == 0:
+		spawnTimer.wait_time = 0.5
+	elif difficulty == 1:
+		spawnTimer.wait_time = 0.4
 	elif difficulty == 2:
+		spawnTimer.wait_time = 0.3
+	elif difficulty == 3:
+		spawnTimer.wait_time = 0.2
+	elif difficulty == 4:
 		spawnTimer.wait_time = 0.1
 
 # Check for mutation times  
