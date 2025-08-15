@@ -22,10 +22,12 @@ var character
 var canBeStunned = true
 var stunCD = 5.0
 var stunCD_elapsed = 0.0
+var defaultSpeed = 100
 
 const EXP_ORB_SCENE = preload("res://scenes/Systems/Exp_Orb.tscn")
 
 func _ready() -> void:
+	defaultSpeed = speed
 	health = health*hpMult
 	character = get_child(0)
 	character.play_walk()

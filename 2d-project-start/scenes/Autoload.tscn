@@ -15,8 +15,8 @@ random_pitch = 3.0
 streams_count = 1
 stream_0/stream = ExtResource("6_iv5r0")
 
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_62578"]
-random_pitch = 2.5
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ektyd"]
+random_pitch = 2.0
 streams_count = 1
 stream_0/stream = ExtResource("9_ektyd")
 
@@ -41,9 +41,12 @@ volume_db = -5.0
 
 [node name="MenuMusicASP" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_c1toh")
+volume_db = -5.0
 
 [node name="PlayMusicASP" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_0dp71")
+volume_db = -5.0
 
 [node name="StepASP" type="AudioStreamPlayer" parent="."]
-stream = SubResource("AudioStreamRandomizer_62578")
+stream = SubResource("AudioStreamRandomizer_ektyd")
+volume_db = -5.0

@@ -30,6 +30,9 @@ func play_gameplay():
 func play_step():
 	$StepASP.play()
 
+func stop_step():
+	$StepASP.stop()
+
 func set_selected_character_data(name: String, player: PackedScene, weapon_name: String):
 	character_selected_name = name
 	character_selected = player
