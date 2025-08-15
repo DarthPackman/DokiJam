@@ -6,7 +6,7 @@ extends Area2D
 var trigger_time_elapsed = 0.0
 @export var duration = 5.0
 var duration_time_elapsed = 0.0
-var damage = 2.5
+@export var damage = 2.5
 @export var statusEffectDisabled = false
 @onready var areaOfEffect = %AOE
 @onready var fx = %FX

@@ -32,10 +32,14 @@ func _process(delta: float) -> void:
 	minutes = floor(activeTime/60)
 	seconds = fmod(activeTime, 60)
 	timerLabel.text = "%02d:%02d" % [minutes, seconds]
-	if minutes == 5:
+	if minutes == 3:
 		difficulty = 1
-	elif minutes == 10:
+	elif minutes == 6:
 		difficulty = 2
+	elif minutes == 9:
+		difficulty = 3
+	elif minutes == 12:
+		difficulty = 4
 
 	if difficulty == 1: 
 		spawnTimer.wait_time = 0.2
@@ -70,6 +74,17 @@ func spawn_mob():
 		new_mob = slow_mob.instantiate()
 	elif currentSpawn == 2:
 		new_mob = fast_mob.instantiate()
+		
+	if difficulty == 0:
+		new_mob.health *= 0.25
+	elif difficulty == 1:
+		new_mob.health *= 0.5
+	elif difficulty == 2:
+		new_mob.health *= 0.75
+	elif difficulty == 3:
+		new_mob.health *= 1
+	elif difficulty == 4:
+		new_mob.health *= 1.25
 	
 	#Mutation Factor for Each Round - Multipliers Exist
 	new_mob.expMult = mult_exp

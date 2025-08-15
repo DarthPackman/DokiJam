@@ -7,7 +7,6 @@ extends Area2D
 var player: Node2D
 var is_flying_to_player: bool = false
 
-@onready var sprite = $Sprite2D
 @onready var collision = $CollisionShape2D
 
 func _ready() -> void:
