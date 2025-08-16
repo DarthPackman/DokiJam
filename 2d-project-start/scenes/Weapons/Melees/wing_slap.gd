@@ -3,9 +3,10 @@ extends Area2D
 @export var w_name: String = "Reg's Wingslap"
 @export var weapon_icon: Texture2D
 @onready var attackSpeedTimer = $Timer
-@export var attackSpeed = 1.5
+@export var attackSpeed = 1.0
 @export var statusEffectDisabled = false
-@export var duration = 1
+@export var duration = 1.5
+
 var attackDuration = 0.6
 var attackDuration_time_elapsed = 0.0
 var target_enemy
@@ -46,7 +47,6 @@ func _physics_process(delta: float) -> void:
 	attackDuration_time_elapsed += delta
 	enemies_in_range = get_overlapping_bodies()
 	if enemies_in_range.size() > 0.0:
-		random_enemy = (randi() % enemies_in_range.size())
 		target_enemy = enemies_in_range.front()
 	
 	if attackDuration_time_elapsed >= attackDuration:

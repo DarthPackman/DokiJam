@@ -3,7 +3,7 @@ extends Area2D
 var travelled_distance = 0
 const SPEED = 1000
 const RANGE = 1200
-var damage = 15.0
+var damage = 12.5
 var disabled = false
 
 func _physics_process(delta: float) -> void:

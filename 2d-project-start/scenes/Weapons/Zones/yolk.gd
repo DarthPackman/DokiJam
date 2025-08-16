@@ -1,10 +1,10 @@
 extends Area2D
 
-var damage = 5
+var damage = 2.5
 var disabled = false
 var duration = 1.0
 var duration_elapsed = 0.0
-var interval = 1.0
+var interval = 0.99
 var triggered = false
 
 func _ready() -> void:

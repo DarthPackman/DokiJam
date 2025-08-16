@@ -2,10 +2,9 @@ extends Area2D
 
 @export var w_name: String = "Long's Hoola"
 @export var weapon_icon: Texture2D
-@export var triggerTime = 0.5
+@export var triggerTime = 0.49
 var trigger_time_elapsed = 0.0
-var duration = 1.0
-var duration_time_elapsed = 0.0
+@export var duration = 1.5
 var damage = 2.5
 @export var rotationSpeed = 0.05
 @export var statusEffectDisabled = false
@@ -18,7 +17,6 @@ func _ready() -> void:
 	areaOfEffect.play("trigger")
 	
 func _physics_process(delta: float) -> void:
-	duration_time_elapsed += delta
 	trigger_time_elapsed += delta
 	if not areaOfEffect.is_playing():
 		areaOfEffect.play("duration")

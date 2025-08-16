@@ -5,7 +5,7 @@ extends Area2D
 @export var weapon_icon: Texture2D
 @export var attackSpeed = 1.0
 @export var statusEffectDisabled = false
-@export var duration = 1.0
+@export var duration = 1.5
 var zoneDurMult = 1.0
 var zoneDmgMult = 1.0
 var zoneIntMult = 1.0

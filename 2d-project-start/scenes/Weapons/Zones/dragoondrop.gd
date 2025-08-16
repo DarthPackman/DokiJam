@@ -1,10 +1,10 @@
 extends Area2D
 
-var damage = 5.0
+var damage = 3.0
 var disabled = false
-var duration = 5.0
+var duration = 2.5
 var duration_elapsed = 0.0
-var interval = 0.5
+var interval = 0.49
 
 func _ready() -> void:
 	$Timer.wait_time = interval

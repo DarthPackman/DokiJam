@@ -2,10 +2,10 @@ extends Area2D
 
 @export var w_name: String = "Reg's Aura"
 @export var weapon_icon: Texture2D
-@export var triggerTime = 0.5
+@export var triggerTime = 0.49
 var trigger_time_elapsed = 0.0
-@export var duration = 1.0
-var damage = 1
+@export var duration = 1.5
+@export var damage = 2.5
 @export var statusEffectDisabled = false
 @onready var areaOfEffect = %AOE
 @onready var fx = %FX

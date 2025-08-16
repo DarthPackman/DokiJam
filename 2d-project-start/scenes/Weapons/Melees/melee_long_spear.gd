@@ -1,6 +1,6 @@
 extends Area2D
 
-var damage = 5.0
+var damage = 10.0
 var disabled = false
 
 func hit():

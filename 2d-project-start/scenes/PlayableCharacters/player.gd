@@ -105,8 +105,9 @@ func _on_level_up(new_level: int) -> void:
 
 # Pressing space adds a 10 EXP for Testing
 func debug_add_exp() -> void:
-	exp_gain(10)
-	print("TEST: Added 10 EXP via debug")
+	pass
+	#exp_gain(10)
+	#print("TEST: Added 10 EXP via debug")
 
 #### WEAPON FIRING SEQUENCE
 

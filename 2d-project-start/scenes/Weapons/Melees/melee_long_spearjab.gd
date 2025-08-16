@@ -3,9 +3,9 @@ extends Area2D
 @export var w_name: String = "Long's Spear"
 @export var weapon_icon: Texture2D
 @onready var attackSpeedTimer = $Timer
-@export var attackSpeed = 1.5
+@export var attackSpeed = 1.0
 @export var statusEffectDisabled = false
-@export var duration = 1
+@export var duration = 1.5
 var attackDuration = 0.6
 var attackDuration_time_elapsed = 0.0
 var target_enemy

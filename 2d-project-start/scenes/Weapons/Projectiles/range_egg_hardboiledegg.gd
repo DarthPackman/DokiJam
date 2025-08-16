@@ -3,10 +3,10 @@ extends Area2D
 @onready var attackSpeedTimer = $Timer
 @export var w_name: String = "Egg's Hardboiled Egg"
 @export var weapon_icon: Texture2D
-@export var attackSpeed = 0.5
+@export var attackSpeed = 0.74
 @export var bounceCount = 3
 @export var statusEffectDisabled = false
-@export var duration = 1.0
+@export var duration = 1.5
 var currentLvl = 1
 var lvlDmgMult = 1
 var lvlScaleMult = 1
