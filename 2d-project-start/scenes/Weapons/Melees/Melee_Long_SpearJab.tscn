@@ -23,6 +23,7 @@ weapon_icon = ExtResource("2_fb84e")
 shape = SubResource("CircleShape2D_x3feo")
 
 [node name="WeaponPivot" type="Marker2D" parent="."]
+unique_name_in_owner = true
 
 [node name="MeleePoint" type="Marker2D" parent="WeaponPivot"]
 unique_name_in_owner = true

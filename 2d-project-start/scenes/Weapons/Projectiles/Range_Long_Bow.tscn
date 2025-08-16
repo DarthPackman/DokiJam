@@ -17,7 +17,7 @@ collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_mfpuh")
 weapon_icon = ExtResource("2_yiky1")
-attackSpeed = 0.75
+attackSpeed = 0.6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_x3feo")

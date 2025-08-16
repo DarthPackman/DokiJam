@@ -4,7 +4,7 @@ extends Area2D
 @export var weapon_icon: Texture2D
 @export var triggerTime = 0.5
 var trigger_time_elapsed = 0.0
-@export var duration = 5.0
+@export var duration = 1.0
 var duration_time_elapsed = 0.0
 var damage = 2.5
 @export var statusEffectDisabled = false

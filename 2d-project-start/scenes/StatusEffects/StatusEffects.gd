@@ -1,6 +1,6 @@
 extends Node
 
-func applyPoison(body, damage = 2, interval = 2, duration_time_elapse = 0.0, duration = 10):
+func applyPoison(body, damage = 2, interval = 1, duration_time_elapse = 0.0, duration = 5):
 	const POISON = preload("res://scenes/StatusEffects/poison.tscn")
 	if not body.has_node("Poison"):
 		var poisonDOT = POISON.instantiate()
@@ -23,7 +23,7 @@ func applyPoison(body, damage = 2, interval = 2, duration_time_elapse = 0.0, dur
 	if body.has_node("Vulnerable"):
 		spreadEffect(body.get_node("Vulnerable"))
 	
-func applyBurn(body, damage = 1, interval = 1, duration = 5):
+func applyBurn(body, damage = 1, interval = 0.5, duration = 5):
 	const BURN = preload("res://scenes/StatusEffects/burn.tscn")
 	if not body.has_node("Burn"):
 		var burnDOT = BURN.instantiate()
@@ -67,7 +67,7 @@ func applyDaze(body, speedReduction = 50.0, duration = 5):
 	if body.has_node("Vulnerable"):
 		enhanceEffect(body.get_node("Vulnerable"))
 
-func applySlow(body, speedReduction = 25.0, duration = 10):
+func applySlow(body, speedReduction = 35.0, duration = 5):
 	const SLOW = preload("res://scenes/StatusEffects/slow.tscn")
 	if not body.has_node("Slow"):
 		var slowCC = SLOW.instantiate()

@@ -1,7 +1,8 @@
-[gd_scene load_steps=40 format=3 uid="uid://cbcpmhuc0r3uh"]
+[gd_scene load_steps=41 format=3 uid="uid://cbcpmhuc0r3uh"]
 
 [ext_resource type="Script" uid="uid://eiogqwid6kow" path="res://scenes/PlayableCharacters/player.gd" id="1_dfvke"]
 [ext_resource type="PackedScene" uid="uid://c5lnuyav6ht8l" path="res://scenes/Systems/level_up/LevelUpScreen.tscn" id="2_60uwt"]
+[ext_resource type="AudioStream" uid="uid://yxq23doaoe0l" path="res://sound/bgm/bgm_pause_fd1.ogg" id="3_k2qg6"]
 [ext_resource type="PackedScene" uid="uid://ceg4kqfltdyk0" path="res://scenes/Systems/weapon_sorter/Fix/NewWeaponSlot.tscn" id="4_k2qg6"]
 [ext_resource type="Texture2D" uid="uid://d4fr3rk4bjwtb" path="res://UI/weaponicons/auraicon.png" id="5_7paq1"]
 [ext_resource type="Texture2D" uid="uid://27pk32a2bsg0" path="res://UI/weaponicons/sodaicon.png" id="7_k2qg6"]
@@ -92,6 +93,10 @@ layer = 50
 [node name="LevelUpScreen" parent="UI" instance=ExtResource("2_60uwt")]
 unique_name_in_owner = true
 visible = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="UI/LevelUpScreen"]
+stream = ExtResource("3_k2qg6")
+autoplay = true
 
 [node name="MarginContainer" type="MarginContainer" parent="UI"]
 anchors_preset = 7

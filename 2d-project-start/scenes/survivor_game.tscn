@@ -59,7 +59,7 @@ grow_horizontal = 2
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_31xms")
-volume_db = -5.0
+volume_db = -7.5
 autoplay = true
 
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]

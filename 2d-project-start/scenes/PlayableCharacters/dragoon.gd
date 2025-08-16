@@ -6,4 +6,6 @@ func play_idle_animation():
 
 func play_walk_animation():
 	%AnimatedSprite2D.play("walk")
+
+func _on_animated_sprite_2d_frame_changed() -> void:
 	Autoload.play_step()

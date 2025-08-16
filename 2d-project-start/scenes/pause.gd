@@ -18,6 +18,7 @@ func _toggle_pause() -> void:
 		get_tree().paused = false
 	else:
 		pause_menu.show()
+		$PauseASP.play()
 		get_tree().paused = true
 		# Initialize weapon cards when pause menu opens
 		new_weapon_order_ui.initialize()
