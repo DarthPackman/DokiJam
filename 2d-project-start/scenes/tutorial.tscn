@@ -4,6 +4,7 @@
 [ext_resource type="Theme" uid="uid://cgah1efpjglvn" path="res://UI/Title screen.tres" id="2_ehuit"]
 
 [node name="Tutorial" type="Control"]
+texture_filter = 1
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -20,19 +21,6 @@ script = ExtResource("1_yb1ct")
 offset_right = 1921.0
 offset_bottom = 1077.0
 theme = ExtResource("2_ehuit")
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -5.0
-offset_right = -5.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(1, 2.38782)
-size_flags_horizontal = 4
-size_flags_vertical = 4
-color = Color(0, 0, 0, 0.588235)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
 texture_filter = 1
@@ -75,6 +63,7 @@ size_flags_horizontal = 8
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_ehuit")
+theme_override_colors/font_shadow_color = Color(1, 0.917647, 0.819608, 1)
 theme_override_font_sizes/font_size = 32
 text = "Gameplay"
 
@@ -82,24 +71,28 @@ text = "Gameplay"
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_ehuit")
+theme_override_colors/font_shadow_color = Color(1, 0.917647, 0.819608, 1)
 text = "This is a Survivor Style Game"
 
 [node name="Gameplay3" type="Label" parent="CanvasLayer/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_ehuit")
+theme_override_colors/font_shadow_color = Color(1, 0.917647, 0.819608, 1)
 text = "Just Try Not To Get Hit"
 
 [node name="Gameplay4" type="Label" parent="CanvasLayer/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_ehuit")
+theme_override_colors/font_shadow_color = Color(1, 0.917647, 0.819608, 1)
 text = "Eventually Select New Items"
 
 [node name="Gameplay5" type="Label" parent="CanvasLayer/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_ehuit")
+theme_override_colors/font_shadow_color = Color(1, 0.917647, 0.819608, 1)
 text = "Chain your items effects"
 
 [node name="MarginContainer3" type="MarginContainer" parent="CanvasLayer/VBoxContainer/MarginContainer/HBoxContainer"]
@@ -117,6 +110,7 @@ size_flags_horizontal = 8
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_ehuit")
+theme_override_colors/font_shadow_color = Color(1, 0.917647, 0.819608, 1)
 theme_override_font_sizes/font_size = 32
 text = "Types"
 
@@ -124,36 +118,42 @@ text = "Types"
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_ehuit")
+theme_override_colors/font_shadow_color = Color(1, 0.917647, 0.819608, 1)
 text = "Each Weapon Has a Type"
 
 [node name="Type3" type="Label" parent="CanvasLayer/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer3/Progress"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_ehuit")
+theme_override_colors/font_shadow_color = Color(1, 0.917647, 0.819608, 1)
 text = "Theres Chonk which applies CCs"
 
 [node name="Type4" type="Label" parent="CanvasLayer/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer3/Progress"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_ehuit")
+theme_override_colors/font_shadow_color = Color(1, 0.917647, 0.819608, 1)
 text = "Theres Tall which applies Debuffs"
 
 [node name="Type5" type="Label" parent="CanvasLayer/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer3/Progress"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_ehuit")
+theme_override_colors/font_shadow_color = Color(1, 0.917647, 0.819608, 1)
 text = "Theres Egg which applies DOTs"
 
 [node name="Type6" type="Label" parent="CanvasLayer/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer3/Progress"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_ehuit")
+theme_override_colors/font_shadow_color = Color(1, 0.917647, 0.819608, 1)
 text = "And theres Regular."
 
 [node name="Type7" type="Label" parent="CanvasLayer/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer3/Progress"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_ehuit")
+theme_override_colors/font_shadow_color = Color(1, 0.917647, 0.819608, 1)
 text = "It doesn't apply anything :P"
 
 [node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/VBoxContainer/MarginContainer/HBoxContainer"]
@@ -171,6 +171,7 @@ size_flags_horizontal = 8
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_ehuit")
+theme_override_colors/font_shadow_color = Color(1, 0.913725, 0.815686, 1)
 theme_override_font_sizes/font_size = 32
 text = "Chains"
 
@@ -178,30 +179,35 @@ text = "Chains"
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_ehuit")
+theme_override_colors/font_shadow_color = Color(1, 0.913725, 0.815686, 1)
 text = "The effects can also chain."
 
 [node name="Chains3" type="Label" parent="CanvasLayer/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_ehuit")
+theme_override_colors/font_shadow_color = Color(1, 0.913725, 0.815686, 1)
 text = "Debuffs & CC Enhance"
 
 [node name="Chains4" type="Label" parent="CanvasLayer/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_ehuit")
+theme_override_colors/font_shadow_color = Color(1, 0.913725, 0.815686, 1)
 text = "Debuffs & Dots will spread"
 
 [node name="Chains5" type="Label" parent="CanvasLayer/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_ehuit")
+theme_override_colors/font_shadow_color = Color(1, 0.913725, 0.815686, 1)
 text = "CCs & Dots will detonate"
 
 [node name="Chains6" type="Label" parent="CanvasLayer/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_ehuit")
+theme_override_colors/font_shadow_color = Color(1, 0.913725, 0.815686, 1)
 text = "Regular resets durations"
 
 [node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/VBoxContainer"]

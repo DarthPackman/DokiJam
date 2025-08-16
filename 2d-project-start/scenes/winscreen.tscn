@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://dmye256cob83t"]
+[gd_scene load_steps=6 format=3 uid="uid://dmye256cob83t"]
 
 [ext_resource type="Script" uid="uid://bs2f1ike2rety" path="res://scenes/gameover.gd" id="1_unfcc"]
 [ext_resource type="Theme" uid="uid://cgah1efpjglvn" path="res://UI/Title screen.tres" id="2_l4jp6"]
+[ext_resource type="Texture2D" uid="uid://cavgs3fld1skr" path="res://art/IMG_6870.png" id="3_l4jp6"]
 [ext_resource type="AudioStream" uid="uid://dc0w7bh6lr8eh" path="res://sound/bgm/bgm_gamewin_fd1.ogg" id="3_unfcc"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rel3a"]
+texture = ExtResource("3_l4jp6")
 
 [node name="winscreen" type="Control"]
 texture_filter = 1
@@ -14,11 +18,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_unfcc")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel2" type="Panel" parent="."]
 layout_mode = 0
 offset_right = 1921.0
 offset_bottom = 1077.0
 theme = ExtResource("2_l4jp6")
+theme_override_styles/panel = SubResource("StyleBoxTexture_rel3a")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -30,8 +35,7 @@ offset_right = 568.0
 offset_bottom = 127.0
 grow_vertical = 2
 theme = ExtResource("2_l4jp6")
-theme_override_colors/font_shadow_color = Color(0.572549, 0.466667, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 0.929412, 0.85098, 1)
 theme_override_font_sizes/font_size = 128
 text = "Mission
 Complete!"

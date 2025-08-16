@@ -1,11 +1,10 @@
-[gd_resource type="Theme" load_steps=13 format=3 uid="uid://cgah1efpjglvn"]
+[gd_resource type="Theme" load_steps=12 format=3 uid="uid://cgah1efpjglvn"]
 
 [ext_resource type="FontFile" uid="uid://bd5fdvq76vys" path="res://UI/GrapeSoda.ttf" id="1_ctske"]
 [ext_resource type="Texture2D" uid="uid://bnx3c633paetn" path="res://UI/Buttonborderdisabled.png" id="1_xq628"]
 [ext_resource type="Texture2D" uid="uid://cqbwk56225naa" path="res://UI/Buttonborderfocus.png" id="2_2skcq"]
 [ext_resource type="Texture2D" uid="uid://ce2wqq83p42l6" path="res://UI/Buttonborderhover.png" id="3_by42i"]
 [ext_resource type="Texture2D" uid="uid://bo0e7hkjmpmc5" path="res://UI/Buttonbordernormal.png" id="4_tcvp8"]
-[ext_resource type="Texture2D" uid="uid://cavgs3fld1skr" path="res://art/IMG_6870.png" id="5_786r3"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nhkdl"]
 texture = ExtResource("1_xq628")
@@ -22,8 +21,8 @@ texture = ExtResource("4_tcvp8")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2u1lf"]
 texture = ExtResource("4_tcvp8")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7nwoj"]
-texture = ExtResource("5_786r3")
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qhakw"]
+bg_color = Color(0.987205, 0.746976, 0.582461, 1)
 
 [resource]
 default_font = ExtResource("1_ctske")
@@ -40,5 +39,5 @@ Button/styles/hover = SubResource("StyleBoxTexture_urx08")
 Button/styles/normal = SubResource("StyleBoxTexture_aatfs")
 Button/styles/pressed = SubResource("StyleBoxTexture_2u1lf")
 Label/colors/font_color = Color(0.451603, 0.438838, 0.995911, 1)
-Panel/styles/panel = SubResource("StyleBoxTexture_7nwoj")
+Panel/styles/panel = SubResource("StyleBoxFlat_qhakw")
 TextEdit/colors/font_color = Color(0.976471, 0.662745, 0.439216, 1)
