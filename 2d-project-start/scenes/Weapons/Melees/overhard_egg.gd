@@ -49,9 +49,9 @@ func _physics_process(delta: float) -> void:
 		for hit_visual in active_hit_visuals:
 			hit_visual.hide()
 			
-		for i in range(active_hit_visuals.size()):
-			active_hit_visuals[i].global_position = active_melee_points[i].global_position
-			active_hit_visuals[i].global_rotation = active_melee_points[i].global_rotation
+	for i in range(active_hit_visuals.size()):
+		active_hit_visuals[i].global_position = active_melee_points[i].global_position
+		active_hit_visuals[i].global_rotation = active_melee_points[i].global_rotation
 
 
 func attack():
@@ -67,17 +67,17 @@ func _on_timer_timeout() -> void:
 	attack()
 
 func level_up():
-	currentLvl += 1
+	currentLvl += 1.0
 	attackSpeed *= 0.9
 	attackSpeedTimer.wait_time = attackSpeed
 	
 	for hit_visual in active_hit_visuals:
 		hit_visual.damage *= 1.1
 
-	if currentLvl in [5, 10, 15]:
-		var index = currentLvl / 5
+	if currentLvl in [5.0, 10.0, 15.0]:
+		var index = currentLvl / 5.0
 		if index < all_hit_visuals.size():
 			active_hit_visuals.append(all_hit_visuals[index])
 			active_melee_points.append(all_melee_points[index])
-	elif currentLvl % 5.0 == 0:
+	elif currentLvl % 5.0 == 0.0:
 		self.scale *= 1.25

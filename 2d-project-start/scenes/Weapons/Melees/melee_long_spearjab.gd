@@ -67,15 +67,15 @@ func _on_timer_timeout() -> void:
 	attack()
 
 func level_up():
-	currentLvl += 1
+	currentLvl += 1.0
 	attackSpeed *= 0.9
 	attackSpeedTimer.wait_time = attackSpeed
 	
 	for hit_visual in active_hit_visuals:
 		hit_visual.damage *= 1.1
 
-	if currentLvl in [5, 10, 15]:
-		var index = currentLvl / 5
+	if currentLvl in [5.0, 10.0, 15.0]:
+		var index = currentLvl / 5.0
 		if index < all_hit_visuals.size():
 			active_hit_visuals.append(all_hit_visuals[index])
 			active_melee_points.append(all_melee_points[index])

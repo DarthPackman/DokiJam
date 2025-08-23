@@ -4,7 +4,7 @@ var travelled_distance = 0
 const SPEED = 1000
 const RANGE = 3000
 var damage = 5.0
-var bounceCount = 3
+var bounceCount = 3.0
 var currentBounce = 0
 var disabled = false
 

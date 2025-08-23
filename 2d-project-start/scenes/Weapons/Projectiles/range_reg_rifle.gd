@@ -7,9 +7,9 @@ extends Area2D
 @export var statusEffectDisabled = false
 @export var duration = 1.5
 var currentLvl = 1.0
-var lvlDmgMult = 1
-var lvlScaleMult = 1
-var bulletCount = 1
+var lvlDmgMult = 1.0
+var lvlScaleMult = 1.0
+var bulletCount = 1.0
 
 func _ready() -> void:
 	attackSpeedTimer.wait_time = attackSpeed
@@ -36,12 +36,12 @@ func _on_timer_timeout() -> void:
 		shoot()
 
 func level_up():
-	currentLvl += 1
+	currentLvl += 1.0
 	lvlDmgMult *= 1.1
 	attackSpeed *= 0.9
 	attackSpeedTimer.wait_time = attackSpeed
 	
-	if currentLvl > 25 and currentLvl % 5.0 == 0.0:
+	if currentLvl > 25.0 and currentLvl % 5.0 == 0.0:
 		lvlScaleMult *= 1.25
 	elif currentLvl % 5.0 == 0.0:
-		bulletCount += 1
+		bulletCount += 1.0

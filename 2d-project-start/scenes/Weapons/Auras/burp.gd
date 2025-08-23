@@ -38,7 +38,7 @@ func _physics_process(delta: float) -> void:
 		trigger_time_elapsed = 0.0
 
 func level_up():
-	currentLvl += 1
+	currentLvl += 1.0
 	triggerTime = triggerTime * 0.9
 	damage = damage * 1.1
 	if currentLvl % 5.0 == 0.0:

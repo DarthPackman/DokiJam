@@ -32,7 +32,7 @@ func _on_timer_timeout() -> void:
 	shoot()
 
 func level_up():
-	currentLvl += 1
+	currentLvl += 1.0
 	
 	zoneDmgMult *= 1.25
 	attackSpeed *= 0.8

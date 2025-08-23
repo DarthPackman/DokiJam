@@ -107,6 +107,7 @@ Poison=""
 Slow=""
 Vulnerable=""
 Weaken=""
+Player=""
 
 [input]
 
