@@ -16,7 +16,7 @@ extends CharacterBody2D
 
 @export var exp_amt: int = 5
 @export var expMult = 1.0
-@export var orb_spawn_radius: float = 2
+@export var orb_spawn_radius: float = 1.0
 var defaultSpeed = 100
 
 var character
@@ -59,23 +59,25 @@ func take_damage(damage: float, damageType: DamageNumbers.DamageTypes):
 		var smoke = SMOKE_SCENE.instantiate()
 		get_parent().add_child(smoke)
 		smoke.global_position = global_position
-		spawn_exp_orb()
+		var death_position = global_position  
+		spawn_exp_orb(death_position)
 		queue_free()
 
-func spawn_exp_orb() -> void:
-	var orb = EXP_ORB_SCENE.instantiate()  
-	get_parent().add_child(orb)  
+func spawn_exp_orb(spawn_position: Vector2 = Vector2.ZERO) -> void:
+	var orb = EXP_ORB_SCENE.instantiate()
+	get_parent().add_child(orb)
 	
-	# makes sure it doesn't stack perfectly and spawn in a circle
-	var offset = random_offset_in_circle(orb_spawn_radius)  
-	orb.global_position = global_position + offset
-
+	# Use provided position or fall back to current global_position
+	var base_position = spawn_position if spawn_position != Vector2.ZERO else global_position
+	
+	# Add small random offset so orbs don't stack perfectly
+	var offset = random_offset_in_circle(orb_spawn_radius)
+	orb.global_position = base_position + offset
 	orb.exp_value = exp_amt * expMult
 
-func random_offset_in_circle(radius: float) -> Vector2:  
-	#  r = R * sqrt(u), theta = 2*pi*v  
-	var angle := randf() * TAU  
-	var r := radius * sqrt(randf())  
+func random_offset_in_circle(radius: float) -> Vector2:
+	var angle := randf() * TAU
+	var r := (radius * 0.25) * sqrt(randf())
 	return Vector2(cos(angle), sin(angle)) * r
 
 
