@@ -9,7 +9,7 @@ var trigger_time_elapsed = 0.0
 @export var statusEffectDisabled = false
 @onready var areaOfEffect = %AOE
 @onready var fx = %FX
-var currentLvl = 1
+var currentLvl = 1.0
 
 func _ready() -> void:
 	areaOfEffect.play("trigger")

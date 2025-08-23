@@ -11,7 +11,7 @@ var attackDuration_time_elapsed = 0.0
 var target_enemy
 var enemies_in_range
 var random_enemy
-var currentLvl = 1
+var currentLvl = 1.0
 
 @onready var all_hit_visuals = [
 	%Hit,
@@ -44,10 +44,6 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	attackDuration_time_elapsed += delta
-	enemies_in_range = get_overlapping_bodies()
-	if enemies_in_range.size() > 0.0:
-		random_enemy = (randi() % enemies_in_range.size())
-		target_enemy = enemies_in_range[random_enemy]
 	
 	if attackDuration_time_elapsed >= attackDuration:
 		for hit_visual in active_hit_visuals:

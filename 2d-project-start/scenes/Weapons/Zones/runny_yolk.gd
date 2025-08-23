@@ -10,7 +10,7 @@ var zoneDurMult = 1.0
 var zoneDmgMult = 1.0
 var zoneIntMult = 1.0
 var zoneScaMult = 1.0
-var currentLvl = 1
+var currentLvl = 1.0
 
 func _ready() -> void:
 	attackSpeedTimer.wait_time = attackSpeed

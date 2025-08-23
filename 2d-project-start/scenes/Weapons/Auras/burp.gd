@@ -9,7 +9,7 @@ var trigger_time_elapsed = 0.0
 @export var statusEffectDisabled = false
 @onready var areaOfEffect = %AOE
 @onready var burpCollider = %BurpC2D
-var currentLvl = 1
+var currentLvl = 1.0
 	
 func _physics_process(delta: float) -> void:
 	trigger_time_elapsed += delta

@@ -7,7 +7,7 @@ extends Area2D
 @export var bounceCount = 3
 @export var statusEffectDisabled = false
 @export var duration = 1.5
-var currentLvl = 1
+var currentLvl = 1.0
 var lvlDmgMult = 1
 var lvlScaleMult = 1
 

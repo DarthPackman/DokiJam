@@ -32,7 +32,7 @@ position = Vector2(100, 0)
 [node name="Hit" parent="WeaponPivot/MeleePoint" instance=ExtResource("2_sxkrg")]
 unique_name_in_owner = true
 visible = false
-position = Vector2(106, 0)
+position = Vector2(100, 0)
 rotation = 0.0006212
 
 [node name="MeleePoint2" type="Marker2D" parent="WeaponPivot"]
@@ -43,18 +43,18 @@ rotation = 3.14159
 [node name="Hit2" parent="WeaponPivot/MeleePoint2" instance=ExtResource("2_sxkrg")]
 unique_name_in_owner = true
 visible = false
-position = Vector2(-107, 1)
+position = Vector2(-100, 1)
 rotation = -3.14159
 
 [node name="MeleePoint3" type="Marker2D" parent="WeaponPivot"]
 unique_name_in_owner = true
-position = Vector2(1, -100)
+position = Vector2(0, -100)
 rotation = 4.71239
 
 [node name="Hit3" parent="WeaponPivot/MeleePoint3" instance=ExtResource("2_sxkrg")]
 unique_name_in_owner = true
 visible = false
-position = Vector2(-107, 1)
+position = Vector2(-100, 1)
 rotation = -3.14159
 
 [node name="MeleePoint4" type="Marker2D" parent="WeaponPivot"]
@@ -65,7 +65,7 @@ rotation = 1.5708
 [node name="Hit4" parent="WeaponPivot/MeleePoint4" instance=ExtResource("2_sxkrg")]
 unique_name_in_owner = true
 visible = false
-position = Vector2(-107, 1)
+position = Vector2(-100, 1)
 rotation = -3.14159
 
 [node name="Timer" type="Timer" parent="."]

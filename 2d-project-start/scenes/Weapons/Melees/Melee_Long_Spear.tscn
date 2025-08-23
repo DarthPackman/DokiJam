@@ -80,5 +80,3 @@ texture_filter = 1
 position = Vector2(55.9982, -2.04974)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_3ik6m")
-autoplay = "default"
-frame_progress = 0.934004
