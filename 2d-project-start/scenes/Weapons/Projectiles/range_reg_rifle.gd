@@ -41,7 +41,7 @@ func level_up():
 	attackSpeed *= 0.9
 	attackSpeedTimer.wait_time = attackSpeed
 	
-	if currentLvl > 25 and currentLvl % 5 == 0:
+	if currentLvl > 25 and currentLvl % 5.0 == 0.0:
 		lvlScaleMult *= 1.25
-	elif currentLvl % 5 == 0:
+	elif currentLvl % 5.0 == 0.0:
 		bulletCount += 1

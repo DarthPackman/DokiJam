@@ -38,5 +38,5 @@ func level_up():
 	attackSpeed *= 0.8
 	attackSpeedTimer.wait_time = attackSpeed
 	
-	if currentLvl % 5 == 0:
+	if currentLvl % 5.0 == 0.0:
 		zoneScaMult *= 1.25

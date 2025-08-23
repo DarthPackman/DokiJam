@@ -41,7 +41,7 @@ func level_up():
 	attackSpeed *= 0.9
 	attackSpeedTimer.wait_time = attackSpeed
 	
-	if currentLvl % 5 == 0:
+	if currentLvl % 5.0 == 0.0:
 		bounceCount += 3
-	if currentLvl % 5 == 0 and currentLvl > 20:
+	if currentLvl % 5.0 == 0.0 and currentLvl > 20:
 		lvlScaleMult *= 1.25

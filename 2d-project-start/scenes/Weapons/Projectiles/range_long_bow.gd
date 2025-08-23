@@ -51,7 +51,7 @@ func level_up():
 	attackSpeed *= 0.9
 	attackSpeedTimer.wait_time = attackSpeed
 	
-	if currentLvl % 5 == 0 and currentLvl > 15:
+	if currentLvl % 5.0 == 0.0 and currentLvl > 15:
 		lvlScaleMult *= 1.25
-	elif currentLvl % 5 == 0:
+	elif currentLvl % 5.0 == 0.0:
 		arrowCount += 1

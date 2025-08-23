@@ -13,4 +13,5 @@ func hit():
 				StatusEffects.applySlow(enemy)
 
 func play_animation():
+	%AnimatedSprite2D.stop()
 	%AnimatedSprite2D.play("default")

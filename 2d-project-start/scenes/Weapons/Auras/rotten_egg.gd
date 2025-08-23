@@ -35,5 +35,5 @@ func level_up():
 	currentLvl += 1
 	triggerTime = triggerTime * 0.9
 	damage = damage * 1.1
-	if currentLvl % 5 == 0:
+	if currentLvl % 5.0 == 0.0:
 		self.scale = self.scale * 1.25

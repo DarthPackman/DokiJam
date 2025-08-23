@@ -13,4 +13,5 @@ func hit():
 				StatusEffects.resetDuration(enemy)
 
 func play_animation():
+	%AnimatedSprite2D.stop()
 	%AnimatedSprite2D.play("default")

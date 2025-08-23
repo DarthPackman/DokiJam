@@ -62,18 +62,16 @@ func attack():
 	$HammerASP.play()
 	if enemies_in_range.size() > 0:
 		look_at(target_enemy.global_position)
-		
+
 	for hit_visual in active_hit_visuals:
 		hit_visual.show()
 		hit_visual.hit()
 		hit_visual.play_animation()
-		
-	attackDuration_time_elapsed = 0.0
 
+	attackDuration_time_elapsed = 0.0
 
 func _on_timer_timeout() -> void:
 	attack()
-
 
 func level_up():
 	currentLvl += 1
@@ -88,5 +86,5 @@ func level_up():
 		if index < all_hit_visuals.size():
 			active_hit_visuals.append(all_hit_visuals[index])
 			active_melee_points.append(all_melee_points[index])
-	elif currentLvl % 5 == 0:
+	elif currentLvl % 5.0 == 0.0:
 		self.scale *= 1.25

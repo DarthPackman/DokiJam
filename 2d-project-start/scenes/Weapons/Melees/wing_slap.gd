@@ -86,5 +86,5 @@ func level_up():
 		if index < all_hit_visuals.size():
 			active_hit_visuals.append(all_hit_visuals[index])
 			active_melee_points.append(all_melee_points[index])
-	elif currentLvl % 5 == 0:
+	elif currentLvl % 5.0 == 0.0:
 		self.scale *= 1.25
